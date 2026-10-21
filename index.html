@@ -399,4 +399,896 @@
             background: linear-gradient(90deg, rgba(77, 20, 140, 0.45) 0%, rgba(21, 31, 50, 0.95) 100%);
             border-bottom: 1px solid var(--border-subtle);
             padding: 20px 26px;
-            display
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .step-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .step-number {
+            background: var(--fedex-orange);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .step-header h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .step-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #c4b5fd;
+            background: rgba(139, 92, 246, 0.16);
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+
+        .step-body {
+            padding: 24px 28px;
+        }
+
+        .step-lead {
+            margin: 0 0 18px;
+            font-size: 1.02rem;
+            color: #e2e8f0;
+            font-weight: 500;
+            border-left: 3px solid var(--fedex-orange);
+            padding-left: 14px;
+        }
+
+        .expectation-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .expectation-item {
+            background: var(--bg-card-alt);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .expectation-item:hover {
+            border-color: rgba(255, 102, 0, 0.4);
+            transform: translateX(3px);
+        }
+
+        .expectation-item strong.item-head {
+            color: #fb923c;
+            font-size: 1.02rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .sub-list {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .sub-list li {
+            margin-bottom: 8px;
+        }
+
+        .sub-list li strong {
+            color: #f8fafc;
+        }
+
+        /* Callout Boxes inside steps */
+        .alert-callout {
+            margin-top: 16px;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.14);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fecaca;
+            animation: pulseGlow 3s infinite;
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: #fde68a;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Acknowledgment & Sign-Off Section */
+        .signoff-card {
+            background: linear-gradient(180deg, #1b273d 0%, #111827 100%);
+            border: 2px solid var(--fedex-orange);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 36px;
+        }
+
+        .signoff-card h2 {
+            margin-top: 0;
+            color: var(--fedex-orange);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ack-statement {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 18px 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            color: #ecfdf5;
+            font-weight: 500;
+        }
+
+        .sign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: #0b1120;
+            color: #fff;
+            font-size: 0.98rem;
+            font-family: inherit;
+        }
+
+        .form-field input:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+
+        .btn-sign {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .btn-sign:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        /* Print-Ready Signature Table */
+        .print-sig-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 26px;
+            background: rgba(11, 17, 32, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .print-sig-table th,
+        .print-sig-table td {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        .print-sig-table th {
+            background: rgba(77, 20, 140, 0.45);
+            color: #fff;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .saved-sigs {
+            margin-top: 20px;
+        }
+
+        .sig-pill {
+            background: rgba(16, 185, 129, 0.12);
+            border-left: 4px solid #10b981;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px 45px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* Print Stylesheet */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #111827 !important;
+            }
+            .top-bar, .control-panel, .btn-sign, #ackFormArea {
+                display: none !important;
+            }
+            .hero {
+                background: #ffffff !important;
+                color: #111827 !important;
+                border-bottom: 3px solid #4D148C !important;
+                padding: 16px 0 !important;
+            }
+            .hero h1, .step-header h2, .meta-value, .code-card h3 {
+                color: #111827 !important;
+                text-shadow: none !important;
+            }
+            .step-card, .meta-card, .code-card, .expectation-item, .signoff-card {
+                background: #ffffff !important;
+                color: #111827 !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid;
+            }
+            .step-lead, .sub-list, .code-card p, .hero-subtitle {
+                color: #334155 !important;
+            }
+            .print-sig-table th, .print-sig-table td {
+                border: 1px solid #334155 !important;
+                color: #111827 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <div class="brand-logo">
+            <div><span class="brand-fed">Fed</span><span class="brand-ex">Ex</span></div>
+            <span class="brand-ground">Ground Operations</span>
+        </div>
+        <div class="top-actions">
+            <a href="tel:+13475270069" class="btn-action btn-call">📞 Call Management (Jamal / Rob)</a>
+            <button class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+    </header>
+
+    <!-- Hero Section with FedEx Ground Step-Van Illustration -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">Official Fleet Policy &amp; Route Playbook</div>
+            <h1>Ultimate Driver Expectations &amp; <span>Operational Standards</span></h1>
+            <p class="hero-subtitle">
+                Precision at the dock, safety on the road, accountability at every doorstep, and pride in every truck.
+            </p>
+
+            <!-- Custom High-Detail FedEx Ground Delivery Step-Van SVG -->
+            <div class="truck-showcase">
+                <svg class="fedex-truck-svg" viewBox="0 0 800 310" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FedEx Ground Delivery Step-Van Truck">
+                    <defs>
+                        <linearGradient id="truckBodyGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="82%" stop-color="#f1f5f9"/>
+                            <stop offset="100%" stop-color="#cbd5e1"/>
+                        </linearGradient>
+                        <linearGradient id="windowGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#1e293b" stop-opacity="0.95"/>
+                        </linearGradient>
+                        <linearGradient id="headlightBeam" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stop-color="#fef08a" stop-opacity="0.55"/>
+                            <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Subtle Speed Accents -->
+                    <line x1="25" y1="95" x2="115" y2="95" stroke="#7b42ff" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+                    <line x1="10" y1="145" x2="90" y2="145" stroke="#FF6600" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+                    <line x1="40" y1="195" x2="110" y2="195" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+
+                    <!-- Headlight Beam -->
+                    <polygon points="695,182 795,155 795,235 695,212" fill="url(#headlightBeam)"/>
+
+                    <!-- Road Surface -->
+                    <rect x="20" y="262" width="760" height="14" rx="7" fill="#1e293b"/>
+                    <line class="road-dash" x1="35" y1="269" x2="765" y2="269" stroke="#FF6600" stroke-width="3" stroke-dasharray="24 24"/>
+
+                    <!-- Rear Step Bumper -->
+                    <rect x="92" y="216" width="22" height="14" rx="3" fill="#334155"/>
+
+                    <!-- Main Step-Van Cargo Box -->
+                    <path d="M110 52 C110 43 117 36 126 36 H515 V228 H110 Z" fill="url(#truckBodyGrad)" stroke="#94a3b8" stroke-width="2"/>
+
+                    <!-- Step-Van Walk-In Cab & Sloped Hood -->
+                    <path d="M515 44 H595 L638 138 L692 152 C700 154 705 161 705 170 V228 H515 Z" fill="url(#truckBodyGrad)" stroke="#94a3b8" stroke-width="2"/>
+
+                    <!-- Roof Cap & Clearance Marker Lights -->
+                    <path d="M112 44 Q355 30 595 44" stroke="#e2e8f0" stroke-width="5" fill="none"/>
+                    <circle cx="130" cy="42" r="4" fill="#f59e0b"/>
+                    <circle cx="582" cy="48" r="4" fill="#f59e0b"/>
+
+                    <!-- Signature Lower Purple/Orange Trim Stripe -->
+                    <rect x="110" y="202" width="405" height="8" fill="#4D148C"/>
+                    <rect x="110" y="210" width="405" height="5" fill="#FF6600"/>
+                    <rect x="110" y="215" width="595" height="13" fill="#334155"/>
+
+                    <!-- Cargo Box Panel Seams -->
+                    <line x1="210" y1="38" x2="210" y2="202" stroke="#e2e8f0" stroke-width="1.5"/>
+                    <line x1="310" y1="38" x2="310" y2="202" stroke="#e2e8f0" stroke-width="1.5"/>
+                    <line x1="410" y1="38" x2="410" y2="202" stroke="#e2e8f0" stroke-width="1.5"/>
+
+                    <!-- Sliding Cab Door & Window -->
+                    <rect x="526" y="62" width="60" height="145" rx="4" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+                    <rect x="534" y="72" width="44" height="54" rx="4" fill="url(#windowGrad)" stroke="#334155" stroke-width="2"/>
+                    <rect x="572" y="136" width="8" height="18" rx="2" fill="#334155"/>
+
+                    <!-- Panoramic Front Windshield -->
+                    <polygon points="594,68 632,138 594,138" fill="url(#windowGrad)" stroke="#334155" stroke-width="2"/>
+
+                    <!-- Side Mirror Assembly -->
+                    <line x1="600" y1="82" x2="625" y2="82" stroke="#1e293b" stroke-width="3"/>
+                    <line x1="600" y1="122" x2="625" y2="122" stroke="#1e293b" stroke-width="3"/>
+                    <rect x="622" y="76" width="9" height="52" rx="3" fill="#0f172a" stroke="#94a3b8" stroke-width="1.5"/>
+
+                    <!-- Front Grille, Headlight & Bumper -->
+                    <rect x="692" y="166" width="12" height="22" rx="3" fill="#fef08a" stroke="#f59e0b" stroke-width="2"/>
+                    <rect x="688" y="192" width="14" height="8" rx="2" fill="#fb923c"/>
+                    <rect x="694" y="212" width="22" height="18" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+
+                    <!-- Official FedEx Ground Branding on Truck Side -->
+                    <text x="195" y="132" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="68" letter-spacing="-4" fill="#4D148C">Fed</text>
+                    <text x="311" y="132" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="68" letter-spacing="-4" fill="#008A00">Ex</text>
+                    <text x="315" y="156" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="22" letter-spacing="1.5" fill="#008A00">Ground</text>
+
+                    <!-- Unit & DOT Numbering on Cab -->
+                    <text x="605" y="172" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="12" fill="#334155">FTW • 76119</text>
+                    <text x="605" y="188" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="10" fill="#64748b">USDOT COMPLIANT</text>
+
+                    <!-- Rear Wheel Well & Dual Tire -->
+                    <path d="M188 228 A46 46 0 0 1 280 228 Z" fill="#0f172a"/>
+                    <circle cx="234" cy="228" r="36" fill="#1e293b" stroke="#0f172a" stroke-width="6"/>
+                    <circle cx="234" cy="228" r="20" fill="#94a3b8" stroke="#475569" stroke-width="3"/>
+                    <circle cx="234" cy="228" r="8" fill="#FF6600"/>
+
+                    <!-- Front Wheel Well & Steer Tire -->
+                    <path d="M586 228 A46 46 0 0 1 678 228 Z" fill="#0f172a"/>
+                    <circle cx="632" cy="228" r="36" fill="#1e293b" stroke="#0f172a" stroke-width="6"/>
+                    <circle cx="632" cy="228" r="20" fill="#94a3b8" stroke="#475569" stroke-width="3"/>
+                    <circle cx="632" cy="228" r="8" fill="#FF6600"/>
+                </svg>
+            </div>
+
+            <!-- Facility & Management Header Cards -->
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-label">📍 Terminal Facility</div>
+                    <div class="meta-value">FedEx Ground — 4901 Village Creek Rd</div>
+                    <div class="meta-sub">Fort Worth, TX 76119</div>
+                </div>
+                <div class="meta-card purple-border">
+                    <div class="meta-label">📞 Management Contacts</div>
+                    <div class="meta-value">Rob Alicea &amp; Jamal</div>
+                    <div class="meta-sub">Mandatory Call Before Coding Exceptions or Whenever in Doubt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Interactive Filter & Quick Jump Navigation -->
+        <div class="control-panel">
+            <input type="text" id="searchFilter" class="search-input" placeholder="🔍 Search expectations (e.g., Code 02, Code 27, Code 85, Pee Bottles, Pickup Window, GroundCloud)..." onkeyup="filterSteps()">
+            <div class="step-pills">
+                <a href="#step-1" class="step-pill">Step 1: Pre-Trip Inspection</a>
+                <a href="#step-2" class="step-pill">Step 2: Organization &amp; Code 27</a>
+                <a href="#step-3" class="step-pill">Step 3: Safe Driving (No Speeding)</a>
+                <a href="#step-4" class="step-pill">Step 4: Delivery &amp; Labels</a>
+                <a href="#step-5" class="step-pill">Step 5: Pickup Windows</a>
+                <a href="#step-6" class="step-pill">Step 6: Codes 02, 27 &amp; 85</a>
+                <a href="#step-7" class="step-pill">Step 7: Cleanliness &amp; Zero Tolerance</a>
+                <a href="#sign-off" class="step-pill">🖊️ Driver Sign-Off</a>
+            </div>
+        </div>
+
+        <!-- Quick-Glance Critical Rules Banner -->
+        <div class="code-summary-grid">
+            <div class="code-card code-02">
+                <span class="code-badge">Code 02 Rule</span>
+                <h3>Incorrect Address Only</h3>
+                <p>Never use Code 02 because you "cannot find" a place. Always call <strong>Rob or Jamal</strong> from the stop first.</p>
+            </div>
+            <div class="code-card code-27">
+                <span class="code-badge">Minimize Code 27</span>
+                <h3>Organize Before Dispatch</h3>
+                <p>Sort shelves at the dock so packages aren't buried and found unattempted at the end of the day.</p>
+            </div>
+            <div class="code-card code-85">
+                <span class="code-badge">Eliminate Code 85</span>
+                <h3>Zero Uncoded Returns</h3>
+                <p>We do <strong>NOT</strong> want Code 85 in the truck. Every undelivered package left behind must be properly coded.</p>
+            </div>
+            <div class="code-card clean-zero">
+                <span class="code-badge">Zero Tolerance</span>
+                <h3>Spotless Cab &amp; Cargo</h3>
+                <p>Clean your truck daily before clocking out. <strong>No "pee bottles"</strong> are ever permitted inside the trucks.</p>
+            </div>
+        </div>
+
+        <!-- STEP 1 -->
+        <section id="step-1" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 1</span>
+                    <h2>Morning Pre-Trip Inspection &amp; Readiness</h2>
+                </div>
+                <span class="step-tag">At the Station</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Winning the day starts at the terminal before you ever turn the key. Every driver is 100% accountable for the condition and readiness of their assigned truck.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">🔧 DOT / FMCSA Pre-Trip Vehicle Walkaround</strong>
+                        Before leaving the station, perform a full walkaround inspection. Verify that your truck has a <strong>full tank of gas/fuel</strong> and that all interior and exterior systems are working properly:
+                        <ul class="sub-list">
+                            <li><strong>Tires, Wheels &amp; Rims:</strong> Check for proper inflation, tread depth, cuts, or abnormal wear (including inner dual tires).</li>
+                            <li><strong>Brakes &amp; Steering:</strong> Test service brakes, parking brake, and steering play.</li>
+                            <li><strong>Lights, Mirrors &amp; Visibility:</strong> Verify headlights, brake lights, turn signals, hazard flashers, clearance lights, reflectors, windshield wipers, horn, and backup camera.</li>
+                            <li><strong>Fluid Levels &amp; Undercarriage:</strong> Check fluid levels and look under the truck for any puddles or leaks.</li>
+                            <li><strong>Safety &amp; Emergency Gear:</strong> Confirm the truck is equipped with a functional fire extinguisher, first-aid kit, and three reflective emergency triangles, plus your high-visibility vest, sturdy footwear, work gloves, and flashlight.</li>
+                            <li><em>Report any mechanical issues or existing body damage to management immediately before dispatch.</em></li>
+                        </ul>
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">📱 Technology &amp; Scanner Check</strong>
+                        Confirm your scanner and battery are fully charged and working properly. Log into <strong>GroundCloud</strong> and ensure your location tracking is turned <strong>ON</strong> before leaving the terminal.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🗺️ Out-of-Area Check</strong>
+                        Review your scanner and GroundCloud itinerary for any deliveries or pickups outside your assigned service area and notify management immediately so they can be reassigned.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section id="step-2" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 2</span>
+                    <h2>Morning Truck Organization &amp; Preventing Code 27</h2>
+                </div>
+                <span class="step-tag">At the Dock</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    How you set up your truck in the morning determines your success on the road and directly protects our service scorecard.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">📦 Organize Every Shelf &amp; Zone Before Dispatch</strong>
+                        Take the time to fully sort and organize your packages by stop and shelf space before leaving the station. Secure heavy cargo so it does not shift in transit.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🎯 Why Organization Matters (Eliminating Code 27)</strong>
+                        A <strong>Code 27 (Did Not Attempt)</strong> happens when a driver arrives at a stop, cannot find the package because it is buried or in the wrong spot, skips the stop, and then finds the package at the end of the day when it is too late to deliver. Organizing your truck before leaving the terminal ensures every package is in its proper place when you need it—saving you time and minimizing Code 27s.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🔍 Catch Misloads, Bad Addresses &amp; Damaged Boxes Early</strong>
+                        While organizing your load at the dock, actively look for:
+                        <ul class="sub-list">
+                            <li><strong>Warehouse Misloads:</strong> Packages belonging to another route or zip code.</li>
+                            <li><strong>Questionable / Incomplete Addresses:</strong> Labels missing street numbers or apartment numbers.</li>
+                            <li><strong>Damaged Packages:</strong> Boxes that are crushed, open, or need repackaging.</li>
+                            <li><em>Hand these back to the terminal immediately so they do not hurt our service rating.</em></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section id="step-3" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 3</span>
+                    <h2>Safe Driving Standards — Accuracy Over Speed</h2>
+                </div>
+                <span class="step-tag">On the Road</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Safety is our highest priority. You do not need to drive fast to be an efficient, top-tier driver.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">🛑 No Speeding (Highways or Residential Streets)</strong>
+                        Strictly obey all posted speed limits on highways, main roads, and residential streets. <strong>To be accurate, you do not have to speed.</strong> Time is saved by organizing your truck at the dock and knowing your route—never by driving fast or recklessly.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🦺 100% Seatbelt Compliance</strong>
+                        Always wear your safety belt whenever the vehicle is in motion—no exceptions.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">📵 Zero Phone Distractions (FMCSA 392.82)</strong>
+                        Keep handheld phones out of your hands while the truck is moving.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">👀 Defensive Driving &amp; Backing Safety</strong>
+                        Maintain a safe following distance, check your mirrors every 5–8 seconds, watch for pedestrians, and park where you can pull forward whenever possible. If you must reverse, back up at a crawling speed and check your camera and mirrors.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🪜 Three Points of Contact &amp; Ergonomic Lifting</strong>
+                        Always use three points of contact (two hands and one foot, or two feet and one hand) when entering or exiting the truck—<strong>never jump out</strong>. Lift heavy boxes with your legs (bending at the knees, never twisting your torso) and always use a dolly/handcart for oversized loads.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🚨 Weather, Fatigue &amp; Emergency Protocol</strong>
+                        Stay hydrated, dress appropriately for heat or cold, and take breaks if you feel fatigued. In the event of any accident, injury, or property damage, stop immediately, call 911 if needed, and contact management/dispatch right away—never leave the scene.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STEP 4 -->
+        <section id="step-4" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 4</span>
+                    <h2>Package Delivery Execution &amp; Label Verification</h2>
+                </div>
+                <span class="step-tag">At the Stop</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Every package must be delivered accurately on the first attempt with complete care and verification, upholding FedEx's "Purple Promise" of outstanding service.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">🏷️ Read the Label Twice</strong>
+                        Always read the shipping label carefully before stepping out of the truck and again at the doorstep. Verify the recipient's name, street number, street name, and apartment/suite number to guarantee an accurate delivery.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🚪 Front Door &amp; Protected Placement</strong>
+                        The customer's front door is the primary target—including walking packages up to the 2nd or 3rd floor of apartment complexes (never leave upper-floor packages at the 1st-floor stairwell).
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🐕 Handling Obstacles (Locked Gates / Loose Dogs)</strong>
+                        If the front door is inaccessible due to a locked gate, loose dog, or other hazard:
+                        <ul class="sub-list">
+                            <li><strong>Dog Bite Prevention:</strong> Always check fenced yards for signs of dogs (honk your horn or rattle the gate before entering). If an aggressive dog approaches, <strong>do not run</strong>—stay calm, avoid direct eye contact, and back away slowly facing the dog.</li>
+                            <li><strong>Safe Alternative Placement:</strong> Place the package in a safe, weather-protected alternative location (such as the <strong>Garage, Porch, Driveway, or Package Locker</strong>).</li>
+                            <li><strong>Scanner Documentation:</strong> Select the exact placement on your scanner. If you select <strong>"Other"</strong>, type a clear note telling the customer exactly where the package is secured.</li>
+                            <li><strong>When in Doubt, Call Management First:</strong> If you are unsure how or where to safely leave a package, call <strong>Rob or Jamal</strong> immediately before leaving the stop.</li>
+                        </ul>
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">📸 Clear Proof of Delivery (POD) Photos</strong>
+                        Take a sharp, well-framed photo showing the package in its secure delivery spot. Never take blurry photos, photos of the ground, or photos from inside the truck cab.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">✍️ Signatures &amp; Door Tags</strong>
+                        When a signature is required, collect it from an actual person at the address. Never falsify a delivery attempt from the truck. If no one is home, always leave a completed door tag on the door.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🔒 Truck &amp; Cargo Security</strong>
+                        Never leave keys in the ignition when stepping out of the cab, and keep the bulkhead and rear doors closed and locked when out of sight to prevent theft.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STEP 5 -->
+        <section id="step-5" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 5</span>
+                    <h2>Strict Pickup Windows &amp; 100% Package Scanning</h2>
+                </div>
+                <span class="step-tag">Clock Precision</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Pickups are a critical part of our FedEx service scorecard and require strict clock management.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">⏰ Hit Pickup Windows Exactly On Time</strong>
+                        Check your scheduled pickups early in the shift. You must arrive and pick up packages <strong>strictly within the designated time window—never before and never after</strong>. Early or late scans trigger automatic service failures.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🔫 Scan Every Single Package</strong>
+                        You must <strong>scan every individual package as you load it into the truck</strong>. Never throw un-scanned pickup packages into the cargo area.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STEP 6 -->
+        <section id="step-6" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 6</span>
+                    <h2>Exception Coding Rules — Code 02, Code 27 &amp; Code 85</h2>
+                </div>
+                <span class="step-tag">Service Accountability</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Our company is graded strictly on service numbers and accountability. Every code you enter either protects or hurts the entire team.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">✅ Use Only Legitimate Exception Codes</strong>
+                        Only apply codes that truthfully match the situation at the stop:
+                        <ul class="sub-list">
+                            <li><strong>Code 04:</strong> Business closed during normal hours.</li>
+                            <li><strong>Code 07:</strong> Residential customer unavailable when a signature is required or residential access is blocked (must leave a door tag).</li>
+                            <li><strong>Code 11:</strong> Business closed on weekends.</li>
+                        </ul>
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">⚠️ Strict Code 02 Rule (Incorrect Address ONLY — Never "Cannot Locate")</strong>
+                        <ul class="sub-list">
+                            <li><strong>Code 02</strong> is strictly for genuinely incorrect or incomplete addresses (e.g., missing street number, missing apartment number, or non-existent street number).</li>
+                            <li><strong>Never</strong> apply Code 02 simply because you cannot find the house, building, or apartment complex.</li>
+                            <li><strong>Mandatory Call Protocol:</strong> Before using Code 02, double-check the label and apartment map. If you still cannot locate the address, <strong>you must call Rob or Jamal from the stop before applying Code 02</strong>. Management will assist you with master maps or customer contact.</li>
+                        </ul>
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">📉 Minimize Code 27 (Did Not Attempt)</strong>
+                        Avoid Code 27 and Code 01 at all costs. By organizing your truck in the morning, you ensure you do not discover overlooked packages at the end of the shift. If an emergency prevents a delivery attempt, you must call management immediately.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🚫 Eliminate Code 85 (Zero Uncoded Packages Left in Truck)</strong>
+                        <ul class="sub-list">
+                            <li><strong>We do NOT want Code 85 inside the truck.</strong> A <strong>Code 85</strong> (or uncoded return) is triggered when a package is left behind in the truck at the end of the day without any exception code scanned on it, which severely hurts our service rating.</li>
+                            <li>Before returning to the station, inspect your cargo area from front to back and ensure <strong>every single remaining undelivered package is properly coded</strong>.</li>
+                        </ul>
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🤝 Physical End-of-Day Package Hand-Off</strong>
+                        Do not toss undelivered or coded packages into a bin unattended. Every returned package must be physically handed to management with a clear explanation before you clock out.
+                    </li>
+                </ul>
+
+                <div class="alert-callout alert-warning">
+                    <span class="alert-icon">📞</span>
+                    <div>
+                        <strong>Remember the Golden Rule on the Road:</strong> Whenever you cannot find an address or have any doubt about how to code or leave a package, call <strong>Rob or Jamal</strong> first while you are still at the stop.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 7 -->
+        <section id="step-7" class="step-card">
+            <div class="step-header">
+                <div class="step-title-group">
+                    <span class="step-number">Step 7</span>
+                    <h2>End-of-Day Truck Cleanliness &amp; Post-Trip Protocol</h2>
+                </div>
+                <span class="step-tag">Zero Tolerance</span>
+            </div>
+            <div class="step-body">
+                <p class="step-lead">
+                    Your truck is your professional workspace and a reflection of our company. We emphasize keeping our fleet spotless every single day.
+                </p>
+                <ul class="expectation-list">
+                    <li class="expectation-item">
+                        <strong class="item-head">🧹 Mandatory Daily Clean-Out</strong>
+                        Before finishing your workday, thoroughly clean the cab and cargo area. Remove all trash, food wrappers, empty cups, plastic wrap, and debris so the truck is spotless for the next morning.
+                    </li>
+                    <li class="expectation-item">
+                        <strong class="item-head">🔑 Post-Trip Equipment &amp; Maintenance Report</strong>
+                        Securely return or store all scanners, batteries, and truck keys as directed by management, and report any new mechanical issues, warning lights, or tire/body damages discovered during the day so the truck can be repaired overnight.
+                    </li>
+                </ul>
+
+                <div class="alert-callout alert-danger">
+                    <span class="alert-icon">☣️</span>
+                    <div>
+                        <strong>STRICT ZERO-TOLERANCE POLICY ON "PEE BOTTLES":</strong><br>
+                        Leaving urine bottles ("pee bottles") inside the cab or cargo area is a severe biohazard, a health violation, and completely unacceptable. <strong>No pee bottles are ever allowed to be left in the trucks.</strong> Violating this rule will result in immediate disciplinary action.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRIVER ACKNOWLEDGMENT & SIGN-OFF -->
+        <section id="sign-off" class="signoff-card">
+            <h2>🖊️ Driver Acknowledgment &amp; Sign-Off</h2>
+            <div class="ack-statement">
+                I have read, understood, and agree to follow all expectations in this <strong>Ultimate Driver Expectations &amp; Operational Standards</strong> policy—including morning truck organization to prevent Code 27, safe driving without speeding, strict pickup windows and 100% scanning, calling Rob or Jamal before applying Code 02, coding all remaining packages to prevent Code 85, and maintaining daily truck cleanliness with zero tolerance for urine bottles.
+            </div>
+
+            <!-- Interactive Digital Sign-Off Form -->
+            <div id="ackFormArea">
+                <div class="sign-grid">
+                    <div class="form-field">
+                        <label for="driverName">Driver Full Name</label>
+                        <input type="text" id="driverName" placeholder="e.g., Mark Francis">
+                    </div>
+                    <div class="form-field">
+                        <label for="routeNum">Route / Truck Number</label>
+                        <input type="text" id="routeNum" placeholder="e.g., wa126 / Truck 23412">
+                    </div>
+                    <div class="form-field">
+                        <label for="driverSig">Digital Signature (Type Full Name)</label>
+                        <input type="text" id="driverSig" placeholder="Type name to sign electronically">
+                    </div>
+                    <div class="form-field">
+                        <label for="signDate">Date</label>
+                        <input type="date" id="signDate">
+                    </div>
+                </div>
+                <button class="btn-sign" onclick="recordSignature()">✅ Submit &amp; Record Driver Acknowledgment</button>
+                <div id="savedSignatures" class="saved-sigs"></div>
+            </div>
+
+            <!-- Print-Ready Table for Physical Binder -->
+            <table class="print-sig-table">
+                <thead>
+                    <tr>
+                        <th style="width: 32%;">Field</th>
+                        <th>Signature Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Driver Name</strong></td>
+                        <td id="printNameCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Route / Truck Number</strong></td>
+                        <td id="printRouteCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Driver Signature</strong></td>
+                        <td id="printSigCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date</strong></td>
+                        <td id="printDateCell">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <strong>FedEx Ground — Terminal Operations</strong> &bull; 4901 Village Creek Rd, Fort Worth, TX 76119<br>
+        Management Contacts: <strong>Rob Alicea &amp; Jamal</strong> &bull; Safety, Reliability &amp; Elite Performance
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.getElementById("signDate");
+            if (dateInput) {
+                dateInput.valueAsDate = new Date();
+            }
+            renderSavedSignatures();
+        });
+
+        function filterSteps() {
+            const query = document.getElementById("searchFilter").value.toLowerCase();
+            const cards = document.querySelectorAll(".step-card");
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? "" : "none";
+            });
+        }
+
+        function recordSignature() {
+            const name = document.getElementById("driverName").value.trim();
+            const route = document.getElementById("routeNum").value.trim();
+            const sig = document.getElementById("driverSig").value.trim();
+            const date = document.getElementById("signDate").value;
+
+            if (!name || !route || !sig) {
+                alert("Please enter your Full Name, Route/Truck Number, and Digital Signature.");
+                return;
+            }
+
+            document.getElementById("printNameCell").innerText = name;
+            document.getElementById("printRouteCell").innerText = route;
+            document.getElementById("printSigCell").innerText = sig + " (Signed Electronically)";
+            document.getElementById("printDateCell").innerText = date;
+
+            try {
+                const list = JSON.parse(localStorage.getItem("fedex_expectations_sigs") || "[]");
+                list.push({
+                    name: name,
+                    route: route,
+                    sig: sig,
+                    date: date,
+                    timestamp: new Date().toLocaleString()
+                });
+                localStorage.setItem("fedex_expectations_sigs", JSON.stringify(list));
+            } catch (e) {}
+
+            renderSavedSignatures();
+            alert("Driver Acknowledgment recorded for " + name + "!");
+        }
+
+        function renderSavedSignatures() {
+            const container = document.getElementById("savedSignatures");
+            if (!container) return;
+            let list = [];
+            try {
+                list = JSON.parse(localStorage.getItem("fedex_expectations_sigs") || "[]");
+            } catch (e) {}
+
+            if (list.length === 0) {
+                container.innerHTML = "";
+                return;
+            }
+
+            let html = "<h4 style='margin: 18px 0 10px; color: #34d399;'>Recorded Acknowledgments on This Device:</h4>";
+            list.slice().reverse().forEach(item => {
+                html += `<div class="sig-pill">
+                    <div><strong>✅ ${item.name}</strong> &mdash; Route/Truck: <strong>${item.route}</strong></div>
+                    <div style="font-size: 0.85rem; color: #cbd5e1;">Signed: ${item.timestamp}</div>
+                </div>`;
+            });
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
