@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Driver Expectations & Operational Standards | FedEx Ground</title>
+    <title>C & S Delivery Service, Inc. | Ultimate Driver Expectations & Operational Standards</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -73,7 +73,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 17, 32, 0.9);
+            background: rgba(11, 17, 32, 0.92);
             backdrop-filter: blur(14px);
             border-bottom: 2px solid var(--fedex-purple);
             padding: 12px 24px;
@@ -90,23 +90,33 @@
             align-items: center;
             gap: 12px;
             font-weight: 900;
-            font-size: 1.45rem;
-            letter-spacing: -0.8px;
+            font-size: 1.35rem;
+            letter-spacing: -0.6px;
+            flex-wrap: wrap;
+        }
+
+        .brand-company {
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .brand-divider {
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 400;
         }
 
         .brand-fed { color: #a78bfa; }
         .brand-ex { color: var(--fedex-orange); }
         .brand-ground {
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.4px;
             background: rgba(16, 185, 129, 0.18);
             color: #34d399;
             border: 1px solid rgba(16, 185, 129, 0.4);
             padding: 3px 10px;
             border-radius: 999px;
-            margin-left: 4px;
         }
 
         .top-actions {
@@ -181,7 +191,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+            font-size: clamp(1.85rem, 4vw, 3rem);
             font-weight: 900;
             margin: 0 0 12px;
             letter-spacing: -1px;
@@ -196,7 +206,7 @@
         .hero-subtitle {
             color: var(--text-muted);
             font-size: 1.08rem;
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto 28px;
         }
 
@@ -221,12 +231,12 @@
             animation: roadLines 1.2s linear infinite;
         }
 
-        /* Facility & Management Info Strip */
+        /* Organization & Multi-Location Info Strip */
         .meta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
-            max-width: 960px;
+            max-width: 1020px;
             margin: 0 auto;
             text-align: left;
         }
@@ -244,8 +254,12 @@
             border-left-color: #a855f7;
         }
 
+        .meta-card.green-border {
+            border-left-color: #10b981;
+        }
+
         .meta-label {
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             color: var(--text-dim);
@@ -260,7 +274,7 @@
         }
 
         .meta-sub {
-            font-size: 0.86rem;
+            font-size: 0.85rem;
             color: #fbbf24;
             margin-top: 3px;
             font-weight: 600;
@@ -271,6 +285,73 @@
             max-width: 1080px;
             margin: 34px auto 60px;
             padding: 0 20px;
+        }
+
+        /* Inspirational Quotes Banner (Drivers & Management) */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .quote-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.96));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-lg);
+            padding: 24px 26px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .quote-card.driver-quote {
+            border-top: 4px solid var(--fedex-orange);
+        }
+
+        .quote-card.mgmt-quote {
+            border-top: 4px solid #a855f7;
+        }
+
+        .quote-role-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        .driver-quote .quote-role-tag {
+            background: rgba(255, 102, 0, 0.16);
+            color: #fdba74;
+            border: 1px solid rgba(255, 102, 0, 0.35);
+        }
+
+        .mgmt-quote .quote-role-tag {
+            background: rgba(168, 85, 247, 0.16);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+        }
+
+        .quote-text {
+            font-size: 1.02rem;
+            font-style: italic;
+            color: #f1f5f9;
+            margin: 0 0 12px;
+            line-height: 1.65;
+        }
+
+        .quote-footer {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
         /* Search & Quick Jump Bar */
@@ -557,7 +638,7 @@
 
         .sign-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 16px;
             margin-bottom: 18px;
         }
@@ -572,7 +653,8 @@
             margin-bottom: 6px;
         }
 
-        .form-field input {
+        .form-field input,
+        .form-field select {
             width: 100%;
             padding: 12px 14px;
             border-radius: 8px;
@@ -583,7 +665,8 @@
             font-family: inherit;
         }
 
-        .form-field input:focus {
+        .form-field input:focus,
+        .form-field select:focus {
             outline: none;
             border-color: #10b981;
         }
@@ -671,18 +754,18 @@
                 border-bottom: 3px solid #4D148C !important;
                 padding: 16px 0 !important;
             }
-            .hero h1, .step-header h2, .meta-value, .code-card h3 {
+            .hero h1, .step-header h2, .meta-value, .code-card h3, .quote-text {
                 color: #111827 !important;
                 text-shadow: none !important;
             }
-            .step-card, .meta-card, .code-card, .expectation-item, .signoff-card {
+            .step-card, .meta-card, .code-card, .expectation-item, .signoff-card, .quote-card {
                 background: #ffffff !important;
                 color: #111827 !important;
                 border: 1px solid #cbd5e1 !important;
                 box-shadow: none !important;
                 break-inside: avoid;
             }
-            .step-lead, .sub-list, .code-card p, .hero-subtitle {
+            .step-lead, .sub-list, .code-card p, .hero-subtitle, .quote-footer {
                 color: #334155 !important;
             }
             .print-sig-table th, .print-sig-table td {
@@ -697,11 +780,13 @@
     <!-- Top Navigation Bar -->
     <header class="top-bar">
         <div class="brand-logo">
+            <span class="brand-company">C &amp; S Delivery Service, Inc.</span>
+            <span class="brand-divider">|</span>
             <div><span class="brand-fed">Fed</span><span class="brand-ex">Ex</span></div>
-            <span class="brand-ground">Ground Operations</span>
+            <span class="brand-ground">All 4 Locations</span>
         </div>
         <div class="top-actions">
-            <a href="tel:+13475270069" class="btn-action btn-call">📞 Call Management (Jamal / Rob)</a>
+            <a href="#step-6" class="btn-action btn-call">📞 Call Station Management / Dispatch First</a>
             <button class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
         </div>
     </header>
@@ -709,15 +794,15 @@
     <!-- Hero Section with FedEx Ground Step-Van Illustration -->
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-badge">Official Fleet Policy &amp; Route Playbook</div>
+            <div class="hero-badge">C &amp; S Delivery Service, Inc. &bull; Company-Wide Playbook</div>
             <h1>Ultimate Driver Expectations &amp; <span>Operational Standards</span></h1>
             <p class="hero-subtitle">
-                Precision at the dock, safety on the road, accountability at every doorstep, and pride in every truck.
+                Unified operational standards across all 4 terminal locations—built on preparation at the dock, safety on the highway, accuracy at every doorstep, and mutual respect.
             </p>
 
             <!-- Custom High-Detail FedEx Ground Delivery Step-Van SVG -->
             <div class="truck-showcase">
-                <svg class="fedex-truck-svg" viewBox="0 0 800 310" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FedEx Ground Delivery Step-Van Truck">
+                <svg class="fedex-truck-svg" viewBox="0 0 800 310" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C & S Delivery Service Inc. FedEx Ground Step-Van Truck">
                     <defs>
                         <linearGradient id="truckBodyGrad" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stop-color="#ffffff"/>
@@ -793,9 +878,10 @@
                     <text x="311" y="132" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="68" letter-spacing="-4" fill="#008A00">Ex</text>
                     <text x="315" y="156" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="22" letter-spacing="1.5" fill="#008A00">Ground</text>
 
-                    <!-- Unit & DOT Numbering on Cab -->
-                    <text x="605" y="172" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="12" fill="#334155">FTW • 76119</text>
-                    <text x="605" y="188" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="10" fill="#64748b">USDOT COMPLIANT</text>
+                    <!-- C & S Delivery Service Branding on Cab -->
+                    <text x="598" y="168" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#1e293b">C &amp; S DELIVERY</text>
+                    <text x="598" y="182" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#475569">SERVICE, INC.</text>
+                    <text x="598" y="195" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="8.5" fill="#64748b">USDOT COMPLIANT</text>
 
                     <!-- Rear Wheel Well & Dual Tire -->
                     <path d="M188 228 A46 46 0 0 1 280 228 Z" fill="#0f172a"/>
@@ -811,17 +897,22 @@
                 </svg>
             </div>
 
-            <!-- Facility & Management Header Cards -->
+            <!-- Organization, Scope & Management Header Cards -->
             <div class="meta-grid">
                 <div class="meta-card">
-                    <div class="meta-label">📍 Terminal Facility</div>
-                    <div class="meta-value">FedEx Ground — 4901 Village Creek Rd</div>
-                    <div class="meta-sub">Fort Worth, TX 76119</div>
+                    <div class="meta-label">🏢 Organization</div>
+                    <div class="meta-value">C &amp; S Delivery Service, Inc.</div>
+                    <div class="meta-sub">Authorized FedEx Ground Contracted Service Provider</div>
+                </div>
+                <div class="meta-card green-border">
+                    <div class="meta-label">🌎 Operational Scope</div>
+                    <div class="meta-value">All 4 Terminal Locations &amp; Routes</div>
+                    <div class="meta-sub">Unified Fleet Standards Across Every Station</div>
                 </div>
                 <div class="meta-card purple-border">
-                    <div class="meta-label">📞 Management Contacts</div>
-                    <div class="meta-value">Rob Alicea &amp; Jamal</div>
-                    <div class="meta-sub">Mandatory Call Before Coding Exceptions or Whenever in Doubt</div>
+                    <div class="meta-label">📞 Management &amp; Support</div>
+                    <div class="meta-value">Station Management &amp; Dispatch Team</div>
+                    <div class="meta-sub">Call Before Coding Exceptions or Whenever in Doubt</div>
                 </div>
             </div>
         </div>
@@ -830,9 +921,28 @@
     <!-- Main Content Container -->
     <main class="container">
 
+        <!-- Inspirational Quotes Section for Drivers & Management -->
+        <section class="quotes-grid" aria-label="Leadership and Driver Vision">
+            <div class="quote-card driver-quote">
+                <span class="quote-role-tag">🚛 For Our Drivers &bull; The Frontline Standard</span>
+                <p class="quote-text">
+                    "Anyone can drive a truck, but it takes a true professional to own a route. Every morning we load more than boxes—we carry the reputation of C &amp; S Delivery Service, Inc. and the trust of every neighborhood we serve. Preparation at the dock, discipline on the highway, and pride at every doorstep: when each driver masters their craft, our entire company wins."
+                </p>
+                <div class="quote-footer">&mdash; C &amp; S Delivery Service, Inc. Frontline Creed</div>
+            </div>
+
+            <div class="quote-card mgmt-quote">
+                <span class="quote-role-tag">🤝 For Our Management &bull; The Leadership Standard</span>
+                <p class="quote-text">
+                    "Top-tier service is built on strong rapport and mutual respect. Leadership's mission across all four locations is to set clear expectations, equip every driver with the tools to succeed, listen closely, and back the team with fast, fair support on the road. When management and drivers communicate as one unit, no goal is out of reach."
+                </p>
+                <div class="quote-footer">&mdash; C &amp; S Delivery Service, Inc. Leadership Pledge</div>
+            </div>
+        </section>
+
         <!-- Interactive Filter & Quick Jump Navigation -->
         <div class="control-panel">
-            <input type="text" id="searchFilter" class="search-input" placeholder="🔍 Search expectations (e.g., Code 02, Code 27, Code 85, Pee Bottles, Pickup Window, GroundCloud)..." onkeyup="filterSteps()">
+            <input type="text" id="searchFilter" class="search-input" placeholder="🔍 Search expectations across all 4 locations (e.g., Code 02, Code 27, Code 85, Pee Bottles, Pickup Window, GroundCloud)..." onkeyup="filterSteps()">
             <div class="step-pills">
                 <a href="#step-1" class="step-pill">Step 1: Pre-Trip Inspection</a>
                 <a href="#step-2" class="step-pill">Step 2: Organization &amp; Code 27</a>
@@ -850,7 +960,7 @@
             <div class="code-card code-02">
                 <span class="code-badge">Code 02 Rule</span>
                 <h3>Incorrect Address Only</h3>
-                <p>Never use Code 02 because you "cannot find" a place. Always call <strong>Rob or Jamal</strong> from the stop first.</p>
+                <p>Never use Code 02 because you "cannot find" a place. Always call <strong>Station Management / Dispatch</strong> from the stop first.</p>
             </div>
             <div class="code-card code-27">
                 <span class="code-badge">Minimize Code 27</span>
@@ -880,7 +990,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    Winning the day starts at the terminal before you ever turn the key. Every driver is 100% accountable for the condition and readiness of their assigned truck.
+                    Winning the day starts at the terminal before you ever turn the key. Every driver across all four C &amp; S Delivery Service, Inc. locations is 100% accountable for the condition and readiness of their assigned truck.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -892,7 +1002,7 @@
                             <li><strong>Lights, Mirrors &amp; Visibility:</strong> Verify headlights, brake lights, turn signals, hazard flashers, clearance lights, reflectors, windshield wipers, horn, and backup camera.</li>
                             <li><strong>Fluid Levels &amp; Undercarriage:</strong> Check fluid levels and look under the truck for any puddles or leaks.</li>
                             <li><strong>Safety &amp; Emergency Gear:</strong> Confirm the truck is equipped with a functional fire extinguisher, first-aid kit, and three reflective emergency triangles, plus your high-visibility vest, sturdy footwear, work gloves, and flashlight.</li>
-                            <li><em>Report any mechanical issues or existing body damage to management immediately before dispatch.</em></li>
+                            <li><em>Report any mechanical issues or existing body damage to your Station Management immediately before dispatch.</em></li>
                         </ul>
                     </li>
                     <li class="expectation-item">
@@ -901,7 +1011,7 @@
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">🗺️ Out-of-Area Check</strong>
-                        Review your scanner and GroundCloud itinerary for any deliveries or pickups outside your assigned service area and notify management immediately so they can be reassigned.
+                        Review your scanner and GroundCloud itinerary for any deliveries or pickups outside your assigned service area and notify Station Management immediately so they can be reassigned.
                     </li>
                 </ul>
             </div>
@@ -918,7 +1028,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    How you set up your truck in the morning determines your success on the road and directly protects our service scorecard.
+                    How you set up your truck in the morning determines your success on the road and directly protects our company's service scorecard.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -979,7 +1089,7 @@
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">🚨 Weather, Fatigue &amp; Emergency Protocol</strong>
-                        Stay hydrated, dress appropriately for heat or cold, and take breaks if you feel fatigued. In the event of any accident, injury, or property damage, stop immediately, call 911 if needed, and contact management/dispatch right away—never leave the scene.
+                        Stay hydrated, dress appropriately for heat or cold, and take breaks if you feel fatigued. In the event of any accident, injury, or property damage, stop immediately, call 911 if needed, and contact your Station Management / Dispatch right away—never leave the scene.
                     </li>
                 </ul>
             </div>
@@ -996,7 +1106,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    Every package must be delivered accurately on the first attempt with complete care and verification, upholding FedEx's "Purple Promise" of outstanding service.
+                    Every package must be delivered accurately on the first attempt with complete care and verification, upholding FedEx's "Purple Promise" and C &amp; S Delivery Service, Inc. standards.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -1014,7 +1124,7 @@
                             <li><strong>Dog Bite Prevention:</strong> Always check fenced yards for signs of dogs (honk your horn or rattle the gate before entering). If an aggressive dog approaches, <strong>do not run</strong>—stay calm, avoid direct eye contact, and back away slowly facing the dog.</li>
                             <li><strong>Safe Alternative Placement:</strong> Place the package in a safe, weather-protected alternative location (such as the <strong>Garage, Porch, Driveway, or Package Locker</strong>).</li>
                             <li><strong>Scanner Documentation:</strong> Select the exact placement on your scanner. If you select <strong>"Other"</strong>, type a clear note telling the customer exactly where the package is secured.</li>
-                            <li><strong>When in Doubt, Call Management First:</strong> If you are unsure how or where to safely leave a package, call <strong>Rob or Jamal</strong> immediately before leaving the stop.</li>
+                            <li><strong>When in Doubt, Call Management First:</strong> If you are unsure how or where to safely leave a package, call your <strong>Station Management or Dispatch Team</strong> immediately before leaving the stop.</li>
                         </ul>
                     </li>
                     <li class="expectation-item">
@@ -1044,7 +1154,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    Pickups are a critical part of our FedEx service scorecard and require strict clock management.
+                    Pickups are a critical part of our FedEx service scorecard across all four locations and require strict clock management.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -1070,7 +1180,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    Our company is graded strictly on service numbers and accountability. Every code you enter either protects or hurts the entire team.
+                    C &amp; S Delivery Service, Inc. is graded strictly on service numbers and accountability. Every code you enter either protects or hurts the entire team.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -1087,12 +1197,12 @@
                         <ul class="sub-list">
                             <li><strong>Code 02</strong> is strictly for genuinely incorrect or incomplete addresses (e.g., missing street number, missing apartment number, or non-existent street number).</li>
                             <li><strong>Never</strong> apply Code 02 simply because you cannot find the house, building, or apartment complex.</li>
-                            <li><strong>Mandatory Call Protocol:</strong> Before using Code 02, double-check the label and apartment map. If you still cannot locate the address, <strong>you must call Rob or Jamal from the stop before applying Code 02</strong>. Management will assist you with master maps or customer contact.</li>
+                            <li><strong>Mandatory Call Protocol:</strong> Before using Code 02, double-check the label and apartment map. If you still cannot locate the address, <strong>you must call your Station Management or Dispatch Team from the stop before applying Code 02</strong>. Management will assist you with master maps or customer contact.</li>
                         </ul>
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">📉 Minimize Code 27 (Did Not Attempt)</strong>
-                        Avoid Code 27 and Code 01 at all costs. By organizing your truck in the morning, you ensure you do not discover overlooked packages at the end of the shift. If an emergency prevents a delivery attempt, you must call management immediately.
+                        Avoid Code 27 and Code 01 at all costs. By organizing your truck in the morning, you ensure you do not discover overlooked packages at the end of the shift. If an emergency prevents a delivery attempt, you must call Station Management immediately.
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">🚫 Eliminate Code 85 (Zero Uncoded Packages Left in Truck)</strong>
@@ -1103,14 +1213,14 @@
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">🤝 Physical End-of-Day Package Hand-Off</strong>
-                        Do not toss undelivered or coded packages into a bin unattended. Every returned package must be physically handed to management with a clear explanation before you clock out.
+                        Do not toss undelivered or coded packages into a bin unattended. Every returned package must be physically handed to your Station Manager with a clear explanation before you clock out.
                     </li>
                 </ul>
 
                 <div class="alert-callout alert-warning">
                     <span class="alert-icon">📞</span>
                     <div>
-                        <strong>Remember the Golden Rule on the Road:</strong> Whenever you cannot find an address or have any doubt about how to code or leave a package, call <strong>Rob or Jamal</strong> first while you are still at the stop.
+                        <strong>Remember the Golden Rule on the Road:</strong> Whenever you cannot find an address or have any doubt about how to code or leave a package, call your <strong>Station Management / Dispatch Team</strong> first while you are still at the stop.
                     </div>
                 </div>
             </div>
@@ -1127,7 +1237,7 @@
             </div>
             <div class="step-body">
                 <p class="step-lead">
-                    Your truck is your professional workspace and a reflection of our company. We emphasize keeping our fleet spotless every single day.
+                    Your truck is your professional workspace and a reflection of C &amp; S Delivery Service, Inc. We emphasize keeping our fleet spotless every single day across all four terminals.
                 </p>
                 <ul class="expectation-list">
                     <li class="expectation-item">
@@ -1136,7 +1246,7 @@
                     </li>
                     <li class="expectation-item">
                         <strong class="item-head">🔑 Post-Trip Equipment &amp; Maintenance Report</strong>
-                        Securely return or store all scanners, batteries, and truck keys as directed by management, and report any new mechanical issues, warning lights, or tire/body damages discovered during the day so the truck can be repaired overnight.
+                        Securely return or store all scanners, batteries, and truck keys as directed by Station Management, and report any new mechanical issues, warning lights, or tire/body damages discovered during the day so the truck can be repaired overnight.
                     </li>
                 </ul>
 
@@ -1154,23 +1264,32 @@
         <section id="sign-off" class="signoff-card">
             <h2>🖊️ Driver Acknowledgment &amp; Sign-Off</h2>
             <div class="ack-statement">
-                I have read, understood, and agree to follow all expectations in this <strong>Ultimate Driver Expectations &amp; Operational Standards</strong> policy—including morning truck organization to prevent Code 27, safe driving without speeding, strict pickup windows and 100% scanning, calling Rob or Jamal before applying Code 02, coding all remaining packages to prevent Code 85, and maintaining daily truck cleanliness with zero tolerance for urine bottles.
+                I have read, understood, and agree to follow all expectations in this <strong>C &amp; S Delivery Service, Inc. — Ultimate Driver Expectations &amp; Operational Standards</strong> policy—including morning truck organization to prevent Code 27, safe driving without speeding, strict pickup windows and 100% scanning, calling Station Management / Dispatch before applying Code 02, coding all remaining packages to prevent Code 85, and maintaining daily truck cleanliness with zero tolerance for urine bottles.
             </div>
 
             <!-- Interactive Digital Sign-Off Form -->
             <div id="ackFormArea">
                 <div class="sign-grid">
                     <div class="form-field">
+                        <label for="terminalLoc">Terminal Location</label>
+                        <select id="terminalLoc">
+                            <option value="Location 1">Terminal Location 1</option>
+                            <option value="Location 2">Terminal Location 2</option>
+                            <option value="Location 3">Terminal Location 3</option>
+                            <option value="Location 4">Terminal Location 4</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
                         <label for="driverName">Driver Full Name</label>
-                        <input type="text" id="driverName" placeholder="e.g., Mark Francis">
+                        <input type="text" id="driverName" placeholder="Enter Full Name">
                     </div>
                     <div class="form-field">
                         <label for="routeNum">Route / Truck Number</label>
-                        <input type="text" id="routeNum" placeholder="e.g., wa126 / Truck 23412">
+                        <input type="text" id="routeNum" placeholder="e.g., Route / Truck #">
                     </div>
                     <div class="form-field">
                         <label for="driverSig">Digital Signature (Type Full Name)</label>
-                        <input type="text" id="driverSig" placeholder="Type name to sign electronically">
+                        <input type="text" id="driverSig" placeholder="Type full name to sign">
                     </div>
                     <div class="form-field">
                         <label for="signDate">Date</label>
@@ -1190,6 +1309,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><strong>Terminal Location</strong></td>
+                        <td id="printLocCell">&nbsp;</td>
+                    </tr>
                     <tr>
                         <td><strong>Driver Name</strong></td>
                         <td id="printNameCell">&nbsp;</td>
@@ -1213,8 +1336,8 @@
     </main>
 
     <footer>
-        <strong>FedEx Ground — Terminal Operations</strong> &bull; 4901 Village Creek Rd, Fort Worth, TX 76119<br>
-        Management Contacts: <strong>Rob Alicea &amp; Jamal</strong> &bull; Safety, Reliability &amp; Elite Performance
+        <strong>C &amp; S Delivery Service, Inc.</strong> &bull; Authorized FedEx Ground Contracted Service Provider<br>
+        Unified Operational Standards Across All 4 Terminal Locations &bull; Safety, Service &amp; Mutual Respect
     </footer>
 
     <script>
@@ -1236,6 +1359,7 @@
         }
 
         function recordSignature() {
+            const loc = document.getElementById("terminalLoc").value;
             const name = document.getElementById("driverName").value.trim();
             const route = document.getElementById("routeNum").value.trim();
             const sig = document.getElementById("driverSig").value.trim();
@@ -1246,25 +1370,27 @@
                 return;
             }
 
+            document.getElementById("printLocCell").innerText = loc;
             document.getElementById("printNameCell").innerText = name;
             document.getElementById("printRouteCell").innerText = route;
             document.getElementById("printSigCell").innerText = sig + " (Signed Electronically)";
             document.getElementById("printDateCell").innerText = date;
 
             try {
-                const list = JSON.parse(localStorage.getItem("fedex_expectations_sigs") || "[]");
+                const list = JSON.parse(localStorage.getItem("cs_delivery_expectations_sigs") || "[]");
                 list.push({
+                    loc: loc,
                     name: name,
                     route: route,
                     sig: sig,
                     date: date,
                     timestamp: new Date().toLocaleString()
                 });
-                localStorage.setItem("fedex_expectations_sigs", JSON.stringify(list));
+                localStorage.setItem("cs_delivery_expectations_sigs", JSON.stringify(list));
             } catch (e) {}
 
             renderSavedSignatures();
-            alert("Driver Acknowledgment recorded for " + name + "!");
+            alert("Driver Acknowledgment recorded for " + name + " (" + loc + ")!");
         }
 
         function renderSavedSignatures() {
@@ -1272,7 +1398,7 @@
             if (!container) return;
             let list = [];
             try {
-                list = JSON.parse(localStorage.getItem("fedex_expectations_sigs") || "[]");
+                list = JSON.parse(localStorage.getItem("cs_delivery_expectations_sigs") || "[]");
             } catch (e) {}
 
             if (list.length === 0) {
@@ -1283,7 +1409,7 @@
             let html = "<h4 style='margin: 18px 0 10px; color: #34d399;'>Recorded Acknowledgments on This Device:</h4>";
             list.slice().reverse().forEach(item => {
                 html += `<div class="sig-pill">
-                    <div><strong>✅ ${item.name}</strong> &mdash; Route/Truck: <strong>${item.route}</strong></div>
+                    <div><strong>✅ ${item.name}</strong> &mdash; ${item.loc || 'All Locations'} &bull; Route/Truck: <strong>${item.route}</strong></div>
                     <div style="font-size: 0.85rem; color: #cbd5e1;">Signed: ${item.timestamp}</div>
                 </div>`;
             });
