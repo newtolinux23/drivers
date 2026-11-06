@@ -1,5 +1,5 @@
 /* ==========================================================================
-   C & S Delivery Service — Driver Handbook
+   Driver Handbook — FedEx Ground P&D (template for any contractor / terminal)
    Screen: dark, animated reading experience
    Print / PDF: half-letter booklet (5.5 × 8.5 in)
    ========================================================================== */
@@ -203,6 +203,10 @@ tbody tr:hover { background: rgba(255,255,255,.035); }
 .quote p { font-family: var(--serif); font-style: italic; font-size: 1.02rem; color: #e5e8f2; }
 .quote small { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--purple-3); }
 
+/* Fill-in blanks (when a terminal hasn't set its details) */
+.blank { display: inline-block; min-width: 130px; border-bottom: 1px dashed rgba(255,255,255,.35); }
+body.embed .topbar .brand span, body.embed #menuBtn { display: none; }
+
 /* Welcome (screen) */
 .front.welcome { margin: 0 0 30px; padding: 34px; border-radius: 26px; background: var(--panel); border: 1px solid var(--line); }
 .front.welcome .kicker { font-size: .7rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--orange-2); }
@@ -312,7 +316,7 @@ footer.site { text-align: center; color: var(--dim); font-size: .8rem; padding: 
 @page :right {
   margin-left: 0.6in; margin-right: 0.45in;
   @bottom-right { content: counter(page); font: 800 8pt 'Inter', sans-serif; color: #4d148c; }
-  @bottom-left { content: "C & S Delivery Service, Inc. · Driver Handbook"; font: 600 6.5pt 'Inter', sans-serif; color: #8a8fa3; letter-spacing: .04em; }
+  @bottom-left { content: "Driver Handbook · FedEx Ground P&D"; font: 600 6.5pt 'Inter', sans-serif; color: #8a8fa3; letter-spacing: .04em; }
 }
 @page :left {
   margin-left: 0.45in; margin-right: 0.6in;
@@ -397,6 +401,11 @@ footer.site { text-align: center; color: var(--dim); font-size: .8rem; padding: 
   .grid.three { display: grid; grid-template-columns: 1fr 1fr; gap: 0 7px; }
   .grid.three > .card { margin-bottom: 7px; }
   .grid[style], .table-wrap + .grid { margin-top: 6px !important; }
+  .blank { min-width: 1.5in; border-bottom: 1px solid #9aa0b4; }
+  td .blank { min-width: 0.75in; }
+  td span.blank:first-child, td b.blank { display: inline-block; }
+  .cover .blank { border-bottom-color: rgba(255,255,255,.6); min-width: 1.6in; }
+  .back-cover .blank { border-bottom-color: rgba(255,255,255,.5); min-width: 2in; }
   .pdf-marker { position: absolute; left: 4px; top: 2px; font-size: 2px; color: #4d148c; }
   .card { background: #fff !important; border: 1px solid #e2e4ec !important; border-radius: 10px; padding: 10px 11px 6px; margin: 0 0 8px; break-inside: avoid; }
   .card h4 { font-size: 9pt; margin-bottom: 6px; color: #1b1f2e; }

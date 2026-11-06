@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#070a16">
-<title>C &amp; S Delivery Service, Inc. — Driver Handbook (2026 Edition)</title>
-<meta name="description" content="The C & S Delivery Service driver handbook: our 7-step day, FedEx Ground standards, DOT/FMCSA rules, scanner codes, uniform policy and safety.">
+<title>Driver Handbook — FedEx Ground P&amp;D (2026 Edition)</title>
+<meta name="description" content="Driver handbook for FedEx Ground contracted service providers: our 7-step day, FedEx Ground standards, DOT/FMCSA rules, scanner codes, uniform policy and safety.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -62,8 +62,8 @@
 
 <header class="topbar">
   <button class="btn menu-btn" id="menuBtn" aria-label="Chapters"><svg class="i"><use href="#i-menu"/></svg></button>
-  <div class="mark">C&amp;S</div>
-  <div class="brand"><b>Driver Handbook</b><span>C &amp; S Delivery Service, Inc. · FedEx Ground contracted service provider</span></div>
+  <div class="mark" data-bind="initials">DH</div>
+  <div class="brand"><b>Driver Handbook</b><span><span data-bind="company">FedEx Ground contracted service provider</span><span data-bind="termSep"></span></span></div>
   <div class="spacer"></div>
   <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Search rules, codes, HOS…" autocomplete="off"></label>
   <button class="btn" id="callBtn"><svg class="i"><use href="#i-phone"/></svg><span class="lbl">Dispatch</span></button>
@@ -105,7 +105,7 @@
 <!-- ============ Cover ============ -->
 <section class="cover" id="top">
   <span class="edition"><i></i>2026 Edition · Revised November 2026</span>
-  <div class="company">C &amp; S Delivery Service, Inc.</div>
+  <div class="company" data-bind="company">For FedEx Ground contracted service providers</div>
   <h1>The Driver<br><em>Handbook</em></h1>
   <p class="tag">Expectations, standards and federal rules for every driver on our FedEx Ground routes — at every terminal we serve.</p>
 
@@ -132,7 +132,7 @@
           <path d="M512 52 H522 Q528 52 532 58 L556 100 H512 Z" fill="url(#glass)"/>
           <rect x="478" y="52" width="26" height="62" rx="4" fill="url(#glass)"/>
           <rect x="474" y="46" width="34" height="114" rx="3" fill="none" stroke="#b9b6c8" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <text x="170" y="86" font-family="Inter, sans-serif" font-weight="900" font-size="30" letter-spacing="-1" fill="#4d148c">C&amp;S</text>
+          <text x="170" y="86" font-family="Inter, sans-serif" font-weight="900" font-size="30" letter-spacing="-1" fill="#4d148c" data-bind="initials">P&amp;D</text>
           <text x="244" y="86" font-family="Inter, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#ff6200">DELIVERY SERVICE</text>
           <text x="171" y="108" font-family="Inter, sans-serif" font-weight="700" font-size="10" letter-spacing="2.2" fill="#6b6f85">SAFE · ACCURATE · ON TIME</text>
           <rect x="566" y="112" width="8" height="14" rx="2" fill="#ffe08a"/>
@@ -146,9 +146,9 @@
   </div>
 
   <div class="cover-meta">
-    <div><small>Applies to</small><b>Every C &amp; S driver, route &amp; terminal</b></div>
-    <div><small>Owner / Authorized Officer</small><b>Rob Alicea ("Brower")</b></div>
-    <div><small>Operations / Dispatch</small><b><a href="tel:+13475270069">Jamal Sealy · (347) 527-0069</a></b></div>
+    <div><small>Applies to</small><b>Every driver, route &amp; terminal</b></div>
+    <div><small>Terminal</small><b data-bind="terminal" class="blank">&nbsp;</b></div>
+    <div><small>Dispatch</small><b><a data-tel="dispatch" data-bind="dispatchLine" class="blank">&nbsp;</a></b></div>
   </div>
   <div class="print-foot print-only">Contracted service provider for FedEx Ground</div>
   <div class="cover-actions">
@@ -162,14 +162,14 @@
 <section class="front welcome reveal in">
   <div class="kicker">Welcome to the team</div>
   <h2>Why this handbook exists</h2>
-  <p>Every morning we load more than boxes — we carry the reputation of C &amp; S Delivery Service and the trust of every neighborhood we serve. This handbook puts everything you need in one place: how we run our day, the FedEx Ground standards we contract to meet, and the federal rules that keep you and the public safe.</p>
+  <p>Every morning we load more than boxes — we carry the reputation of our company and the trust of every neighborhood we serve. This handbook puts everything you need in one place: how we run our day, the FedEx Ground standards we contract to meet, and the federal rules that keep you and the public safe.</p>
   <p>Read it once from start to finish. Keep it in your cab. When you are unsure, look it up — and when it is not in here, call us.</p>
   <div class="quotes">
   <div class="quote"><p>Anyone can drive a truck, but it takes a true professional to own a route. Preparation at the dock, discipline on the road and pride at every doorstep — when each driver masters the craft, the whole company wins.</p><small>For our drivers · The frontline standard</small></div>
   <div class="quote"><p>Top-tier service is built on rapport and respect. Leadership's job is to set clear expectations, give every driver the tools to succeed, listen closely and back the team with fast, fair support on the road.</p><small>For our management · The leadership standard</small></div>
   </div>
-  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">When rules overlap</b><p>Federal and state law, FedEx Ground contracting standards and C &amp; S policy all apply to you. When they differ, <b>follow the strictest one.</b></p></div></div>
-  <p class="sigblock">— Rob Alicea ("Brower"), Owner &amp; Authorized Officer</p>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">When rules overlap</b><p>Federal and state law, FedEx Ground contracting standards and company policy all apply to you. When they differ, <b>follow the strictest one.</b></p></div></div>
+  <p class="sigblock">— Management, <span data-bind="company">your company</span></p>
 </section>
 
 <section class="front toc-print print-only">
@@ -206,7 +206,7 @@
 <div class="part"><span class="bar print-only"></span><span>Part I</span><h2>Who we are</h2><p class="print-only">Our purpose, the companies whose rules we follow, and what it takes to wear the uniform.</p></div>
 
 <section class="chapter reveal" id="ch-01" data-title="Mission vision values culture justice honor">
-  <header class="ch-head"><span class="ch-num">01</span><span class="ch-kicker">Chapter 01</span><h3>Mission, vision &amp; values</h3><p class="lede">Why C &amp; S exists today — and where we are headed together.</p></header>
+  <header class="ch-head"><span class="ch-num">01</span><span class="ch-kicker">Chapter 01</span><h3>Mission, vision &amp; values</h3><p class="lede">Why we exist today — and where we are headed together.</p></header>
   <div class="grid">
     <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-target"/></svg></span>Our mission</h4><p>To deliver every FedEx Ground shipment in the communities we serve <b>safely, accurately and on time on the first attempt</b> — while building a "Driver-First" workplace founded on thorough dock preparation, disciplined defensive driving, mutual respect and fast support on the road.</p></div>
     <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-flag"/></svg></span>Our vision</h4><p>To be the safest, most reliable contracted service provider at every terminal we operate — with <b>zero preventable accidents</b>, <b>zero uncoded packages</b> and professional standards that let every driver, and the company, grow together.</p></div>
@@ -219,23 +219,23 @@
 </section>
 
 <section class="chapter reveal" id="ch-02" data-title="FedEx Ground contractor ISP CSP standards scorecard VEDR GroundCloud">
-  <header class="ch-head"><span class="ch-num">02</span><span class="ch-kicker">Chapter 02</span><h3>Working on FedEx Ground routes</h3><p class="lede">You work for C &amp; S. C &amp; S contracts with FedEx Ground. That means three rulebooks apply to you.</p></header>
-  <p>FedEx Ground does not employ its pickup-and-delivery drivers directly. It contracts routes to independent businesses — <b>contracted service providers</b> like C &amp; S — who employ the drivers, own or lease the trucks and are responsible for safety compliance. You are a C &amp; S employee, but you represent FedEx at every door.</p>
+  <header class="ch-head"><span class="ch-num">02</span><span class="ch-kicker">Chapter 02</span><h3>Working on FedEx Ground routes</h3><p class="lede">You work for a contractor. Your contractor works for FedEx Ground. That means three rulebooks apply to you.</p></header>
+  <p>FedEx Ground does not employ its pickup-and-delivery drivers directly. It contracts routes to independent businesses — <b>contracted service providers</b> like <span data-bind="company">your company</span> — who employ the drivers, own or lease the trucks and are responsible for safety compliance. You are your contractor's employee, but you represent FedEx at every door.</p>
   <div class="steps">
     <div><b>1 · The law</b><span>Federal Motor Carrier Safety Regulations (49 CFR Parts 382–396), hazmat rules (Parts 171–177), OSHA, and your state and city traffic laws.</span></div>
     <div><b>2 · FedEx Ground contracting standards</b><span>Uniform and appearance, vehicle look and condition, safety technology (cameras), service standards and scanning procedures. FedEx can refuse a driver who does not meet them.</span></div>
-    <div><b>3 · C &amp; S policy</b><span>This handbook: our 7-step day, call-first rules, truck care and conduct.</span></div>
+    <div><b>3 · Company policy</b><span>This handbook: our 7-step day, call-first rules, truck care and conduct.</span></div>
   </div>
   <div class="grid" style="margin-top:16px">
     <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-cam"/></svg></span>Safety technology in your truck</h4><ul class="tight"><li>FedEx Ground requires contractors to run an approved <b>video event data recorder (VEDR)</b> — a road- and driver-facing camera that flags risky events like following too close, rolling stops, phone use and no seat belt.</li><li>Many trucks also have collision and lane-departure warnings, blind-spot and backing cameras. Treat alerts as real.</li><li><b>Blocking, unplugging or tampering with any camera or sensor is grounds for immediate termination.</b></li></ul></div>
-    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-star"/></svg></span>We are scored every day</h4><ul class="tight"><li>FedEx measures each contractor on safety and service: on-time pickups, delivery completion, exceptions, damages, and camera events.</li><li>Those numbers decide whether C &amp; S keeps and grows its routes — and your job.</li><li>Every Code 27, every uncoded package and every camera event shows up on our scorecard.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-star"/></svg></span>We are scored every day</h4><ul class="tight"><li>FedEx measures each contractor on safety and service: on-time pickups, delivery completion, exceptions, damages, and camera events.</li><li>Those numbers decide whether your company keeps and grows its routes — and your job.</li><li>Every missed delivery, every uncoded package and every camera event shows up on our scorecard.</li></ul></div>
   </div>
 </section>
 
 <section class="chapter reveal" id="ch-03" data-title="qualifications medical card DOT physical license MVR background drug test age 21">
   <header class="ch-head"><span class="ch-num">03</span><span class="ch-kicker">Chapter 03</span><h3>Qualifications, records &amp; testing</h3><p class="lede">What you need to drive — and keep — a route.</p></header>
   <div class="grid">
-    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-id"/></svg></span>To drive for C &amp; S you must</h4><ul class="tight">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-id"/></svg></span>To drive these routes you must</h4><ul class="tight">
       <li>Be <b>at least 21</b> to drive a commercial vehicle across state lines. <span class="src">49 CFR 391.11</span></li>
       <li>Hold a valid driver's license for the vehicle you drive — and keep it valid.</li>
       <li>Pass a <b>DOT physical</b> and carry a current medical examiner's certificate. It lasts <b>up to 24 months</b>, or less if the examiner says so. <span class="src">49 CFR 391.41–391.45</span></li>
@@ -247,7 +247,7 @@
       <li>Your medical card is about to expire, or a health change affects your driving or a medication makes you drowsy.</li>
       <li>You are involved in any crash or damage, however small.</li></ul></div>
   </div>
-  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">Your driver file</b><p>C &amp; S keeps a federal driver qualification file on you (application, MVRs, medical card, road test). Your driving record is reviewed every year. Keep your copy of the medical card in your wallet — an inspector can ask for it.</p></div></div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">Your driver file</b><p>Your company keeps a federal driver qualification file on you (application, MVRs, medical card, road test). Your driving record is reviewed every year. Keep your copy of the medical card in your wallet — an inspector can ask for it.</p></div></div>
 </section>
 
 <section class="chapter reveal" id="ch-04" data-title="uniform appearance dress code badge boots vest grooming headphones">
@@ -263,7 +263,7 @@
       <li>Your appearance should match your badge photo.</li>
       <li>Clean, neat and well groomed — hair and facial hair trimmed, no body odor.</li>
       <li>Tattoos or piercings management finds offensive must be covered or removed on duty.</li></ul></div>
-    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span>Safety gear (C &amp; S)</h4><ul class="tight">
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span>Safety gear (company standard)</h4><ul class="tight">
       <li>Closed-toe, slip-resistant work shoes or boots. No sandals, slides or bare canvas shoes.</li>
       <li>High-visibility vest on the terminal yard and dock.</li>
       <li>Gloves for heavy, sharp or wet freight.</li>
@@ -275,7 +275,7 @@
 <!-- ======================================================================
      PART II — THE 7-STEP DAY
      ====================================================================== -->
-<div class="part"><span class="bar print-only"></span><span>Part II</span><h2>The 7-step day</h2><p class="print-only">From the first walk-around to the last key in the lockbox — how a C &amp; S professional runs a route.</p></div>
+<div class="part"><span class="bar print-only"></span><span>Part II</span><h2>The 7-step day</h2><p class="print-only">From the first walk-around to the last key in the lockbox — how a professional runs a route.</p></div>
 
 <section class="chapter reveal" id="ch-05" data-title="step 1 pre-trip inspection tires brakes steering lights fuel scanner GroundCloud">
   <header class="ch-head"><span class="ch-num">05</span><span class="ch-kicker">Chapter 05 · Step 1 of 7</span><h3>Pre-trip inspection &amp; readiness</h3><p class="lede">Winning the day starts before you turn the key. Federal law says you may not drive until you are satisfied the truck is safe. <span class="src" style="color:inherit">49 CFR 392.7 · 396.13</span></p></header>
@@ -302,11 +302,11 @@
 </section>
 
 <section class="chapter reveal" id="ch-06" data-title="step 2 dock organization SID shelf load code 27 misload damage">
-  <header class="ch-head"><span class="ch-num">06</span><span class="ch-kicker">Chapter 06 · Step 2 of 7</span><h3>Dock organization &amp; preventing Code 27</h3><p class="lede">Fifteen minutes on your shelves in the morning saves an hour of searching on the road.</p></header>
+  <header class="ch-head"><span class="ch-num">06</span><span class="ch-kicker">Chapter 06 · Step 2 of 7</span><h3>Dock organization &amp; preventing missed deliveries</h3><p class="lede">Fifteen minutes on your shelves in the morning saves an hour of searching on the road.</p></header>
   <div class="grid">
     <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-box"/></svg></span>Why it matters</h4><ul class="tight">
       <li>Sort and lip-load every package by <b>stop ID (SID)</b> and sequence, label facing the aisle, before dispatch.</li>
-      <li>A <b>Code 27</b> (did not attempt) usually means a package was buried or on the wrong shelf, missed at the stop and found too late.</li>
+      <li>A <b>missed delivery (Code 01)</b> usually means a package was buried or on the wrong shelf, missed at the stop and found too late.</li>
       <li>Heavy freight goes low. Keep the center aisle clear — it is your walkway.</li></ul></div>
     <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-search"/></svg></span>Catch problems at the dock</h4><ul class="tight">
       <li><b>Misloads:</b> packages for another route or ZIP code go back to the terminal before you leave.</li>
@@ -369,11 +369,11 @@
     <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-lock"/></svg></span>Gates, dogs &amp; doubts</h4><ul class="tight">
       <li>Locked gate or loose dog blocking the door? Find a safe, sheltered alternative spot — or call before you code.</li>
       <li>Rattle the gate, honk or whistle before you enter any yard. See Chapter 15 for dog safety.</li>
-      <li><b>Not sure a spot is safe? Call Rob or Jamal from the stop before you walk away.</b></li></ul></div>
+      <li><b>Not sure a spot is safe? Call dispatch from the stop before you walk away.</b></li></ul></div>
   </div>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Signature option</th><th>Who may sign</th><th>Can you release without a person?</th><th>C &amp; S rule</th></tr></thead>
+      <thead><tr><th>Signature option</th><th>Who may sign</th><th>Can you release without a person?</th><th>Company rule</th></tr></thead>
       <tbody>
         <tr><td><span class="pill green">No signature</span></td><td>No one</td><td><b>Yes.</b> Leave it safely at the address.</td><td>Sheltered spot plus a clear POD photo.</td></tr>
         <tr><td><span class="pill amber">ISR · Indirect</span></td><td>Recipient, a neighbor, a building manager or another nearby person, or the recipient's signed door tag / electronic release</td><td><b>Only</b> with a signed door tag or recorded release</td><td>No one home? Leave a door tag, scan it and code the stop.</td></tr>
@@ -399,42 +399,42 @@
   </div>
 </section>
 
-<section class="chapter reveal" id="ch-10" data-title="step 6 scanner codes exception code 01 02 03 04 06 07 08 10 11 12 16 19 27 83 85 call first">
-  <header class="ch-head"><span class="ch-num">10</span><span class="ch-kicker">Chapter 10 · Step 6 of 7</span><h3>Scanner &amp; exception codes</h3><p class="lede">An honest, accurate code tells the customer the truth — and protects you.</p></header>
+<section class="chapter reveal" id="ch-10" data-title="step 6 scanner codes exception code 01 03 05 07 08 17 bad address refused not home call first">
+  <header class="ch-head"><span class="ch-num">10</span><span class="ch-kicker">Chapter 10 · Step 6 of 7</span><h3>Scanner &amp; delivery exception codes</h3><p class="lede">An honest, accurate code tells the customer the truth — and protects you.</p></header>
   <div class="grid three">
-    <div class="callout red" style="margin:0"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><div><b class="t">Code 02 — call first</b><p>Only for a truly wrong or incomplete address. <b>Never</b> because you can't find the house. Call Jamal (347-527-0069) or Rob from the stop before you apply it.</p></div></div>
-    <div class="callout amber" style="margin:0"><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span><div><b class="t">Code 27 — prevent it</b><p>"Did not attempt" is almost always a dock problem. Sort by SID every morning, and call if an emergency blocks a stop.</p></div></div>
+    <div class="callout red" style="margin:0"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><div><b class="t">Bad address (03) — call first</b><p>Only for an address that is truly wrong or incomplete — <b>never</b> because you couldn't find the house. Call dispatch from the stop before you use it.</p></div></div>
+    <div class="callout amber" style="margin:0"><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span><div><b class="t">Missed delivery (01) — prevent it</b><p>A missed package is almost always a dock problem. Sort by SID every morning, and call if an emergency blocks a stop.</p></div></div>
     <div class="callout red" style="margin:0"><span class="ic"><svg class="i"><use href="#i-box"/></svg></span><div><b class="t">Zero uncoded packages</b><p>Never bring a package back without a code. Walk the cargo area front to back before you return, then hand every return to management.</p></div></div>
   </div>
-  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">About these code numbers</b><p>This is the C &amp; S terminal code card. Scanner software updates can change numbers or names. <b>If your scanner shows a different description, follow the scanner and ask management.</b></p></div></div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">Where these codes come from</b><p>These are FedEx's published delivery exception codes (FedEx code dictionary on fedex.com). Your scanner may show extra pickup or terminal codes, or slightly different wording. <b>Always choose the description on your scanner that matches what happened</b>, and check with your terminal's code card.</p></div></div>
   <div class="finder screen-only">
-    <input id="codeQ" type="search" placeholder="Find a code — try 02, refused, dog, closed…">
-    <select id="codeCat"><option value="all">All codes</option><option value="call">Call-first / restricted</option><option value="del">Delivery exceptions</option><option value="dock">Dock, damage &amp; hazmat</option><option value="pu">Completion &amp; pickup</option></select>
+    <input id="codeQ" type="search" placeholder="Find a code — try 03, refused, closed, damaged…">
+    <select id="codeCat"><option value="all">All codes</option><option value="call">Call first</option><option value="del">Delivered</option><option value="not">Not delivered</option><option value="dock">Hazmat &amp; other</option></select>
   </div>
   <div class="table-wrap">
     <table id="codeTable">
-      <thead><tr><th>Code</th><th>Meaning</th><th>When to use it</th><th>What you must do</th></tr></thead>
+      <thead><tr><th>Code</th><th>FedEx description</th><th>When it fits</th><th>What you must do</th></tr></thead>
       <tbody>
-        <tr data-cat="call"><td><span class="pill red">01</span></td><td><b>Security delay / blocked access</b></td><td>Real security threat, aggressive loose dog with no safe alternative, police barricade.</td><td>Honk or rattle the gate first. <b>Call management before coding.</b></td></tr>
-        <tr data-cat="call"><td><span class="pill red">02</span></td><td><b>Incorrect / incomplete address</b></td><td>Missing street or apt/suite number, or a street number that doesn't exist. Never for "can't locate."</td><td>Re-check the label and map, then <b>call Jamal or Rob from the stop.</b></td></tr>
-        <tr data-cat="del"><td><span class="pill amber">03</span></td><td><b>Refused by customer</b></td><td>The recipient refuses the package at the door.</td><td>Note the reason. Hand it to management at end of day.</td></tr>
-        <tr data-cat="del"><td><span class="pill green">04</span></td><td><b>Business closed (weekday)</b></td><td>Business locked during normal weekday hours.</td><td>Confirm it's locked, leave a door tag, note the hours.</td></tr>
-        <tr data-cat="del"><td><span class="pill amber">06</span></td><td><b>Refused — damaged</b></td><td>The customer refuses because the box or contents look damaged.</td><td>Hand it to QA / management on return.</td></tr>
-        <tr data-cat="del"><td><span class="pill green">07</span></td><td><b>Customer not in (signature needed)</b></td><td>No one available to sign an ISR, DSR or ASR package.</td><td>Knock and wait about 60 seconds, then leave and scan a door tag.</td></tr>
-        <tr data-cat="del"><td><span class="pill amber">08</span></td><td><b>Release not authorized / unsafe</b></td><td>No safe sheltered spot to leave a no-signature package.</td><td>Door tag, document the reason, call if unsure.</td></tr>
-        <tr data-cat="dock"><td><span class="pill amber">10</span></td><td><b>Damaged — not attempted</b></td><td>Crushed, leaking or open carton found at the dock or in transit.</td><td>Catch it at the dock. Hand it to QA / management.</td></tr>
-        <tr data-cat="del"><td><span class="pill green">11</span></td><td><b>Business closed (weekend / holiday)</b></td><td>Commercial stop closed Saturday, Sunday or a holiday.</td><td>Code it correctly and note the business hours.</td></tr>
-        <tr data-cat="dock"><td><span class="pill amber">12</span></td><td><b>Misload / wrong route</b></td><td>The package belongs to another route or outside your area.</td><td>Catch it during Step 2 and return it before you leave.</td></tr>
-        <tr data-cat="dock"><td><span class="pill amber">16</span></td><td><b>C.O.D. payment not available</b></td><td>The recipient can't pay a C.O.D. shipment.</td><td>Leave a door tag and return the package to management.</td></tr>
-        <tr data-cat="dock"><td><span class="pill green">19</span></td><td><b>Future delivery requested</b></td><td>Verified customer request to hold until a later date.</td><td>Hand it to the hold cage with the date confirmed.</td></tr>
-        <tr data-cat="call"><td><span class="pill red">27</span></td><td><b>Did not attempt</b></td><td>Package missed on a messy shelf and found too late.</td><td><b>Prevent it.</b> Sort by SID and call management in an emergency.</td></tr>
-        <tr data-cat="dock"><td><span class="pill red">83</span></td><td><b>Improper / prohibited hazmat</b></td><td>Missing hazmat paperwork or shipper signature, leaking, or a prohibited class.</td><td><b>Do not load it.</b> Reject it and call management.</td></tr>
-        <tr data-cat="call"><td><span class="pill red">85</span></td><td><b>Uncoded return</b></td><td>Package brought back with no exception scan.</td><td><b>Zero tolerance.</b> Every return gets a code and is handed to management.</td></tr>
-        <tr data-cat="pu"><td><span class="pill violet">13 / 21</span></td><td><b>Delivered — released / signed</b></td><td>Successful no-signature release (13) or live signature (21).</td><td>Label read twice, sheltered spot, sharp POD photo.</td></tr>
-        <tr data-cat="pu"><td><span class="pill violet">22 / 24</span></td><td><b>Pickup — nothing ready / call tag</b></td><td>Scheduled shipper has nothing going out (22), or the call-tag item isn't available (24).</td><td>Still arrive and scan inside the pickup window.</td></tr>
+        <tr data-cat="call"><td><span class="pill red">01</span></td><td><b>Missed delivery</b></td><td>The package was on the truck but not attempted — buried on a shelf, out of time, or a stop skipped.</td><td><b>Prevent it.</b> Sort by SID. If you can't make a stop, call dispatch before you skip it.</td></tr>
+        <tr data-cat="call"><td><span class="pill red">03</span></td><td><b>Incorrect address / unable to locate</b></td><td>The address is wrong or incomplete (no such number, missing apt/suite) — after real effort to find it.</td><td>Re-check the label and map, ask a neighbor if safe, then <b>call dispatch from the stop</b> before you code it.</td></tr>
+        <tr data-cat="call"><td><span class="pill red">05</span></td><td><b>Customer security delay</b></td><td>A gate, guard, lobby or locked building keeps you from reaching the door.</td><td>Try the call box, the office or the customer's number on the label. <b>Call dispatch before coding.</b></td></tr>
+        <tr data-cat="del"><td><span class="pill green">02</span></td><td><b>Delivered — release authorized</b></td><td>Delivered without a signature where the shipment allows it, or on a signed release.</td><td>Sheltered spot, sharp POD photo, correct location noted.</td></tr>
+        <tr data-cat="del"><td><span class="pill amber">04</span></td><td><b>Delivered to another address</b></td><td>Left with a neighbor or another address — only when the signature option and customer instructions allow it.</td><td>Record exactly who or where. Never for DSR or ASR packages.</td></tr>
+        <tr data-cat="del"><td><span class="pill amber">09</span></td><td><b>Damaged — delivery completed</b></td><td>The customer accepts a package that is visibly damaged.</td><td>Photograph the damage and note it on the scanner.</td></tr>
+        <tr data-cat="del"><td><span class="pill green">11 / 16</span></td><td><b>C.O.D. delivery / payment received</b></td><td>C.O.D. shipment delivered and payment collected.</td><td>Collect only the payment type shown. Turn in payment the same day.</td></tr>
+        <tr data-cat="not"><td><span class="pill amber">07</span></td><td><b>Refused by recipient</b></td><td>The recipient refuses the package at the door.</td><td>Note the reason. Hand it to management at the end of the day.</td></tr>
+        <tr data-cat="not"><td><span class="pill amber">08</span></td><td><b>Business closed or adult unavailable</b></td><td>A business is closed, or nobody eligible is there to sign (ISR, DSR, ASR).</td><td>Leave a door tag and scan it. Note the business hours.</td></tr>
+        <tr data-cat="not"><td><span class="pill amber">10</span></td><td><b>Damaged — not delivered</b></td><td>The package is too damaged to deliver, or the customer refuses it because of damage.</td><td>Hand it to QA / management on return. Catch it at the dock if you can.</td></tr>
+        <tr data-cat="not"><td><span class="pill amber">14</span></td><td><b>Undeliverable</b></td><td>The package can't be delivered for another reason (vacant address, deceased, and so on).</td><td>Document the reason, then call dispatch.</td></tr>
+        <tr data-cat="not"><td><span class="pill green">17</span></td><td><b>Customer requested future delivery</b></td><td>A verified customer request to deliver on a later date.</td><td>Confirm the date. Hand it to the hold area.</td></tr>
+        <tr data-cat="not"><td><span class="pill green">15</span></td><td><b>Business closed due to strike</b></td><td>The business is closed because of a strike or labor action.</td><td>Rare. Note it and tell dispatch.</td></tr>
+        <tr data-cat="not"><td><span class="pill amber">24</span></td><td><b>Customer delayed delivery</b></td><td>The customer caused the delay.</td><td>Note what happened. Tell dispatch.</td></tr>
+        <tr data-cat="dock"><td><span class="pill red">20</span></td><td><b>Restricted article / commodity unacceptable</b></td><td>Hazmat or a restricted item that is missing paperwork, damaged or leaking, or not allowed.</td><td><b>Do not load or deliver it.</b> Call management (Chapter 14).</td></tr>
+        <tr data-cat="dock"><td><span class="pill amber">13</span></td><td><b>Other</b></td><td>Nothing else fits.</td><td><b>Always</b> type a clear note. Expect management to ask.</td></tr>
       </tbody>
     </table>
   </div>
+  <p class="src">Source: FedEx Codes Dictionary — delivery exception codes (fedex.com). Codes 18 and 21–23 are air or network codes that drivers don't use.</p>
 </section>
 
 <section class="chapter reveal" id="ch-11" data-title="step 7 end of day clean truck pee bottle biohazard returns post-trip DVIR keys">
@@ -443,7 +443,7 @@
   <div class="grid three">
     <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-trash"/></svg></span>Clean out</h4><ul class="tight"><li>Remove wrappers, cups, bottles, shrink wrap, cardboard and trash from the dash, floor and shelves.</li><li>Leave the truck ready for the next shift.</li></ul></div>
     <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-users"/></svg></span>Hand off returns</h4><ul class="tight"><li>Every undelivered package has a valid code.</li><li>Hand returns <b>to a manager</b> with an explanation — never drop them in a bin unattended.</li></ul></div>
-    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-pen"/></svg></span>Post-trip report</h4><ul class="tight"><li>Federal law requires a written report when you find or are told about a defect. <span class="src">396.11</span></li><li><b>C &amp; S requires a post-trip check every day.</b> Report lights, brakes, tires or damage so repairs happen overnight.</li><li>Dock the scanner, charge batteries and put keys in the lockbox.</li></ul></div>
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-pen"/></svg></span>Post-trip report</h4><ul class="tight"><li>Federal law requires a written report when you find or are told about a defect. <span class="src">396.11</span></li><li><b>Company policy: a post-trip check every day.</b> Report lights, brakes, tires or damage so repairs happen overnight.</li><li>Dock the scanner, charge batteries and put keys in the lockbox.</li></ul></div>
   </div>
 </section>
 
@@ -462,7 +462,7 @@
         <tr><td><b>14-hour window</b></td><td>No driving after the 14th hour on duty</td><td>Dock sorting, pre-trip, breaks and post-trip all count. Then 10 hours off.</td></tr>
         <tr><td><b>30-minute break</b></td><td>After 8 hours of driving</td><td>Any 30 minutes in a row off the wheel. Not required if you qualify for short-haul (below).</td></tr>
         <tr><td><b>60 / 70 hours</b></td><td>60 hrs in 7 days or 70 hrs in 8</td><td>Reset with 34 hours off in a row.</td></tr>
-        <tr><td><b>Short-haul exception</b><br><span class="src">395.1(e)(1)</span></td><td>Stay within <b>150 air-miles</b> of the terminal and be <b>released within 14 hours</b></td><td>No logbook or ELD needed — C &amp; S keeps your start and end times instead. Go past 150 miles or 14 hours and full logging rules apply <b>that day</b>.</td></tr>
+        <tr><td><b>Short-haul exception</b><br><span class="src">395.1(e)(1)</span></td><td>Stay within <b>150 air-miles</b> of the terminal and be <b>released within 14 hours</b></td><td>No logbook or ELD needed — the company keeps your start and end times instead. Go past 150 miles or 14 hours and full logging rules apply <b>that day</b>.</td></tr>
         <tr><td><b>Non-CDL short-haul</b><br><span class="src">395.1(e)(2)</span></td><td>Within 150 air-miles, return to the terminal</td><td>Drivers of non-CDL trucks may stretch to 16 hours on duty on 2 days in any 7 — <b>only with management approval.</b></td></tr>
       </tbody>
     </table>
@@ -481,14 +481,14 @@
       <li>Only exception: calling 911 or police in an emergency.</li>
       <li>These violations carry heavy fines, and repeat offenses can disqualify you from driving commercial vehicles.</li></ul></div>
     <div class="card bad" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-drop"/></svg></span>Alcohol &amp; drugs</h4><ul class="tight">
-      <li><b>C &amp; S policy: zero.</b> No alcohol, marijuana or illegal drugs on duty, on station property or in a truck.</li>
+      <li><b>Company policy: zero.</b> No alcohol, marijuana or illegal drugs on duty, on station property or in a truck.</li>
       <li>No alcohol within <b>4 hours</b> before duty.</li>
       <li>DOT standards: an alcohol level of <b>0.04</b> or higher is a violation, and <b>0.02–0.039</b> means at least 24 hours off duty. <span class="src">382.201 · 382.505</span></li>
       <li>State marijuana or medical cards <b>do not count</b> — federal transportation rules still apply.</li>
       <li>Prescriptions that cause drowsiness: tell management before you drive.</li>
       <li>Refusing a required test is treated the same as a positive test.</li></ul></div>
   </div>
-  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">Testing</b><p>Every C &amp; S driver is tested before hiring and when management has reasonable suspicion or after a crash. Drivers who hold a CDL are also in the federal random-testing program (49 CFR Part 382). Go to the clinic <b>right away</b> when directed.</p></div></div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">Testing</b><p>Every driver is tested before hiring and when management has reasonable suspicion or after a crash. Drivers who hold a CDL are also in the federal random-testing program (49 CFR Part 382). Go to the clinic <b>right away</b> when directed.</p></div></div>
 </section>
 
 <section class="chapter reveal" id="ch-14" data-title="hazmat hazardous materials placard 1001 limited quantity ORM-D shipping papers OP-900 dry ice UN1845 lithium">
@@ -497,20 +497,20 @@
     <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Before you accept or load</h4><ul class="tight">
       <li>Check for <b>hazard labels and markings</b>: the UN number, proper shipping name, class and packing group.</li>
       <li>Check the <b>FedEx Ground hazmat shipping paper (OP-900)</b> and the shipper's signed certification. They must match the package.</li>
-      <li>Leaking, damaged, unsigned or mislabeled? <b>Do not load it.</b> Code 83 and call management.</li>
+      <li>Leaking, damaged, unsigned or mislabeled? <b>Do not load it.</b> Use the restricted-article code (20) and call management.</li>
       <li><b>Limited Quantity</b> packages show the black-and-white diamond mark and may weigh up to 30 kg (66 lb) gross. The old "ORM-D" marking is no longer valid for ground shipments.</li></ul></div>
     <div class="card" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span>In the truck</h4><ul class="tight">
       <li>Keep shipping papers <b>within reach while belted</b>, or in the driver-door pouch when you are out of the cab. <span class="src">177.817</span></li>
       <li>Load hazmat near the rear door, upright (arrows up), blocked and braced. Never stack heavy freight on top.</li>
       <li>Keep incompatible classes apart, such as corrosives (class 8) away from oxidizers (class 5).</li>
-      <li><b>Placard limit:</b> 1,001 lb or more combined of placard-table hazmat requires placards and a hazmat-endorsed CDL. <b>C &amp; S P&amp;D trucks stay below that limit.</b> <span class="src">172.504</span></li></ul></div>
+      <li><b>Placard limit:</b> 1,001 lb or more combined of placard-table hazmat requires placards and a hazmat-endorsed CDL. <b>P&amp;D trucks must stay below that limit.</b> <span class="src">172.504</span></li></ul></div>
   </div>
   <div class="grid" style="margin-top:16px">
     <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-snow"/></svg></span>Dry ice (UN1845, class 9)</h4><ul class="tight">
       <li>Dry ice turns into CO₂ gas that pushes oxygen out of closed spaces.</li>
       <li>The package must show the net weight in <b>kg</b>.</li>
       <li>Load it in the cargo area <b>only, never in the cab</b>. Keep the bulkhead door closed and let air in before you climb in after a long stretch.</li></ul></div>
-    <div class="card bad" style="--d:3"><h4><span class="ic"><svg class="i"><use href="#i-x"/></svg></span>Never on a C &amp; S P&amp;D truck</h4><ul class="tight">
+    <div class="card bad" style="--d:3"><h4><span class="ic"><svg class="i"><use href="#i-x"/></svg></span>Never on a P&amp;D truck</h4><ul class="tight">
       <li>Explosives (1.1–1.3), poison gas (2.3), dangerous-when-wet (4.3), poison-inhalation hazards, infectious substances (6.2) and radioactive material (class 7).</li>
       <li>Damaged or recalled lithium batteries, or any battery shipment that isn't marked correctly.</li>
       <li>In doubt? <b>Stop and call.</b></li></ul></div>
@@ -547,12 +547,12 @@
     <div><b>Stop and secure the scene</b><span>Never leave the scene. Flashers on immediately, parking brake set, engine off if there's any leak or smoke.</span></div>
     <div><b>Check for injuries and call 911</b><span>Help only as far as it's safe. Do not move injured people unless they're in danger.</span></div>
     <div><b>Set out triangles within 10 minutes</b><span>Two-way road: 10 ft from the truck on the traffic side, 100 ft behind and 100 ft ahead. Divided or one-way road: 10, 100 and 200 ft behind. Near a hill or curve: put one 100–500 ft back so drivers see it in time. <span class="src">392.22</span></span></div>
-    <div><b>Call management right away</b><span>Rob ("Brower") or Jamal Sealy at (347) 527-0069 — before you talk to anyone else about fault.</span></div>
+    <div><b>Call management right away</b><span>Your manager or dispatcher — <span data-bind="dispatchLine">the number on your quick-reference card</span> — before you talk to anyone else about fault.</span></div>
     <div><b>Document, don't debate</b><span>Photograph every vehicle, plate, the damage, the road and the signs. Exchange license, insurance and registration. Be polite and don't admit fault — the camera and the facts will tell the story.</span></div>
     <div><b>Testing &amp; reporting</b><span>If directed to test, go immediately. Under federal rules, alcohol tests happen within 2 hours, drug tests within 32 hours, and you may not drink alcohol for 8 hours after the crash. Stay reachable. <span class="src">382.303</span></span></div>
   </div>
   <div class="grid" style="margin-top:16px">
-    <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-flame"/></svg></span>Leaking or smoking package</h4><ul class="tight"><li>Stop in a safe, open area away from people.</li><li>Don't touch it or breathe the fumes. Take the shipping papers and move upwind.</li><li>Call 911, then C &amp; S management, then FedEx (1-800-463-3339).</li></ul></div>
+    <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-flame"/></svg></span>Leaking or smoking package</h4><ul class="tight"><li>Stop in a safe, open area away from people.</li><li>Don't touch it or breathe the fumes. Take the shipping papers and move upwind.</li><li>Call 911, then your manager, then FedEx (1-800-463-3339).</li></ul></div>
     <div class="card" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span>Breakdown</h4><ul class="tight"><li>Get fully off the road if you can. Flashers on, triangles out.</li><li>Call dispatch — the spare truck and a rescue driver are on the way.</li><li>Stay with the truck and freight unless you're unsafe.</li></ul></div>
   </div>
 </section>
@@ -570,12 +570,12 @@
     <label class="check"><input type="checkbox" data-id="c2"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Fire extinguisher charged and secured, 3 triangles, first-aid kit and truck papers on board.</span></label>
     <label class="check"><input type="checkbox" data-id="c3"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>In full uniform, badge visible, safety shoes on, medical card in my wallet.</span></label>
     <label class="check"><input type="checkbox" data-id="c4"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Scanner charged; GroundCloud on with location tracking; manifest checked for out-of-area stops.</span></label>
-    <label class="check"><input type="checkbox" data-id="c5"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Shelves sorted by SID with labels facing the aisle — no Code 27 today.</span></label>
+    <label class="check"><input type="checkbox" data-id="c5"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Shelves sorted by SID with labels facing the aisle — no missed deliveries today.</span></label>
     <label class="check"><input type="checkbox" data-id="c6"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Misloads, bad addresses and damaged boxes handed back at the dock.</span></label>
     <label class="check"><input type="checkbox" data-id="c7"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Seat belt every move, phone mounted, no speeding, full stops, backing only with G.O.A.L.</span></label>
     <label class="check"><input type="checkbox" data-id="c8"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Read every label twice, carried packages to upper-floor doors, took sharp POD photos.</span></label>
     <label class="check"><input type="checkbox" data-id="c9"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Hit every pickup window and scanned 100% of packages as loaded.</span></label>
-    <label class="check"><input type="checkbox" data-id="c10"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Called management before any Code 01 or 02.</span></label>
+    <label class="check"><input type="checkbox" data-id="c10"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Called dispatch before any bad-address (03) or security-delay (05) code.</span></label>
     <label class="check"><input type="checkbox" data-id="c11"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Walked the cargo area — zero uncoded packages; returns handed to a manager.</span></label>
     <label class="check"><input type="checkbox" data-id="c12"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Truck cleaned out (zero bottles or waste), post-trip done, keys in the lockbox.</span></label>
   </div>
@@ -588,23 +588,24 @@
       <thead><tr><th>Who / what</th><th>Number</th><th>When</th></tr></thead>
       <tbody>
         <tr><td><b>Emergency</b></td><td><b>911</b></td><td>Injury, fire, crash, threat, leaking hazmat</td></tr>
-        <tr><td><b>Jamal Sealy</b> · Operations / dispatch</td><td><a href="tel:+13475270069"><b>(347) 527-0069</b></a></td><td>Code 01/02 calls, delays, breakdowns, rescues</td></tr>
-        <tr><td><b>Rob Alicea ("Brower")</b> · Owner</td><td>Your station's posted number</td><td>Escalations, crashes, anything serious</td></tr>
-        <tr><td><b>FedEx</b></td><td>1-800-463-3339</td><td>After 911 and C &amp; S — hazmat incidents</td></tr>
+        <tr><td><b>Dispatch</b> <span data-bind="dispatchName" class="blank">&nbsp;</span></td><td><a data-tel="dispatch"><b data-bind="dispatchPhone" class="blank">&nbsp;</b></a></td><td>Bad address, delays, breakdowns</td></tr>
+        <tr><td><b>Manager</b> <span data-bind="managerName" class="blank">&nbsp;</span></td><td><a data-tel="manager"><b data-bind="managerPhone" class="blank">&nbsp;</b></a></td><td>Crashes, anything serious</td></tr>
+        <tr><td><b>Terminal</b> <span data-bind="terminal" class="blank">&nbsp;</span></td><td><span data-bind="address" class="blank">&nbsp;</span></td><td>Where you report each day</td></tr>
+        <tr><td><b>FedEx</b></td><td>1-800-463-3339</td><td>Hazmat incidents, after 911</td></tr>
       </tbody>
     </table>
   </div>
   <div class="grid three">
     <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>Hours</h4><ul class="tight"><li>11 hrs driving / 14-hr window</li><li>10 hrs off between shifts</li><li>Short-haul: 150 air-miles, released within 14 hrs</li></ul></div>
     <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-wheel"/></svg></span>Truck</h4><ul class="tight"><li>Tread 4/32" steer, 2/32" others</li><li>5 B:C extinguisher plus 3 triangles</li><li>Triangles out within 10 min</li></ul></div>
-    <div class="card bad" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Never</h4><ul class="tight"><li>Handheld phone or texting while driving</li><li>Code 02 without calling</li><li>Uncoded returns or bottles left in a truck</li></ul></div>
+    <div class="card bad" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Never</h4><ul class="tight"><li>Handheld phone or texting while driving</li><li>Bad-address code without calling</li><li>Uncoded returns or bottles left in a truck</li></ul></div>
   </div>
 </section>
 
 <section class="chapter reveal" id="ch-19" data-title="acknowledgment sign off signature">
   <header class="ch-head"><span class="ch-num">19</span><span class="ch-kicker">Chapter 19</span><h3>Driver acknowledgment</h3><p class="lede">Sign, date and hand this page to management.</p></header>
-  <p>I have received and read the <b>C &amp; S Delivery Service, Inc. Driver Handbook (2026 Edition)</b>. I understand and agree to follow it, including: the daily pre-trip inspection and GroundCloud tracking; dock organization to prevent Code 27; safe driving with no speeding, no handheld phone use and a seat belt at all times; reading every label twice and carrying packages to upper-floor doors; on-time pickups and 100% scanning; <b>calling management before any Code 02</b>; <b>zero uncoded packages</b>; the uniform and appearance standards; the alcohol and drug policy; and the <b>zero-tolerance policy on urine bottles and human waste</b>.</p>
-  <p>I understand this handbook does not replace federal or state law or FedEx Ground standards, and that C &amp; S may update it at any time.</p>
+  <p>I have received and read the <b>Driver Handbook (2026 Edition)</b> issued by <span data-bind="company">my employer</span>. I understand and agree to follow it, including: the daily pre-trip inspection and GroundCloud tracking; dock organization to prevent missed deliveries; safe driving with no speeding, no handheld phone use and a seat belt at all times; reading every label twice and carrying packages to upper-floor doors; on-time pickups and 100% scanning; <b>calling management before using a bad-address code</b>; <b>zero uncoded packages</b>; the uniform and appearance standards; the alcohol and drug policy; and the <b>zero-tolerance policy on urine bottles and human waste</b>.</p>
+  <p>I understand this handbook does not replace federal or state law or FedEx Ground standards, and that my employer may update it at any time.</p>
   <div class="sign">
     <label>Driver full name<input id="sName" placeholder="Full legal name"><span class="sig-line" data-from="sName"></span></label>
     <label>Route / terminal<input id="sRoute" placeholder="e.g. WA123 · Terminal 4901"><span class="sig-line" data-from="sRoute"></span></label>
@@ -622,20 +623,20 @@
 <!-- Back cover (print) -->
 <section class="back-cover print-only">
   <div>
-    <div class="mark">C&amp;S</div>
+    <div class="mark" data-bind="initials">DH</div>
     <h2 style="margin-top:18px">Safe. Accurate.<br>On time. Every stop.</h2>
     <p>Thank you for carrying our name — and our customers' trust — every single day.</p>
   </div>
   <div class="bc-contacts">
-    <div><small>Operations / dispatch</small>Jamal Sealy · (347) 527-0069</div>
-    <div><small>Owner / authorized officer</small>Rob Alicea ("Brower")</div>
+    <div><small>Dispatch</small><span data-bind="dispatchLine" class="blank">&nbsp;</span></div>
+    <div><small>Manager</small><span data-bind="managerLine" class="blank">&nbsp;</span></div>
     <div><small>Emergency</small>Call 911 first — then call us</div>
   </div>
-  <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:#cbb8f5">C &amp; S Delivery Service, Inc. · Contracted service provider for FedEx Ground · 2026 Edition</div>
+  <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:#cbb8f5"><span data-bind="company">Contracted service provider</span> · FedEx Ground P&amp;D · 2026 Edition</div>
 </section>
 
 <div class="no-results" id="noResults">No chapters match your search.</div>
-<footer class="site">C &amp; S Delivery Service, Inc. · Driver Handbook, 2026 edition · Regulations summarized from 49 CFR and FedEx published materials as of November 2026. When in doubt, follow the strictest rule and call management.</footer>
+<footer class="site">Driver Handbook, 2026 edition · Regulations summarized from 49 CFR and FedEx published materials as of November 2026. When in doubt, follow the strictest rule and call management.</footer>
 </main>
 </div>
 
@@ -644,8 +645,8 @@
   <div class="sheet">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h3 id="mTitle" style="margin:0">Call dispatch</h3><button class="btn" id="mClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
     <p style="color:var(--muted);font-size:.9rem">Call <b>before</b> any Code 01 or 02, before skipping a stop blocked by a gate or dog, and the moment anything goes wrong.</p>
-    <div class="contact"><div><b>Jamal Sealy</b><small>Operations / dispatch · (347) 527-0069</small></div><a class="btn hot" href="tel:+13475270069"><svg class="i"><use href="#i-phone"/></svg>Call</a></div>
-    <div class="contact"><div><b>Rob Alicea ("Brower")</b><small>Owner — escalations, crashes, spare truck</small></div></div>
+    <div class="contact"><div><b data-bind="dispatchName">Dispatch</b><small>Dispatch · <span data-bind="dispatchPhone">ask your manager for the number</span></small></div><a class="btn hot" data-tel="dispatch"><svg class="i"><use href="#i-phone"/></svg>Call</a></div>
+    <div class="contact"><div><b data-bind="managerName">Manager</b><small>Escalations, crashes, spare truck · <span data-bind="managerPhone"></span></small></div><a class="btn" data-tel="manager"><svg class="i"><use href="#i-phone"/></svg>Call</a></div>
     <div class="contact"><div><b>Emergency</b><small>Injury, fire, crash, threat</small></div><a class="btn" href="tel:911">911</a></div>
   </div>
 </div>
@@ -658,6 +659,22 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+
+  // ---- Terminal details: filled from the link (?co=&term=&addr=&dname=&dphone=&mname=&mphone=) ----
+  const P = new URLSearchParams(location.search);
+  const cfg = { co: P.get('co') || '', term: P.get('term') || '', addr: P.get('addr') || '', dname: P.get('dname') || '', dphone: P.get('dphone') || '', mname: P.get('mname') || '', mphone: P.get('mphone') || '' };
+  const initials = (n) => n.replace(/[,.]/g, ' ').split(/\s+/).filter((w) => w && !/^(inc|llc|corp|co|the|and|of|&)$/i.test(w)).slice(0, 3).map((w) => w[0].toUpperCase()).join('');
+  const line = (a, b) => [a, b].filter(Boolean).join(' · ');
+  const vals = {
+    company: cfg.co, initials: cfg.co ? initials(cfg.co) : '', termSep: cfg.term ? ' · ' + cfg.term : '', terminal: cfg.term, address: cfg.addr,
+    dispatchName: cfg.dname, dispatchPhone: cfg.dphone, dispatchLine: line(cfg.dname, cfg.dphone),
+    managerName: cfg.mname, managerPhone: cfg.mphone, managerLine: line(cfg.mname, cfg.mphone),
+  };
+  $$('[data-bind]').forEach((el) => { const v = vals[el.dataset.bind]; if (v) { el.textContent = v; el.classList.remove('blank'); } });
+  const tel = (n) => (n || '').replace(/[^\d+]/g, '');
+  $$('[data-tel]').forEach((el) => { const n = tel(el.dataset.tel === 'manager' ? cfg.mphone : cfg.dphone); if (n) el.href = 'tel:' + n; else if (el.classList.contains('btn')) el.style.display = 'none'; });
+  if (cfg.co) document.title = 'Driver Handbook — ' + cfg.co;
+  if (P.get('embed')) document.body.classList.add('embed');
 
   // Stagger delays for cards inside each chapter
   $$('.chapter').forEach((ch) => $$('.card, .steps > div, .stat', ch).forEach((el, i) => { if (!el.style.getPropertyValue('--d')) el.style.setProperty('--d', i); }));
