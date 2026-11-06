@@ -1,2260 +1,762 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C &amp; S Delivery Service, Inc. | Employee Handbook — Driver Expectations &amp; Master Field Bible</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-        :root {
-            --fedex-purple: #4D148C;
-            --fedex-purple-dark: #2e0959;
-            --fedex-purple-light: #7b42ff;
-            --fedex-orange: #FF6600;
-            --fedex-green: #008A00;
-            --bg-dark: #0b1120;
-            --bg-card: #151f32;
-            --bg-card-alt: #1b273d;
-            --text-main: #f8fafc;
-            --text-muted: #cbd5e1;
-            --text-dim: #94a3b8;
-            --border-subtle: rgba(255, 255, 255, 0.12);
-            --accent-green: #10b981;
-            --accent-amber: #f59e0b;
-            --accent-red: #ef4444;
-            --accent-blue: #3b82f6;
-            --shadow-lg: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
-            --radius-lg: 16px;
-            --radius-md: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(circle at 15% 10%, rgba(77, 20, 140, 0.28), transparent 35%),
-                radial-gradient(circle at 85% 25%, rgba(255, 102, 0, 0.15), transparent 35%);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Animations */
-        @keyframes driveInTruck {
-            0% { transform: translateX(-180px); opacity: 0; }
-            70% { transform: translateX(8px); opacity: 1; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes roadLines {
-            from { stroke-dashoffset: 0; }
-            to { stroke-dashoffset: -48; }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45); }
-            50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-        }
-
-        /* Top Sticky Bar */
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(11, 17, 32, 0.94);
-            backdrop-filter: blur(14px);
-            border-bottom: 2px solid var(--fedex-purple);
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 900;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-            flex-wrap: wrap;
-        }
-
-        .brand-company {
-            color: #ffffff;
-            font-weight: 900;
-        }
-
-        .brand-divider {
-            color: rgba(255, 255, 255, 0.25);
-            font-weight: 400;
-        }
-
-        .brand-fed { color: #a78bfa; }
-        .brand-ex { color: var(--fedex-orange); }
-        .brand-ground {
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            background: rgba(16, 185, 129, 0.18);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            padding: 3px 10px;
-            border-radius: 999px;
-        }
-
-        .top-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .search-wrap {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-main);
-            padding: 8px 34px 8px 14px;
-            border-radius: 999px;
-            font-size: 0.84rem;
-            width: 230px;
-            outline: none;
-            transition: all 0.2s ease;
-        }
-
-        .search-input:focus {
-            border-color: var(--fedex-orange);
-            background: rgba(255, 255, 255, 0.13);
-            width: 270px;
-        }
-
-        .search-clear-btn {
-            position: absolute;
-            right: 10px;
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            cursor: pointer;
-            font-size: 0.85rem;
-            padding: 2px 4px;
-            display: none;
-        }
-
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: none;
-        }
-
-        .btn-call {
-            background: linear-gradient(135deg, var(--fedex-orange), #e65c00);
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.35);
-        }
-
-        .btn-call:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        .btn-print {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-print:hover {
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        /* Quick Filter Bar */
-        .filter-bar {
-            max-width: 1080px;
-            margin: 16px auto 0;
-            padding: 0 20px;
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 6px;
-        }
-
-        .filter-pill {
-            background: var(--bg-card);
-            color: var(--text-muted);
-            border: 1px solid var(--border-subtle);
-            padding: 7px 15px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .filter-pill:hover {
-            border-color: var(--fedex-purple-light);
-            color: #fff;
-        }
-
-        .filter-pill.active {
-            background: linear-gradient(135deg, var(--fedex-purple), var(--fedex-orange));
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 14px rgba(77, 20, 140, 0.45);
-        }
-
-        /* ==========================================================
-           HANDBOOK COVER PAGE (PAGE 1)
-           ========================================================== */
-        .handbook-cover {
-            max-width: 1080px;
-            margin: 22px auto 34px;
-            padding: 0 20px;
-        }
-
-        .cover-sheet {
-            background: linear-gradient(145deg, #1e0b36 0%, #0f172a 55%, #172554 100%);
-            border: 2px solid rgba(255, 255, 255, 0.14);
-            border-top: 8px solid var(--fedex-purple);
-            border-bottom: 8px solid var(--fedex-orange);
-            border-radius: 20px;
-            padding: 44px 36px 38px;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-
-        .cover-top-tag {
-            display: inline-block;
-            background: rgba(255, 102, 0, 0.16);
-            color: #fdba74;
-            border: 1px solid rgba(255, 102, 0, 0.45);
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 6px 18px;
-            border-radius: 999px;
-            margin-bottom: 16px;
-        }
-
-        .cover-company {
-            font-size: clamp(1.3rem, 2.8vw, 1.9rem);
-            font-weight: 900;
-            color: #a78bfa;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 0 0 8px;
-        }
-
-        .cover-title {
-            font-size: clamp(2rem, 4.3vw, 3.2rem);
-            font-weight: 900;
-            margin: 0 0 12px;
-            letter-spacing: -1px;
-            color: #ffffff;
-            line-height: 1.15;
-        }
-
-        .cover-title span {
-            color: var(--fedex-orange);
-        }
-
-        .cover-subtitle {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 780px;
-            margin: 0 auto 24px;
-            font-weight: 500;
-        }
-
-        /* Detailed FedEx Step-Van Showcase */
-        .truck-showcase {
-            max-width: 640px;
-            margin: 8px auto 26px;
-            padding: 16px 18px 8px;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
-            border-radius: var(--radius-lg);
-        }
-
-        .fedex-truck-svg {
-            width: 100%;
-            max-width: 540px;
-            height: auto;
-            filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.6));
-            animation: driveInTruck 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-
-        .road-dash {
-            animation: roadLines 1.2s linear infinite;
-        }
-
-        /* Inspirational Quotes on Cover Page */
-        .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 18px;
-            margin: 0 auto 26px;
-            text-align: left;
-        }
-
-        .quote-card {
-            background: rgba(15, 23, 42, 0.82);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius-md);
-            padding: 20px 22px;
-        }
-
-        .quote-card.driver-quote {
-            border-top: 4px solid var(--fedex-orange);
-        }
-
-        .quote-card.mgmt-quote {
-            border-top: 4px solid #a855f7;
-        }
-
-        .quote-role-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.74rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-        }
-
-        .driver-quote .quote-role-tag {
-            background: rgba(255, 102, 0, 0.15);
-            color: #fdba74;
-        }
-
-        .mgmt-quote .quote-role-tag {
-            background: rgba(168, 85, 247, 0.18);
-            color: #d8b4fe;
-        }
-
-        .quote-text {
-            margin: 0;
-            font-size: 0.94rem;
-            font-style: italic;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
-
-        /* Cover Metadata Bar */
-        .cover-meta-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            text-align: left;
-        }
-
-        .meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .meta-label {
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.1px;
-            color: var(--text-dim);
-        }
-
-        .meta-val {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .meta-val a {
-            color: #fdba74;
-            text-decoration: none;
-        }
-
-        /* ==========================================================
-           MAIN CONTENT CONTAINER & SECTIONS
-           ========================================================== */
-        .main-container {
-            max-width: 1080px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
-
-        .handbook-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 30px 32px;
-            box-shadow: var(--shadow-lg);
-            animation: fadeUp 0.4s ease-out;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 16px;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 18px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-        }
-
-        .section-badge {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: rgba(123, 66, 255, 0.2);
-            color: #c4b5fd;
-            border: 1px solid rgba(123, 66, 255, 0.4);
-            margin-bottom: 8px;
-        }
-
-        .section-badge.orange {
-            background: rgba(255, 102, 0, 0.18);
-            color: #fdba74;
-            border-color: rgba(255, 102, 0, 0.4);
-        }
-
-        .section-badge.red {
-            background: rgba(239, 68, 68, 0.18);
-            color: #fca5a5;
-            border-color: rgba(239, 68, 68, 0.45);
-        }
-
-        .section-badge.green {
-            background: rgba(16, 185, 129, 0.18);
-            color: #6ee7b7;
-            border-color: rgba(16, 185, 129, 0.4);
-        }
-
-        .section-title {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: -0.4px;
-        }
-
-        .section-subtitle {
-            margin: 6px 0 0;
-            font-size: 0.92rem;
-            color: var(--text-muted);
-        }
-
-        /* Mission & Vision Cards */
-        .mv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 22px;
-        }
-
-        .mv-card {
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 22px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mv-card.mission {
-            border-left: 5px solid var(--fedex-purple-light);
-        }
-
-        .mv-card.vision {
-            border-left: 5px solid var(--fedex-orange);
-        }
-
-        .mv-card h4 {
-            margin: 0 0 8px;
-            font-size: 1.08rem;
-            font-weight: 800;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mv-card p {
-            margin: 0;
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        .pillars-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 14px;
-        }
-
-        .pillar-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 14px 16px;
-        }
-
-        .pillar-box strong {
-            display: block;
-            font-size: 0.88rem;
-            color: #fdba74;
-            margin-bottom: 4px;
-        }
-
-        .pillar-box span {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        /* Table of Contents Grid */
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 14px;
-        }
-
-        .toc-item {
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 14px 18px;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: left;
-            color: var(--text-main);
-            width: 100%;
-        }
-
-        .toc-item:hover {
-            border-color: var(--fedex-orange);
-            transform: translateY(-2px);
-            background: rgba(255, 102, 0, 0.08);
-        }
-
-        .toc-num {
-            background: linear-gradient(135deg, var(--fedex-purple), #6d28d9);
-            color: #ffffff;
-            font-weight: 900;
-            font-size: 0.82rem;
-            min-width: 34px;
-            height: 34px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .toc-text strong {
-            display: block;
-            font-size: 0.92rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 2px;
-        }
-
-        .toc-text span {
-            font-size: 0.78rem;
-            color: var(--text-dim);
-            line-height: 1.4;
-            display: block;
-        }
-
-        /* Reusable Cards & Grids */
-        .cards-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 18px;
-        }
-
-        .cards-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-        }
-
-        .info-card {
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 20px 22px;
-        }
-
-        .info-card h4 {
-            margin: 0 0 10px;
-            font-size: 1.02rem;
-            font-weight: 800;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .info-card ul {
-            margin: 0;
-            padding-left: 18px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-
-        .info-card li {
-            margin-bottom: 8px;
-        }
-
-        .info-card p {
-            margin: 0;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-
-        /* Alert Callouts */
-        .callout-banner {
-            border-radius: var(--radius-md);
-            padding: 18px 22px;
-            margin-top: 18px;
-            border: 1px solid var(--border-subtle);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .callout-banner.danger {
-            background: rgba(239, 68, 68, 0.12);
-            border-color: rgba(239, 68, 68, 0.45);
-            border-left: 6px solid var(--accent-red);
-        }
-
-        .callout-banner.warning {
-            background: rgba(245, 158, 11, 0.12);
-            border-color: rgba(245, 158, 11, 0.45);
-            border-left: 6px solid var(--accent-amber);
-        }
-
-        .callout-banner.success {
-            background: rgba(16, 185, 129, 0.12);
-            border-color: rgba(16, 185, 129, 0.45);
-            border-left: 6px solid var(--accent-green);
-        }
-
-        .callout-banner strong {
-            font-size: 0.96rem;
-            color: #ffffff;
-        }
-
-        .callout-banner p {
-            margin: 0;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-
-        /* Visual SID Truck Shelf Diagram */
-        .sid-diagram-box {
-            background: #0f172a;
-            border: 2px solid rgba(167, 139, 250, 0.35);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .sid-diagram-title {
-            text-align: center;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: #c4b5fd;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 14px;
-        }
-
-        .sid-truck-layout {
-            display: grid;
-            grid-template-columns: 1fr 120px 1fr;
-            gap: 12px;
-            align-items: stretch;
-        }
-
-        @media (max-width: 720px) {
-            .sid-truck-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .sid-wall {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .sid-shelf {
-            background: rgba(77, 20, 140, 0.28);
-            border: 1px solid rgba(167, 139, 250, 0.4);
-            border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 0.82rem;
-        }
-
-        .sid-shelf.orange-shelf {
-            background: rgba(255, 102, 0, 0.18);
-            border-color: rgba(255, 102, 0, 0.45);
-        }
-
-        .sid-shelf strong {
-            display: block;
-            color: #ffffff;
-            font-size: 0.85rem;
-        }
-
-        .sid-shelf span {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-        }
-
-        .sid-aisle {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px dashed rgba(255, 255, 255, 0.25);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 8px;
-            text-align: center;
-            font-size: 0.75rem;
-            font-weight: 800;
-            color: var(--text-dim);
-        }
-
-        /* Tables */
-        .table-wrap {
-            overflow-x: auto;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-subtle);
-            margin-top: 14px;
-        }
-
-        table.handbook-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.86rem;
-        }
-
-        table.handbook-table th {
-            background: rgba(77, 20, 140, 0.55);
-            color: #ffffff;
-            font-weight: 800;
-            padding: 12px 14px;
-            border-bottom: 2px solid var(--fedex-orange);
-            white-space: nowrap;
-        }
-
-        table.handbook-table td {
-            padding: 11px 14px;
-            border-bottom: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            vertical-align: top;
-        }
-
-        table.handbook-table tr:nth-child(even) td {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .code-pill {
-            display: inline-block;
-            font-weight: 900;
-            font-size: 0.8rem;
-            padding: 3px 9px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            white-space: nowrap;
-        }
-
-        .code-pill.critical {
-            background: rgba(239, 68, 68, 0.25);
-            color: #fca5a5;
-            border: 1px solid rgba(239, 68, 68, 0.5);
-        }
-
-        .code-pill.safe {
-            background: rgba(16, 185, 129, 0.22);
-            color: #6ee7b7;
-            border: 1px solid rgba(16, 185, 129, 0.45);
-        }
-
-        .code-pill.warn {
-            background: rgba(245, 158, 11, 0.22);
-            color: #fcd34d;
-            border: 1px solid rgba(245, 158, 11, 0.45);
-        }
-
-        /* Scanner Filter Controls */
-        .scanner-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .scanner-input {
-            flex: 1;
-            min-width: 220px;
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.88rem;
-            outline: none;
-        }
-
-        .scanner-select {
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.88rem;
-            outline: none;
-        }
-
-        /* Interactive Shift Checklist */
-        .checklist-header-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-            background: var(--bg-card-alt);
-            padding: 14px 18px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .progress-track {
-            width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            overflow: hidden;
-            margin-top: 8px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--fedex-orange), var(--accent-green));
-            transition: width 0.3s ease;
-        }
-
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
-        }
-
-        .check-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 12px 14px;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            font-size: 0.85rem;
-            color: var(--text-main);
-        }
-
-        .check-row.checked {
-            background: rgba(16, 185, 129, 0.12);
-            border-color: rgba(16, 185, 129, 0.45);
-            color: #a7f3d0;
-        }
-
-        .check-row input[type="checkbox"] {
-            margin-top: 3px;
-            accent-color: var(--accent-green);
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
-        /* Sign-Off Form */
-        .signoff-box {
-            background: var(--bg-card-alt);
-            border: 2px solid rgba(255, 102, 0, 0.45);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            margin-top: 18px;
-        }
-
-        .signoff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .field-group label {
-            display: block;
-            font-size: 0.74rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dim);
-            margin-bottom: 6px;
-        }
-
-        .field-group input {
-            width: 100%;
-            padding: 10px 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-subtle);
-            background: rgba(11, 17, 32, 0.8);
-            color: #ffffff;
-            font-size: 0.9rem;
-        }
-
-        /* Modal */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(6px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-backdrop.open {
-            display: flex;
-        }
-
-        .modal-card {
-            background: var(--bg-card);
-            border: 2px solid var(--fedex-purple-light);
-            border-radius: var(--radius-lg);
-            max-width: 500px;
-            width: 100%;
-            padding: 26px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ==========================================================
-           ELEGANT PRINT / SAVE-AS-PDF STYLESHEET (@media print)
-           ========================================================== */
-        @media print {
-            @page {
-                size: letter portrait;
-                margin: 16mm 15mm 16mm 15mm;
-            }
-
-            body {
-                background: #ffffff !important;
-                background-image: none !important;
-                color: #0f172a !important;
-                font-size: 9.8pt !important;
-                line-height: 1.48 !important;
-            }
-
-            .no-print,
-            .top-bar,
-            .filter-bar,
-            .scanner-controls,
-            .modal-backdrop {
-                display: none !important;
-            }
-
-            .handbook-cover {
-                margin: 0 0 18px 0 !important;
-                padding: 0 !important;
-                max-width: 100% !important;
-                page-break-after: always;
-                break-after: page;
-            }
-
-            .cover-sheet {
-                background: #ffffff !important;
-                color: #0f172a !important;
-                border: 2px solid #4D148C !important;
-                border-top: 8px solid #4D148C !important;
-                border-bottom: 8px solid #FF6600 !important;
-                box-shadow: none !important;
-                padding: 24px !important;
-            }
-
-            .cover-company { color: #4D148C !important; }
-            .cover-title { color: #0f172a !important; }
-            .cover-subtitle { color: #334155 !important; }
-            .quote-card, .cover-meta-bar {
-                background: #f8fafc !important;
-                border: 1px solid #cbd5e1 !important;
-                color: #0f172a !important;
-            }
-            .quote-text, .meta-val { color: #0f172a !important; }
-            .meta-label { color: #475569 !important; }
-
-            .main-container {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                gap: 16px !important;
-            }
-
-            .handbook-section {
-                display: block !important;
-                background: #ffffff !important;
-                color: #0f172a !important;
-                border: 1px solid #cbd5e1 !important;
-                box-shadow: none !important;
-                padding: 18px 20px !important;
-                margin-bottom: 14px !important;
-                break-inside: auto;
-            }
-
-            .section-title, .mv-card h4, .info-card h4, .toc-text strong, .sid-shelf strong, .callout-banner strong {
-                color: #1e1b4b !important;
-            }
-
-            .section-subtitle, .mv-card p, .info-card ul, .info-card p, .toc-text span, .sid-shelf span, .callout-banner p {
-                color: #1e293b !important;
-            }
-
-            .mv-card, .info-card, .toc-item, .pillar-box, .sid-diagram-box, .sid-shelf, .check-row, .signoff-box {
-                background: #f8fafc !important;
-                border-color: #cbd5e1 !important;
-                color: #0f172a !important;
-            }
-
-            table.handbook-table th {
-                background: #4D148C !important;
-                color: #ffffff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            table.handbook-table td {
-                color: #0f172a !important;
-                border-bottom: 1px solid #cbd5e1 !important;
-            }
-
-            tr, .info-card, .mv-card, .callout-banner, .signoff-box {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070a16">
+<title>C &amp; S Delivery Service, Inc. — Driver Handbook (2026 Edition)</title>
+<meta name="description" content="The C & S Delivery Service driver handbook: our 7-step day, FedEx Ground standards, DOT/FMCSA rules, scanner codes, uniform policy and safety.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="handbook.css">
 </head>
 <body>
 
-    <!-- ==========================================================
-         TOP STICKY BAR
-         ========================================================== -->
-    <header class="top-bar no-print">
-        <div class="brand-logo">
-            <span class="brand-company">C &amp; S Delivery Service, Inc.</span>
-            <span class="brand-divider">|</span>
-            <span><span class="brand-fed">Fed</span><span class="brand-ex">Ex</span></span>
-            <span class="brand-ground">Ground ISP &bull; All Station Locations</span>
-        </div>
+<!-- Icon set -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4"/><path d="M12 17.5v.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A17 17 0 013 5a2 2 0 012-2z"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3L3 6l2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 01-8 0z"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.6 3.2-2.6s2.6.8 3.2 2.6"/><path d="M15 10h3M15 13h3"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="6.5" cy="9.5" r="1.8"/><circle cx="10.5" cy="6" r="1.8"/><circle cx="15" cy="6" r="1.8"/><circle cx="18.5" cy="9.8" r="1.8"/><path d="M12.5 11.5c-3 0-6 4-6 6.5 0 1.5 1.2 2.5 2.7 2.5 1.2 0 2-.6 3.3-.6s2.1.6 3.3.6c1.5 0 2.7-1 2.7-2.5 0-2.5-3-6.5-6-6.5z"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V4h3M18 4h3v3M21 17v3h-3M6 20H3v-3"/><path d="M7 8v8M10 8v8M13 8v8M16 8v8"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 01-10 0c0-2.5 1.5-4 2.5-5 0 2 1 3 2 3 0-3-1-5.5.5-8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 015.5 3H20v15H5.5A1.5 1.5 0 004 19.5z"/><path d="M4 19.5A1.5 1.5 0 005.5 21H20"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M16 3l5 5L8 21H3v-5z"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 14.5V21M9.6 11.2L3.5 9.5M14.4 11.2l6.1-1.7"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-3v8l-6-3"/></symbol>
+    <symbol id="i-lift" viewBox="0 0 24 24"><path d="M6 9h12l2 11H4z"/><circle cx="12" cy="5" r="2.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 9c0 6.5-8 11-8 11z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 00-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.8c1.8.7 3 2.4 3.5 5.2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 7a3 3 0 006 0zM19 7l-3 7a3 3 0 006 0z"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2M6 10v4M10 10v4"/></symbol>
+    <symbol id="i-siren" viewBox="0 0 24 24"><path d="M6 18v-6a6 6 0 0112 0v6"/><path d="M4 18h16v3H4zM12 3v2M4.2 6.2l1.4 1.4M19.8 6.2l-1.4 1.4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4 6l16 12M20 6L4 18"/></symbol>
+  </defs>
+</svg>
 
-        <div class="top-actions">
-            <div class="search-wrap">
-                <input type="text" id="global-search" class="search-input" placeholder="Search codes, rules, HOS, SID...">
-                <button type="button" id="btn-clear-search" class="search-clear-btn" title="Clear search">&#10005;</button>
-            </div>
-            <button type="button" id="btn-open-dispatch" class="btn-action btn-call">
-                &#128222; Call Dispatch / Code 02
-            </button>
-            <button type="button" id="btn-print-top" class="btn-action btn-print">
-                &#128424; Print / Save PDF
-            </button>
-        </div>
-    </header>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <!-- ==========================================================
-         CATEGORY QUICK-FILTER PILLS
-         ========================================================== -->
-    <nav class="filter-bar no-print" aria-label="Section Filter">
-        <button type="button" class="filter-pill active" data-filter="all">All Chapters (Complete Bible)</button>
-        <button type="button" class="filter-pill" data-filter="identity">Mission, Vision &amp; Culture</button>
-        <button type="button" class="filter-pill" data-filter="workflow">7-Step Daily Expectations</button>
-        <button type="button" class="filter-pill" data-filter="codes">Scanner Codes (02 / 27 / 85)</button>
-        <button type="button" class="filter-pill" data-filter="regulations">DOT HOS, Signatures &amp; Hazmat</button>
-        <button type="button" class="filter-pill" data-filter="checklist">Interactive Shift Checklist &amp; Sign-Off</button>
-    </nav>
+<header class="topbar">
+  <button class="btn menu-btn" id="menuBtn" aria-label="Chapters"><svg class="i"><use href="#i-menu"/></svg></button>
+  <div class="mark">C&amp;S</div>
+  <div class="brand"><b>Driver Handbook</b><span>C &amp; S Delivery Service, Inc. · FedEx Ground contracted service provider</span></div>
+  <div class="spacer"></div>
+  <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Search rules, codes, HOS…" autocomplete="off"></label>
+  <button class="btn" id="callBtn"><svg class="i"><use href="#i-phone"/></svg><span class="lbl">Dispatch</span></button>
+  <a class="btn hot" href="handbook.pdf" download="CS-Driver-Handbook-2026.pdf"><svg class="i"><use href="#i-download"/></svg><span class="lbl">PDF booklet</span></a>
+  <div class="progress" id="progress"></div>
+</header>
 
-    <!-- ==========================================================
-         HANDBOOK COVER PAGE (PAGE 1)
-         ========================================================== -->
-    <section class="handbook-cover" id="top-cover">
-        <div class="cover-sheet">
-            <div class="cover-top-tag">Official Driver Operations Manual &amp; Field Reference Bible</div>
-            <h2 class="cover-company">C &amp; S Delivery Service, Inc. ("CNS")</h2>
-            <h1 class="cover-title">Ultimate Driver Expectations &amp; <span>Master Handbook</span></h1>
-            <p class="cover-subtitle">
-                Complete on-duty and after-hours guidelines uniting C &amp; S Delivery Service's 7-Step Frontline Expectations, Corporate Mission &amp; Vision, GroundCloud &amp; Exception Coding (Code 02, Code 27, Code 85), OP-324 Scanner Codes, SID 1000–8500 Load Chart, and Federal DOT / FMCSA Regulations.
-            </p>
+<div class="layout">
 
-            <!-- Animated FedEx Step-Van SVG Showcase -->
-            <div class="truck-showcase">
-                <svg class="fedex-truck-svg" viewBox="0 0 600 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C & S Delivery Service FedEx Ground Step-Van">
-                    <!-- Animated Highway Road Line -->
-                    <line x1="10" y1="204" x2="590" y2="204" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
-                    <line class="road-dash" x1="20" y1="204" x2="580" y2="204" stroke="#f59e0b" stroke-width="3" stroke-dasharray="24 24"/>
-                    
-                    <!-- Step-Van Main Body (White Composite Box) -->
-                    <rect x="65" y="34" width="355" height="136" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
-                    <!-- Step-Van Cab & Hood -->
-                    <path d="M420 42 H485 L522 102 L548 114 V170 H420 V42 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
-                    
-                    <!-- Brand Accent Stripe -->
-                    <rect x="65" y="142" width="483" height="10" fill="#4D148C"/>
-                    <rect x="65" y="152" width="483" height="6" fill="#FF6600"/>
+<!-- ============ Chapter rail ============ -->
+<nav class="toc-rail" id="rail" aria-label="Chapters">
+  <h4>Part I · Who we are</h4>
+  <a href="#ch-01"><small>01</small>Mission, vision &amp; values</a>
+  <a href="#ch-02"><small>02</small>Working on FedEx Ground routes</a>
+  <a href="#ch-03"><small>03</small>Qualifications &amp; records</a>
+  <a href="#ch-04"><small>04</small>Uniform &amp; appearance</a>
+  <h4>Part II · The 7-step day</h4>
+  <a href="#ch-05"><small>05</small>Pre-trip &amp; readiness</a>
+  <a href="#ch-06"><small>06</small>Dock organization</a>
+  <a href="#ch-07"><small>07</small>Safe driving</a>
+  <a href="#ch-08"><small>08</small>Delivery &amp; signatures</a>
+  <a href="#ch-09"><small>09</small>Pickups &amp; scanning</a>
+  <a href="#ch-10"><small>10</small>Scanner codes</a>
+  <a href="#ch-11"><small>11</small>End of day</a>
+  <h4>Part III · Rules of the road</h4>
+  <a href="#ch-12"><small>12</small>Hours of service</a>
+  <a href="#ch-13"><small>13</small>Phones, belts, alcohol &amp; drugs</a>
+  <a href="#ch-14"><small>14</small>Hazardous materials</a>
+  <a href="#ch-15"><small>15</small>Heat, dogs &amp; personal safety</a>
+  <a href="#ch-16"><small>16</small>Accidents &amp; emergencies</a>
+  <h4>Part IV · Tools</h4>
+  <a href="#ch-17"><small>17</small>Daily checklist</a>
+  <a href="#ch-18"><small>18</small>Quick reference</a>
+  <a href="#ch-19"><small>19</small>Acknowledgment</a>
+</nav>
 
-                    <!-- Windshield & Side Door Window -->
-                    <polygon points="478,50 515,100 478,100" fill="#0f172a" stroke="#475569" stroke-width="2"/>
-                    <rect x="430" y="52" width="38" height="66" rx="4" fill="#1e293b" stroke="#475569" stroke-width="2"/>
-                    
-                    <!-- Bulkhead Sliding Door Outline -->
-                    <rect x="426" y="46" width="46" height="118" rx="3" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<main id="main">
 
-                    <!-- FedEx Ground & C&S Branding on Cargo Box -->
-                    <text x="95" y="92" fill="#4D148C" font-family="Inter, sans-serif" font-weight="900" font-size="42" letter-spacing="-2">Fed</text>
-                    <text x="168" y="92" fill="#FF6600" font-family="Inter, sans-serif" font-weight="900" font-size="42" letter-spacing="-2">Ex</text>
-                    <text x="222" y="92" fill="#008A00" font-family="Inter, sans-serif" font-weight="800" font-size="20">Ground</text>
-                    <text x="97" y="118" fill="#1e293b" font-family="Inter, sans-serif" font-weight="800" font-size="13" letter-spacing="0.6">C &amp; S DELIVERY SERVICE, INC. &bull; AUTHORIZED CSP</text>
-                    <text x="97" y="134" fill="#64748b" font-family="Inter, sans-serif" font-weight="700" font-size="10">ALL OPERATING TERMINALS &amp; ROUTES &bull; US DOT COMPLIANT</text>
+<!-- ============ Cover ============ -->
+<section class="cover" id="top">
+  <span class="edition"><i></i>2026 Edition · Revised November 2026</span>
+  <div class="company">C &amp; S Delivery Service, Inc.</div>
+  <h1>The Driver<br><em>Handbook</em></h1>
+  <p class="tag">Expectations, standards and federal rules for every driver on our FedEx Ground routes — at every terminal we serve.</p>
 
-                    <!-- Headlight & Bumper -->
-                    <rect x="542" y="128" width="8" height="18" rx="2" fill="#fde047"/>
-                    <rect x="544" y="160" width="12" height="12" rx="3" fill="#334155"/>
-                    <rect x="55" y="160" width="14" height="12" rx="3" fill="#334155"/>
+  <div class="truck-wrap" aria-hidden="true">
+    <svg viewBox="0 0 640 210" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4e2ee"/></linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a3355"/><stop offset="1" stop-color="#0d1226"/></linearGradient>
+        <radialGradient id="beam" cx="0" cy=".5" r="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+      </defs>
+      <line x1="0" y1="190" x2="640" y2="190" stroke="rgba(255,255,255,.18)" stroke-width="4"/>
+      <line class="road-dash" x1="0" y1="190" x2="640" y2="190" stroke="#ffb27a" stroke-width="3" stroke-dasharray="26 34"/>
+      <line class="speed-line" x1="70" y1="98" x2="120" y2="98" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <line class="speed-line" x1="50" y1="122" x2="110" y2="122" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <line class="speed-line" x1="80" y1="146" x2="120" y2="146" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <g class="truck">
+        <ellipse cx="350" cy="186" rx="215" ry="7" fill="rgba(0,0,0,.35)"/>
+        <g class="bob">
+          <path d="M560 128 L640 104 L640 160 L560 150 Z" fill="url(#beam)"/>
+          <rect x="140" y="30" width="330" height="136" rx="10" fill="url(#body)"/>
+          <path d="M470 40 H520 Q534 40 542 54 L568 100 Q574 110 574 122 V166 H470 Z" fill="url(#body)"/>
+          <rect x="140" y="132" width="434" height="9" fill="#4d148c"/>
+          <rect x="140" y="141" width="434" height="5" fill="#ff6200"/>
+          <path d="M512 52 H522 Q528 52 532 58 L556 100 H512 Z" fill="url(#glass)"/>
+          <rect x="478" y="52" width="26" height="62" rx="4" fill="url(#glass)"/>
+          <rect x="474" y="46" width="34" height="114" rx="3" fill="none" stroke="#b9b6c8" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="170" y="86" font-family="Inter, sans-serif" font-weight="900" font-size="30" letter-spacing="-1" fill="#4d148c">C&amp;S</text>
+          <text x="244" y="86" font-family="Inter, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#ff6200">DELIVERY SERVICE</text>
+          <text x="171" y="108" font-family="Inter, sans-serif" font-weight="700" font-size="10" letter-spacing="2.2" fill="#6b6f85">SAFE · ACCURATE · ON TIME</text>
+          <rect x="566" y="112" width="8" height="14" rx="2" fill="#ffe08a"/>
+          <rect x="562" y="150" width="16" height="12" rx="3" fill="#2b3045"/>
+          <rect x="132" y="150" width="14" height="12" rx="3" fill="#2b3045"/>
+        </g>
+        <g><circle class="wheel" cx="222" cy="168" r="23" fill="#151a2e" stroke="#3a4060" stroke-width="5"/><circle cx="222" cy="168" r="9" fill="#a5a9bd"/><path class="wheel" d="M222 152v32M206 168h32" stroke="#6b7090" stroke-width="3"/></g>
+        <g><circle class="wheel" cx="512" cy="168" r="23" fill="#151a2e" stroke="#3a4060" stroke-width="5"/><circle cx="512" cy="168" r="9" fill="#a5a9bd"/><path class="wheel" d="M512 152v32M496 168h32" stroke="#6b7090" stroke-width="3"/></g>
+      </g>
+    </svg>
+  </div>
 
-                    <!-- Rear Dual Wheel -->
-                    <circle cx="155" cy="174" r="28" fill="#0f172a" stroke="#475569" stroke-width="5"/>
-                    <circle cx="155" cy="174" r="13" fill="#94a3b8"/>
-                    <circle cx="155" cy="174" r="5" fill="#1e293b"/>
+  <div class="cover-meta">
+    <div><small>Applies to</small><b>Every C &amp; S driver, route &amp; terminal</b></div>
+    <div><small>Owner / Authorized Officer</small><b>Rob Alicea ("Brower")</b></div>
+    <div><small>Operations / Dispatch</small><b><a href="tel:+13475270069">Jamal Sealy · (347) 527-0069</a></b></div>
+  </div>
+  <div class="print-foot print-only">Contracted service provider for FedEx Ground</div>
+  <div class="cover-actions">
+    <a class="btn hot" href="handbook.pdf" download="CS-Driver-Handbook-2026.pdf"><svg class="i"><use href="#i-download"/></svg>Download the PDF booklet</a>
+    <button class="btn" id="printBtn"><svg class="i"><use href="#i-print"/></svg>Print</button>
+    <a class="btn" href="#ch-17"><svg class="i"><use href="#i-check"/></svg>Today's checklist</a>
+  </div>
+</section>
 
-                    <!-- Front Steer Wheel -->
-                    <circle cx="485" cy="174" r="28" fill="#0f172a" stroke="#475569" stroke-width="5"/>
-                    <circle cx="485" cy="174" r="13" fill="#94a3b8"/>
-                    <circle cx="485" cy="174" r="5" fill="#1e293b"/>
-                </svg>
-            </div>
+<!-- ============ Front matter (print) ============ -->
+<section class="front welcome reveal in">
+  <div class="kicker">Welcome to the team</div>
+  <h2>Why this handbook exists</h2>
+  <p>Every morning we load more than boxes — we carry the reputation of C &amp; S Delivery Service and the trust of every neighborhood we serve. This handbook puts everything you need in one place: how we run our day, the FedEx Ground standards we contract to meet, and the federal rules that keep you and the public safe.</p>
+  <p>Read it once from start to finish. Keep it in your cab. When you are unsure, look it up — and when it is not in here, call us.</p>
+  <div class="quotes">
+  <div class="quote"><p>Anyone can drive a truck, but it takes a true professional to own a route. Preparation at the dock, discipline on the road and pride at every doorstep — when each driver masters the craft, the whole company wins.</p><small>For our drivers · The frontline standard</small></div>
+  <div class="quote"><p>Top-tier service is built on rapport and respect. Leadership's job is to set clear expectations, give every driver the tools to succeed, listen closely and back the team with fast, fair support on the road.</p><small>For our management · The leadership standard</small></div>
+  </div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">When rules overlap</b><p>Federal and state law, FedEx Ground contracting standards and C &amp; S policy all apply to you. When they differ, <b>follow the strictest one.</b></p></div></div>
+  <p class="sigblock">— Rob Alicea ("Brower"), Owner &amp; Authorized Officer</p>
+</section>
 
-            <!-- Dual Inspirational Quotes -->
-            <div class="quotes-grid">
-                <div class="quote-card driver-quote">
-                    <div class="quote-role-tag">&#128666; For Our Drivers &bull; The Frontline Standard</div>
-                    <p class="quote-text">
-                        "Anyone can drive a truck, but it takes a true professional to own a route. Every morning we load more than boxes—we carry the reputation of C &amp; S Delivery Service, Inc. and the trust of every neighborhood we serve. Preparation at the dock, discipline on the highway, and pride at every doorstep: when each driver masters their craft, our entire company wins."
-                    </p>
-                </div>
-                <div class="quote-card mgmt-quote">
-                    <div class="quote-role-tag">&#129309; For Our Management &bull; The Leadership Standard</div>
-                    <p class="quote-text">
-                        "Top-tier service is built on strong rapport and mutual respect. Leadership's mission is to set clear expectations, equip every driver with the tools to succeed, listen closely, and back the team with fast, fair support on the road. When management and drivers communicate as one unit, no goal is out of reach."
-                    </p>
-                </div>
-            </div>
+<section class="front toc-print print-only">
+  <div class="kicker">Inside</div>
+  <h2>Contents</h2>
+  <div class="part-row">Part I · Who we are</div>
+  <a href="#ch-01"><span class="n">01</span><span class="t">Mission, vision &amp; values</span><span class="d"></span><span class="p" data-for="ch-01">5</span></a>
+  <a href="#ch-02"><span class="n">02</span><span class="t">Working on FedEx Ground routes</span><span class="d"></span><span class="p" data-for="ch-02">6</span></a>
+  <a href="#ch-03"><span class="n">03</span><span class="t">Qualifications, records &amp; testing</span><span class="d"></span><span class="p" data-for="ch-03">8</span></a>
+  <a href="#ch-04"><span class="n">04</span><span class="t">Uniform &amp; professional appearance</span><span class="d"></span><span class="p" data-for="ch-04">9</span></a>
+  <div class="part-row">Part II · The 7-step day</div>
+  <a href="#ch-05"><span class="n">05</span><span class="t">Step 1 · Pre-trip &amp; readiness</span><span class="d"></span><span class="p" data-for="ch-05">11</span></a>
+  <a href="#ch-06"><span class="n">06</span><span class="t">Step 2 · Dock organization</span><span class="d"></span><span class="p" data-for="ch-06">13</span></a>
+  <a href="#ch-07"><span class="n">07</span><span class="t">Step 3 · Safe driving</span><span class="d"></span><span class="p" data-for="ch-07">15</span></a>
+  <a href="#ch-08"><span class="n">08</span><span class="t">Step 4 · Delivery &amp; signatures</span><span class="d"></span><span class="p" data-for="ch-08">16</span></a>
+  <a href="#ch-09"><span class="n">09</span><span class="t">Step 5 · Pickups &amp; scanning</span><span class="d"></span><span class="p" data-for="ch-09">18</span></a>
+  <a href="#ch-10"><span class="n">10</span><span class="t">Step 6 · Scanner codes</span><span class="d"></span><span class="p" data-for="ch-10">19</span></a>
+  <a href="#ch-11"><span class="n">11</span><span class="t">Step 7 · End of day</span><span class="d"></span><span class="p" data-for="ch-11">22</span></a>
+  <div class="part-row">Part III · Rules of the road</div>
+  <a href="#ch-12"><span class="n">12</span><span class="t">Hours of service</span><span class="d"></span><span class="p" data-for="ch-12">24</span></a>
+  <a href="#ch-13"><span class="n">13</span><span class="t">Phones, seat belts, alcohol &amp; drugs</span><span class="d"></span><span class="p" data-for="ch-13">25</span></a>
+  <a href="#ch-14"><span class="n">14</span><span class="t">Hazardous materials &amp; dry ice</span><span class="d"></span><span class="p" data-for="ch-14">26</span></a>
+  <a href="#ch-15"><span class="n">15</span><span class="t">Heat, dogs &amp; personal safety</span><span class="d"></span><span class="p" data-for="ch-15">28</span></a>
+  <a href="#ch-16"><span class="n">16</span><span class="t">Accidents &amp; emergencies</span><span class="d"></span><span class="p" data-for="ch-16">30</span></a>
+  <div class="part-row">Part IV · Tools</div>
+  <a href="#ch-17"><span class="n">17</span><span class="t">Daily readiness checklist</span><span class="d"></span><span class="p" data-for="ch-17">33</span></a>
+  <a href="#ch-18"><span class="n">18</span><span class="t">Quick reference card</span><span class="d"></span><span class="p" data-for="ch-18">34</span></a>
+  <a href="#ch-19"><span class="n">19</span><span class="t">Driver acknowledgment</span><span class="d"></span><span class="p" data-for="ch-19">35</span></a>
+</section>
 
-            <!-- Cover Metadata Bar -->
-            <div class="cover-meta-bar">
-                <div class="meta-item">
-                    <span class="meta-label">Terminal / Station Scope</span>
-                    <span class="meta-val">All C &amp; S Operating Stations &amp; Terminals</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Service Coverage</span>
-                    <span class="meta-val">All Assigned C &amp; S Service Areas &amp; Routes</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Owner / Authorized Officer</span>
-                    <span class="meta-val">Rob Alicea ("Brower") &bull; Driver-First Ops</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">BC / Operations Dispatch</span>
-                    <span class="meta-val"><a href="tel:3475270069">Jamal Sealy &bull; (347) 527-0069</a></span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ======================================================================
+     PART I — WHO WE ARE
+     ====================================================================== -->
+<div class="part"><span class="bar print-only"></span><span>Part I</span><h2>Who we are</h2><p class="print-only">Our purpose, the companies whose rules we follow, and what it takes to wear the uniform.</p></div>
 
-    <!-- ==========================================================
-         MAIN CONTENT STREAM
-         ========================================================== -->
-    <main class="main-container">
+<section class="chapter reveal" id="ch-01" data-title="Mission vision values culture justice honor">
+  <header class="ch-head"><span class="ch-num">01</span><span class="ch-kicker">Chapter 01</span><h3>Mission, vision &amp; values</h3><p class="lede">Why C &amp; S exists today — and where we are headed together.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-target"/></svg></span>Our mission</h4><p>To deliver every FedEx Ground shipment in the communities we serve <b>safely, accurately and on time on the first attempt</b> — while building a "Driver-First" workplace founded on thorough dock preparation, disciplined defensive driving, mutual respect and fast support on the road.</p></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-flag"/></svg></span>Our vision</h4><p>To be the safest, most reliable contracted service provider at every terminal we operate — with <b>zero preventable accidents</b>, <b>zero uncoded packages</b> and professional standards that let every driver, and the company, grow together.</p></div>
+  </div>
+  <div class="grid three" style="margin-top:16px">
+    <div class="card" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span>Justice, honor &amp; self-discipline</h4><ul class="tight"><li>Fair scheduling and honest exception coding.</li><li>Own your route, your truck and your results.</li></ul></div>
+    <div class="card ok" style="--d:3"><h4><span class="ic"><svg class="i"><use href="#i-users"/></svg></span>Driver-first support</h4><ul class="tight"><li>A spare truck at the station for breakdowns.</li><li>Rescue help on heavy days and rotating weekend coverage.</li></ul></div>
+    <div class="card bad" style="--d:4"><h4><span class="ic"><svg class="i"><use href="#i-lock"/></svg></span>Zero weapons · zero substances</h4><ul class="tight"><li>No firearms or weapons, alcohol or illegal drugs on station property or in any truck.</li><li>Details in Chapter 13.</li></ul></div>
+  </div>
+</section>
 
-        <!-- MASTER TABLE OF CONTENTS -->
-        <section class="handbook-section" id="sec-toc" data-category="all">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge">Quick-Jump Directory</span>
-                    <h3 class="section-title">Master Table of Contents</h3>
-                    <p class="section-subtitle">Click any chapter below to jump directly to its regulations, codes, or procedures.</p>
-                </div>
-            </div>
-            <div class="toc-grid">
-                <button type="button" class="toc-item" data-jump="sec-identity">
-                    <span class="toc-num">01</span>
-                    <span class="toc-text">
-                        <strong>Corporate Identity: Mission, Vision &amp; Culture</strong>
-                        <span>Our Mission Statement, Vision Statement, Core Values (Justice, Honor, Self-Discipline), and Driver-First Support.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step1">
-                    <span class="toc-num">02</span>
-                    <span class="toc-text">
-                        <strong>Step 1: Morning Pre-Trip Inspection &amp; GroundCloud</strong>
-                        <span>DOT 49 CFR 396 walkaround, full fuel check, tire/brake specs, and mandatory GroundCloud tracking ON.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step2">
-                    <span class="toc-num">03</span>
-                    <span class="toc-text">
-                        <strong>Step 2: Dock Organization, SID Load Chart &amp; Code 27</strong>
-                        <span>Sorting shelves 1000–8500 before dispatch to eliminate Code 27 (DNA) and catching misloads/damages at the dock.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step3">
-                    <span class="toc-num">04</span>
-                    <span class="toc-text">
-                        <strong>Step 3: Safe Driving ("Accuracy Over Speed") &amp; VEDR</strong>
-                        <span>Zero speeding on highways/streets, 100% seatbelt, FMCSA 392.82 phone ban, VEDR camera KIs, and 3 points of contact.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step4">
-                    <span class="toc-num">05</span>
-                    <span class="toc-text">
-                        <strong>Step 4: Delivery Execution, Dogs/Gates &amp; Signatures</strong>
-                        <span>Read label twice, 2nd/3rd floor apartment delivery, dog/gate protocol, sharp POD photos, and ISR/DSR/ASR 21+ rules.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step5">
-                    <span class="toc-num">06</span>
-                    <span class="toc-text">
-                        <strong>Step 5: Strict Pickup Windows &amp; 100% Scanning</strong>
-                        <span>On-time pickup windows (never early, never late) and scanning 100% of packages as you load them.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step6">
-                    <span class="toc-num">07</span>
-                    <span class="toc-text">
-                        <strong>Step 6: OP-324 Scanner Codes (Code 02, 27 &amp; 85)</strong>
-                        <span>Interactive code finder, mandatory call before Code 02, zero Code 85 uncoded packages, and physical hand-off.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-step7">
-                    <span class="toc-num">08</span>
-                    <span class="toc-text">
-                        <strong>Step 7: Truck Cleanliness &amp; Zero-Tolerance Biohazard</strong>
-                        <span>Mandatory end-of-day trash clean-out, strict zero tolerance for urine ("pee") bottles, and post-trip DVIR.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-dot">
-                    <span class="toc-num">09</span>
-                    <span class="toc-text">
-                        <strong>DOT Hours of Service (49 CFR 395) &amp; Hazmat Rules</strong>
-                        <span>14-hr window, 11-hr driving, 30-min break, 150 air-mile exemption, Hazmat 999 lb limit, OP-900LL, and Dry Ice.</span>
-                    </span>
-                </button>
-                <button type="button" class="toc-item" data-jump="sec-checklist">
-                    <span class="toc-num">10</span>
-                    <span class="toc-text">
-                        <strong>Emergencies, Interactive Shift Checklist &amp; Sign-Off</strong>
-                        <span>On-road accident protocol, live daily driver readiness checklist, and printable Driver Acknowledgment form.</span>
-                    </span>
-                </button>
-            </div>
-        </section>
+<section class="chapter reveal" id="ch-02" data-title="FedEx Ground contractor ISP CSP standards scorecard VEDR GroundCloud">
+  <header class="ch-head"><span class="ch-num">02</span><span class="ch-kicker">Chapter 02</span><h3>Working on FedEx Ground routes</h3><p class="lede">You work for C &amp; S. C &amp; S contracts with FedEx Ground. That means three rulebooks apply to you.</p></header>
+  <p>FedEx Ground does not employ its pickup-and-delivery drivers directly. It contracts routes to independent businesses — <b>contracted service providers</b> like C &amp; S — who employ the drivers, own or lease the trucks and are responsible for safety compliance. You are a C &amp; S employee, but you represent FedEx at every door.</p>
+  <div class="steps">
+    <div><b>1 · The law</b><span>Federal Motor Carrier Safety Regulations (49 CFR Parts 382–396), hazmat rules (Parts 171–177), OSHA, and your state and city traffic laws.</span></div>
+    <div><b>2 · FedEx Ground contracting standards</b><span>Uniform and appearance, vehicle look and condition, safety technology (cameras), service standards and scanning procedures. FedEx can refuse a driver who does not meet them.</span></div>
+    <div><b>3 · C &amp; S policy</b><span>This handbook: our 7-step day, call-first rules, truck care and conduct.</span></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-cam"/></svg></span>Safety technology in your truck</h4><ul class="tight"><li>FedEx Ground requires contractors to run an approved <b>video event data recorder (VEDR)</b> — a road- and driver-facing camera that flags risky events like following too close, rolling stops, phone use and no seat belt.</li><li>Many trucks also have collision and lane-departure warnings, blind-spot and backing cameras. Treat alerts as real.</li><li><b>Blocking, unplugging or tampering with any camera or sensor is grounds for immediate termination.</b></li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-star"/></svg></span>We are scored every day</h4><ul class="tight"><li>FedEx measures each contractor on safety and service: on-time pickups, delivery completion, exceptions, damages, and camera events.</li><li>Those numbers decide whether C &amp; S keeps and grows its routes — and your job.</li><li>Every Code 27, every uncoded package and every camera event shows up on our scorecard.</li></ul></div>
+  </div>
+</section>
 
-        <!-- CHAPTER 1: CORPORATE IDENTITY — MISSION STATEMENT, VISION STATEMENT & CULTURE -->
-        <section class="handbook-section" id="sec-identity" data-category="identity">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge orange">Chapter 1 &bull; Corporate Purpose &amp; Identity</span>
-                    <h3 class="section-title">Company Mission Statement, Vision Statement &amp; Core Values</h3>
-                    <p class="section-subtitle">The two foundational pillars defining why C &amp; S Delivery Service, Inc. exists today and where our team is headed.</p>
-                </div>
-            </div>
+<section class="chapter reveal" id="ch-03" data-title="qualifications medical card DOT physical license MVR background drug test age 21">
+  <header class="ch-head"><span class="ch-num">03</span><span class="ch-kicker">Chapter 03</span><h3>Qualifications, records &amp; testing</h3><p class="lede">What you need to drive — and keep — a route.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-id"/></svg></span>To drive for C &amp; S you must</h4><ul class="tight">
+      <li>Be <b>at least 21</b> to drive a commercial vehicle across state lines. <span class="src">49 CFR 391.11</span></li>
+      <li>Hold a valid driver's license for the vehicle you drive — and keep it valid.</li>
+      <li>Pass a <b>DOT physical</b> and carry a current medical examiner's certificate. It lasts <b>up to 24 months</b>, or less if the examiner says so. <span class="src">49 CFR 391.41–391.45</span></li>
+      <li>Read and speak English well enough to understand road signs and talk with officers. <span class="src">49 CFR 391.11</span></li>
+      <li>Pass a background check, a driving-record (MVR) review and a pre-employment drug screen.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Tell management immediately if</h4><ul class="tight">
+      <li>Your license is suspended, revoked or expires.</li>
+      <li>You get any traffic ticket or are convicted of a moving violation — in any vehicle.</li>
+      <li>Your medical card is about to expire, or a health change affects your driving or a medication makes you drowsy.</li>
+      <li>You are involved in any crash or damage, however small.</li></ul></div>
+  </div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">Your driver file</b><p>C &amp; S keeps a federal driver qualification file on you (application, MVRs, medical card, road test). Your driving record is reviewed every year. Keep your copy of the medical card in your wallet — an inspector can ask for it.</p></div></div>
+</section>
 
-            <div class="mv-grid">
-                <div class="mv-card mission">
-                    <h4>&#127919; Our Mission Statement (Our Daily Purpose)</h4>
-                    <p>
-                        To deliver every FedEx Ground shipment across all communities we serve safely, accurately, and on time on the first attempt—while cultivating a <strong>"Driver-First"</strong> workplace built on thorough dock preparation, disciplined defensive driving, mutual respect, and immediate on-road leadership support.
-                    </p>
-                </div>
-                <div class="mv-card vision">
-                    <h4>&#128640; Our Vision Statement (Our Long-Term Objective)</h4>
-                    <p>
-                        To stand as the premier, safest, and most reliable Contracted Service Provider across every terminal we operate—where <strong>zero preventable accidents</strong>, <strong>zero uncoded packages (Code 85)</strong>, and spotless professional standards empower every driver and the entire company to grow and succeed together.
-                    </p>
-                </div>
-            </div>
+<section class="chapter reveal" id="ch-04" data-title="uniform appearance dress code badge boots vest grooming headphones">
+  <header class="ch-head"><span class="ch-num">04</span><span class="ch-kicker">Chapter 04</span><h3>Uniform &amp; professional appearance</h3><p class="lede">Customers open the door to a FedEx professional. FedEx Ground's contracting standards require it — and so do we.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-shirt"/></svg></span>The uniform</h4><ul class="tight">
+      <li><b>FedEx uniform shirt</b> with the FedEx logo, tucked and clean.</li>
+      <li><b>Uniform pants or shorts</b>, with <b>dark shoes and dark socks</b>.</li>
+      <li>Jackets, caps and cold-weather layers must be <b>FedEx-approved uniform items</b>. No hoodies or other brands over the uniform.</li>
+      <li>Keep every piece in good condition — <b>no rips, tears or noticeable stains.</b> Ask for a replacement before it gets there.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-id"/></svg></span>ID &amp; grooming</h4><ul class="tight">
+      <li><b>FedEx ID badge visible at all times</b> on route and at the terminal.</li>
+      <li>Your appearance should match your badge photo.</li>
+      <li>Clean, neat and well groomed — hair and facial hair trimmed, no body odor.</li>
+      <li>Tattoos or piercings management finds offensive must be covered or removed on duty.</li></ul></div>
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span>Safety gear (C &amp; S)</h4><ul class="tight">
+      <li>Closed-toe, slip-resistant work shoes or boots. No sandals, slides or bare canvas shoes.</li>
+      <li>High-visibility vest on the terminal yard and dock.</li>
+      <li>Gloves for heavy, sharp or wet freight.</li>
+      <li>No earbuds in both ears. Calls only hands-free, where your state allows it.</li></ul></div>
+  </div>
+  <div class="callout amber"><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span><div><b class="t">Why it matters</b><p>FedEx can refuse dispatch to a driver who does not meet its appearance standard. Out of uniform means off the route.</p></div></div>
+</section>
 
-            <div class="pillars-row">
-                <div class="pillar-box">
-                    <strong>1. Justice, Honor &amp; Self-Discipline</strong>
-                    <span>Fair scheduling, honest exception coding, and personal accountability in the cab and at every customer's door.</span>
-                </div>
-                <div class="pillar-box">
-                    <strong>2. Driver-First Contingency Support</strong>
-                    <span>Spare truck maintained at the station for breakdowns, paid per-stop rescue sweeps on heavy days, and rotating weekend protection.</span>
-                </div>
-                <div class="pillar-box">
-                    <strong>3. Full Uniform &amp; FedEx ID Badge</strong>
-                    <span>Clean branded polo/shirt, dark trousers/shorts, closed-toe slip-resistant boots, high-vis vest at the terminal, and visible FedEx ID badge.</span>
-                </div>
-                <div class="pillar-box">
-                    <strong>4. Zero Weapons &amp; Zero Substance Policy</strong>
-                    <span>Strict prohibition of firearms, weapons, alcohol (0.02 BAC threshold), or controlled substances on station property or inside any truck.</span>
-                </div>
-            </div>
-        </section>
+<!-- ======================================================================
+     PART II — THE 7-STEP DAY
+     ====================================================================== -->
+<div class="part"><span class="bar print-only"></span><span>Part II</span><h2>The 7-step day</h2><p class="print-only">From the first walk-around to the last key in the lockbox — how a C &amp; S professional runs a route.</p></div>
 
-        <!-- CHAPTER 2: STEP 1 — MORNING PRE-TRIP INSPECTION & GROUNDCLOUD -->
-        <section class="handbook-section" id="sec-step1" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge">Chapter 2 &bull; Step 1 of 7</span>
-                    <h3 class="section-title">Step 1: Morning Pre-Trip Inspection &amp; Readiness (At the Station)</h3>
-                    <p class="section-subtitle">Winning the day starts at your assigned station before you ever turn the key (49 CFR Parts 393 &amp; 396).</p>
-                </div>
-            </div>
+<section class="chapter reveal" id="ch-05" data-title="step 1 pre-trip inspection tires brakes steering lights fuel scanner GroundCloud">
+  <header class="ch-head"><span class="ch-num">05</span><span class="ch-kicker">Chapter 05 · Step 1 of 7</span><h3>Pre-trip inspection &amp; readiness</h3><p class="lede">Winning the day starts before you turn the key. Federal law says you may not drive until you are satisfied the truck is safe. <span class="src" style="color:inherit">49 CFR 392.7 · 396.13</span></p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-wheel"/></svg></span>Walk-around</h4><ul class="tight">
+      <li><b>Last report:</b> read the previous driver's inspection report. If it listed defects, sign that the repairs were made.</li>
+      <li><b>Tires:</b> inflation, cuts, bulges, tight lug nuts. Minimum tread <b>4/32" on front steer tires, 2/32" on all others.</b> <span class="src">393.75</span></li>
+      <li><b>Brakes:</b> firm pedal and a parking brake that holds.</li>
+      <li><b>Steering:</b> no excess free play. On a 20" wheel the limit is <b>2½" (manual) or 5¼" (power steering)</b>. <span class="src">393.209</span></li>
+      <li><b>Lights &amp; glass:</b> headlights, brake lights, turn signals, flashers, mirrors, wipers, horn and backup camera.</li>
+      <li><b>Fluids &amp; leaks:</b> oil and coolant levels, and no puddles under the truck.</li>
+      <li><b>Fuel:</b> leave the station with a full tank.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-flame"/></svg></span>Emergency equipment <span class="src">393.95</span></h4><ul class="tight">
+      <li><b>Fire extinguisher</b> rated <b>5 B:C</b> (or two rated 4 B:C), charged, secured and within reach.</li>
+      <li><b>Three reflective warning triangles</b> (or at least six fuses/flares).</li>
+      <li>First-aid kit, registration, insurance card and annual inspection proof.</li>
+      <li><i>2026 update:</i> spare fuses are no longer a federal requirement and liquid-burning flares are no longer accepted warning devices. Use triangles.</li></ul></div>
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-battery"/></svg></span>Scanner, GroundCloud &amp; route</h4><ul class="tight">
+      <li>Scanner and spare battery fully charged and syncing.</li>
+      <li>Log in to <b>GroundCloud</b> with <b>location tracking ON</b> before you leave the terminal.</li>
+      <li>Review your manifest for stops or pickups outside your area, and tell dispatch before you roll out.</li>
+      <li>Report warning lights, tire problems or new damage <b>at the dock</b> — never drive a truck you think is unsafe.</li></ul></div>
+  </div>
+</section>
 
-            <div class="cards-grid-2">
-                <div class="info-card">
-                    <h4>&#128295; DOT / FMCSA Pre-Trip Vehicle Walkaround</h4>
-                    <ul>
-                        <li><strong>Full Fuel Tank Verification:</strong> Confirm your assigned truck has a full tank of gas/fuel before leaving the station.</li>
-                        <li><strong>Tires, Wheels &amp; Rims:</strong> Inspect for proper inflation, cuts, bulges, and legal tread depth (<strong>&ge; 4/32" on front steer tires</strong>; <strong>&ge; 2/32" on rear drive duals</strong>). Ensure all lug nuts are tight.</li>
-                        <li><strong>Brakes &amp; Steering:</strong> Test service brake pedal firmness, parking/emergency brake hold, and check steering play (&le; 2 inches on a 20" wheel).</li>
-                        <li><strong>Lights, Mirrors &amp; Visibility:</strong> Verify headlights, brake lights, turn signals, 4-way hazard flashers, clearance lights, reflectors, wipers, horn, and backup camera.</li>
-                        <li><strong>Fluid Levels &amp; Undercarriage:</strong> Check oil/coolant levels and look underneath the vehicle for any active puddles or leaks.</li>
-                        <li><strong>Safety &amp; Emergency Gear:</strong> Confirm a charged <strong>5 B:C fire extinguisher</strong>, <strong>3 reflective DOT triangles</strong>, first-aid kit, current registration, insurance card, and annual DOT inspection decal.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128241; Scanner, GroundCloud &amp; Out-of-Area Check</h4>
-                    <ul>
-                        <li><strong>Scanner &amp; Battery Check:</strong> Confirm your Zebra/Forge handheld scanner and spare battery are 100% charged and syncing properly.</li>
-                        <li><strong>Mandatory GroundCloud Login:</strong> Log into <strong>GroundCloud</strong> on your tablet/device and verify that <strong>Location Tracking is turned ON</strong> before pulling out of the terminal.</li>
-                        <li><strong>Out-of-Area Itinerary Check:</strong> Review your scanner manifest and GroundCloud map before dispatch for any deliveries or pickups outside your assigned route or service area and notify <strong>Station Management / Dispatch</strong> immediately so they can be reassigned.</li>
-                        <li><strong>Report Defects Immediately:</strong> Report any mechanical warning lights, tire issues, or new body damage to management at the dock before dispatch.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 3: STEP 2 — DOCK ORGANIZATION, SID CHART & PREVENTING CODE 27 -->
-        <section class="handbook-section" id="sec-step2" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge orange">Chapter 3 &bull; Step 2 of 7</span>
-                    <h3 class="section-title">Step 2: Morning Truck Organization &amp; Preventing Code 27 (At the Dock)</h3>
-                    <p class="section-subtitle">How you set up your shelves in the morning determines your speed, accuracy, and stress level all day.</p>
-                </div>
-            </div>
-
-            <div class="cards-grid-2">
-                <div class="info-card">
-                    <h4>&#128230; Why Dock Organization Eliminates Code 27 (DNA)</h4>
-                    <ul>
-                        <li><strong>Organize Every Shelf Before Dispatch:</strong> Sort and lip-load your packages by Stop ID (SID) and stop sequence before leaving the building.</li>
-                        <li><strong>What Causes a Code 27 (Did Not Attempt):</strong> A Code 27 happens when a driver arrives at a stop, cannot find the package because it is buried or on the wrong shelf, skips the stop, and discovers the package at the end of the shift when it is too late to deliver.</li>
-                        <li><strong>The Solution:</strong> Spending 15 extra minutes organizing your shelves at the dock saves 60+ minutes of searching on the road and eliminates preventable Code 27s.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128269; Catch Misloads, Bad Addresses &amp; Damages at the Dock</h4>
-                    <ul>
-                        <li><strong>Warehouse Misloads (Code 12):</strong> Check labels while sorting for packages belonging to another route or wrong ZIP code and hand them back to station personnel before departure.</li>
-                        <li><strong>Questionable / Incomplete Addresses:</strong> Catch labels missing street numbers, suite numbers, or apartment numbers at the dock so management can research them early.</li>
-                        <li><strong>Damaged Boxes (Code 10):</strong> Inspect for crushed, wet, leaking, or open cartons and have QA tape or repackage them before loading.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Visual SID Shelf Architecture Diagram -->
-            <div class="sid-diagram-box">
-                <div class="sid-diagram-title">Standard FedEx Ground Step-Van SID Shelf Loading Map (1000–8500 Zones)</div>
-                <div class="sid-truck-layout">
-                    <!-- Left Driver Side -->
-                    <div class="sid-wall">
-                        <div class="sid-shelf">
-                            <strong>1000 Shelf (Driver Top Front)</strong>
-                            <span>Early Morning Stops &bull; Priority Business &amp; First Residential Sequence</span>
-                        </div>
-                        <div class="sid-shelf">
-                            <strong>3000 Shelf (Driver Middle Front)</strong>
-                            <span>Mid-Morning Stops &bull; Lip-Load SID Stickers Facing Aisle</span>
-                        </div>
-                        <div class="sid-shelf">
-                            <strong>5000 Shelf (Driver Lower Front)</strong>
-                            <span>Heavy Carton Zone &bull; Keep Heavy Boxes Low to Prevent Tipping</span>
-                        </div>
-                        <div class="sid-shelf">
-                            <strong>7000 Shelf (Driver Rear Section)</strong>
-                            <span>Afternoon Route Sequence &bull; Overflow &amp; Mid-Size Freight</span>
-                        </div>
-                    </div>
-
-                    <!-- Center Aisle -->
-                    <div class="sid-aisle">
-                        <span>&#9650; CAB / BULKHEAD DOOR</span>
-                        <span>KEEP CENTER AISLE CLEAR OF LOOSE PACKAGES</span>
-                        <span>REAR ROLL-UP DOOR (8000 / 8500 BULK &amp; HAZMAT) &#9660;</span>
-                    </div>
-
-                    <!-- Right Curb / Passenger Side -->
-                    <div class="sid-wall">
-                        <div class="sid-shelf orange-shelf">
-                            <strong>2000 Shelf (Curb Top Front)</strong>
-                            <span>Morning Commercial &amp; Residential Sequence &bull; Easy Cab Exit</span>
-                        </div>
-                        <div class="sid-shelf orange-shelf">
-                            <strong>4000 Shelf (Curb Middle Front)</strong>
-                            <span>Mid-Day Route Sequence &bull; Smalls Bagged/Tubbed Together</span>
-                        </div>
-                        <div class="sid-shelf orange-shelf">
-                            <strong>6000 Shelf (Curb Lower Front)</strong>
-                            <span>Mid-Afternoon Heavy / Medium Freight</span>
-                        </div>
-                        <div class="sid-shelf orange-shelf">
-                            <strong>8000 / 8500 Zone (Curb Rear &amp; Floor)</strong>
-                            <span>Large Bulk Stops, Hospital Freight, Team Lift (71–150 lbs) &amp; Braced Hazmat</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 4: STEP 3 — SAFE DRIVING ("ACCURACY OVER SPEED") & VEDR -->
-        <section class="handbook-section" id="sec-step3" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge green">Chapter 4 &bull; Step 3 of 7</span>
-                    <h3 class="section-title">Step 3: Safe Driving Standards — "Accuracy Over Speed" (On the Road)</h3>
-                    <p class="section-subtitle">To be accurate, you do not have to speed. Time is saved at the dock—never by speeding on the street.</p>
-                </div>
-            </div>
-
-            <div class="cards-grid-3">
-                <div class="info-card">
-                    <h4>&#128680; Zero Speeding &amp; Seatbelt Mandate</h4>
-                    <ul>
-                        <li><strong>No Speeding (Highways or Streets):</strong> Strictly obey posted speed limits on freeways, main roads, school zones, and residential streets.</li>
-                        <li><strong>100% Seatbelt Compliance:</strong> Click your seatbelt before shifting into drive at every single stop—even when moving 50 feet between houses.</li>
-                        <li><strong>Zero Handheld Phone Use (49 CFR 392.82):</strong> Never hold, dial, or text on a cell phone while the vehicle is in motion.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128249; VEDR Camera &amp; Backing Safety</h4>
-                    <ul>
-                        <li><strong>VEDR Camera Integrity:</strong> AI-assisted Video Event Data Recorders monitor following distance (<strong>&ge; 4–6 sec</strong>), rolling stops, distracted driving, and seatbelt use. Tampering with or covering a camera is grounds for immediate termination.</li>
-                        <li><strong>Park to Pull Forward:</strong> Avoid backing whenever possible. If you must reverse, use <strong>G.O.A.L. (Get Out And Look)</strong>, tap the horn twice, activate 4-way flashers, and back at a crawling speed using mirrors and camera.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#129466; 3 Points of Contact &amp; Lifting</h4>
-                    <ul>
-                        <li><strong>Three Points of Contact:</strong> Always maintain 2 hands and 1 foot (or 2 feet and 1 hand) on grab handles and steps when entering or exiting the cab or cargo bay. Never jump out of the truck.</li>
-                        <li><strong>Ergonomic Lifting:</strong> Keep packages close to your core ("Power Zone"), bend at the knees, never twist your spine under load, and always use your hand truck/dolly for packages over 70 lbs.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 5: STEP 4 — PACKAGE DELIVERY EXECUTION, OBSTACLES & SIGNATURES -->
-        <section class="handbook-section" id="sec-step4" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge">Chapter 5 &bull; Step 4 of 7</span>
-                    <h3 class="section-title">Step 4: Package Delivery Execution, Locked Gates/Dogs &amp; Signature Rules</h3>
-                    <p class="section-subtitle">Upholding the FedEx "Purple Promise" with double label verification, protected placement, and sharp POD photos.</p>
-                </div>
-            </div>
-
-            <div class="cards-grid-2">
-                <div class="info-card">
-                    <h4>&#127968; Read Label Twice &amp; Apartment Upper Floors</h4>
-                    <ul>
-                        <li><strong>Read the Label Twice:</strong> Read the shipping label carefully inside the truck and a second time at the front door—verifying <strong>Recipient Name, Street Number, Street Name, and Apt/Suite #</strong>.</li>
-                        <li><strong>2nd &amp; 3rd Floor Apartments:</strong> Always walk packages up to the customer's actual apartment door on the 2nd or 3rd floor. <strong>Never</strong> dump upper-floor packages at the 1st-floor stairwell or breezeway entrance.</li>
-                        <li><strong>Sharp POD Photos:</strong> Take a crisp, well-framed photo showing the package in its sheltered location (never include people, faces, or reflections; never snap blurry ground shots or photos from inside the cab).</li>
-                        <li><strong>Cab &amp; Cargo Security:</strong> Remove keys from the ignition at every stop and close/lock the bulkhead and rear doors when out of sight.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128021; Locked Gates, Loose Dogs &amp; Safe Placement</h4>
-                    <ul>
-                        <li><strong>Dog Bite Prevention Protocol:</strong> Whistle, honk your horn, or rattle closed gates before entering any yard. Look for toys, bowls, or warning signs. If an aggressive dog approaches, <strong>DO NOT RUN</strong>—stay calm, avoid direct eye contact, use your package or clipboard as a shield between you and the dog, and back away slowly facing the animal.</li>
-                        <li><strong>Safe Weather-Protected Alternative Location:</strong> When a locked gate or loose dog blocks the front door, secure the package in a safe, sheltered spot (<strong>Porch, Garage, Driveway, or Package Locker</strong>).</li>
-                        <li><strong>Scanner Documentation ("Other"):</strong> Select the exact placement on your scanner. If selecting <strong>"Other"</strong>, type a clear descriptive note telling the customer exactly where the package is located.</li>
-                        <li><strong>Call Management When in Doubt:</strong> Unsure if a spot is safe? Call <strong>Rob ("Brower")</strong> or <strong>Jamal Sealy (347-527-0069)</strong> from the stop before walking away.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Signature Requirements Table -->
-            <div class="table-wrap">
-                <table class="handbook-table">
-                    <thead>
-                        <tr>
-                            <th>Signature Tier</th>
-                            <th>Who Must Sign</th>
-                            <th>Driver Release / Door Tag Allowed?</th>
-                            <th>Mandatory C &amp; S / FedEx Execution Rule</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="code-pill safe">NSR &bull; No Signature Required</span></td>
-                            <td>None (Standard Residential Release)</td>
-                            <td><strong>Yes</strong> — Safe weather-protected spot + clear POD photo</td>
-                            <td>Place out of street view and weather; capture clear POD photo showing placement context.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="code-pill warn">ISR &bull; Indirect Signature</span></td>
-                            <td>Recipient, neighbor, building manager, OR signed FedEx Door Tag</td>
-                            <td><strong>Yes, ONLY with a signed Door Tag</strong> collected by driver</td>
-                            <td>If no one is home, apply <strong>Code 07</strong>, leave a Door Tag, and scan the Door Tag barcode.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="code-pill warn">DSR &bull; Direct Signature</span></td>
-                            <td><strong>Anyone</strong> physically present at the exact delivery address</td>
-                            <td><strong>NO</strong> — Signed Door Tags and neighbor signatures are strictly invalid</td>
-                            <td>Must obtain an in-person signature on the scanner at the address. Never sign for a customer.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="code-pill critical">ASR &bull; Adult Signature (21+)</span></td>
-                            <td>Recipient or resident at the address who is <strong>21 years of age or older</strong></td>
-                            <td><strong>NO</strong> — Zero release, zero re-route without ID verification</td>
-                            <td><strong>Inspect Government Photo ID</strong> and scan/verify 21+ birth date on the scanner. Zero exceptions.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- CHAPTER 6: STEP 5 — STRICT PICKUP WINDOWS & 100% PACKAGE SCANNING -->
-        <section class="handbook-section" id="sec-step5" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge orange">Chapter 6 &bull; Step 5 of 7</span>
-                    <h3 class="section-title">Step 5: Strict Pickup Windows &amp; 100% Individual Package Scanning</h3>
-                    <p class="section-subtitle">Pickups are heavily weighted on the FedEx Ground service scorecard and require exact clock discipline.</p>
-                </div>
-            </div>
-
-            <div class="cards-grid-2">
-                <div class="info-card">
-                    <h4>&#9200; Hit Pickup Windows Strictly On Time</h4>
-                    <ul>
-                        <li><strong>Check Your Pickup Schedule Every Morning:</strong> Review all assigned commercial and regular pickups on your scanner and GroundCloud before leaving the station.</li>
-                        <li><strong>Never Early, Never Late:</strong> You must arrive and open the pickup scan <strong>strictly inside the designated pickup window</strong>. Scanning even 1 minute before the open time or 1 minute after the close time triggers an automatic FedEx service failure.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128246; Scan 100% of Packages as You Load</h4>
-                    <ul>
-                        <li><strong>Scan Every Individual Box:</strong> Scan every single package barcode as you load it into the truck—never bulk-toss un-scanned pickup packages into the cargo bay hoping to scan them later.</li>
-                        <li><strong>Zero Packages Ready (Code 22):</strong> If a scheduled pickup customer has zero outbound packages, still arrive inside the window, speak with the shipper, and close the stop with <strong>Pickup Code 22 (Nothing to Pick Up)</strong>.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 7: STEP 6 — INTERACTIVE SCANNER EXCEPTION CODE DIRECTORY (CODE 02, 27 & 85) -->
-        <section class="handbook-section" id="sec-step6" data-category="codes">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge red">Chapter 7 &bull; Step 6 of 7 &bull; OP-324 Directory</span>
-                    <h3 class="section-title">Step 6: Master Scanner Exception Codes — Code 02, Code 27 &amp; Code 85 Rules</h3>
-                    <p class="section-subtitle">Interactive directory of official FedEx Ground OP-324 &amp; Forge status codes plus C &amp; S mandatory call rules.</p>
-                </div>
-            </div>
-
-            <!-- Critical C&S Coding Rules -->
-            <div class="cards-grid-3" style="margin-bottom: 20px;">
-                <div class="callout-banner danger" style="margin-top: 0;">
-                    <strong>&#128222; STRICT CODE 02 RULE (CALL FIRST!)</strong>
-                    <p><strong>Code 02</strong> is ONLY for genuinely incorrect or incomplete addresses (missing street/apt #). <strong>NEVER</strong> use Code 02 just because you cannot find a house or building. You <strong>MUST call Jamal (347-527-0069) or Rob ("Brower") from the stop</strong> before applying Code 02.</p>
-                </div>
-                <div class="callout-banner warning" style="margin-top: 0;">
-                    <strong>&#9888; MINIMIZE CODE 27 (DID NOT ATTEMPT)</strong>
-                    <p><strong>Code 27 (DNA)</strong> happens when a package is buried on the wrong shelf and found too late. Organize your truck by SID at the dock every morning to keep Code 27 at zero. Call management immediately if an emergency blocks a stop.</p>
-                </div>
-                <div class="callout-banner danger" style="margin-top: 0;">
-                    <strong>&#128683; ELIMINATE CODE 85 (ZERO UNCODED)</strong>
-                    <p><strong>We do NOT want Code 85 inside the truck!</strong> A Code 85 occurs when a package is brought back to the terminal without any exception code scanned. Walk your cargo bay front-to-back before returning and physically hand all returns to management.</p>
-                </div>
-            </div>
-
-            <!-- Interactive Code Search & Filter -->
-            <div class="scanner-controls no-print">
-                <input type="text" id="code-search" class="scanner-input" placeholder="Filter by code number (e.g., 02, 04, 07, 10, 12, 27, 85) or keyword...">
-                <select id="code-category-select" class="scanner-select">
-                    <option value="all">All Scanner Status &amp; Exception Codes</option>
-                    <option value="critical">C &amp; S Restricted / Call-First Codes (01, 02, 27, 85)</option>
-                    <option value="delivery">Standard Delivery Exceptions (03, 04, 06, 07, 08, 11)</option>
-                    <option value="station">Dock, Damage, Misload &amp; Hazmat (10, 12, 16, 19, 83)</option>
-                    <option value="pickup">Release &amp; Pickup Codes (13, 21, 22, 24)</option>
-                </select>
-            </div>
-
-            <div class="table-wrap">
-                <table class="handbook-table" id="scanner-codes-table">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Official OP-324 Name</th>
-                            <th>When to Use &amp; Required Condition</th>
-                            <th>Mandatory C &amp; S Driver Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="scanner-codes-tbody">
-                        <!-- Populated dynamically via JS and rendered in print -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- CHAPTER 8: STEP 7 — END-OF-DAY TRUCK CLEANLINESS & ZERO-TOLERANCE BIOHAZARD POLICY -->
-        <section class="handbook-section" id="sec-step7" data-category="workflow">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge red">Chapter 8 &bull; Step 7 of 7 &bull; Zero Tolerance</span>
-                    <h3 class="section-title">Step 7: End-of-Day Truck Cleanliness &amp; Zero-Tolerance "Pee Bottle" Policy</h3>
-                    <p class="section-subtitle">Your truck is your professional office and a direct reflection of C &amp; S Delivery Service, Inc.</p>
-                </div>
-            </div>
-
-            <div class="callout-banner danger" style="margin-top: 0; margin-bottom: 20px; animation: pulseGlow 2.5s infinite;">
-                <strong>&#9763; STRICT ZERO-TOLERANCE POLICY ON URINE ("PEE") BOTTLES</strong>
-                <p>
-                    Leaving urine bottles ("pee bottles") or any human waste inside the cab or cargo bay is a severe OSHA/DOT biohazard, a health violation, and completely disrespectful to your fellow drivers and mechanics. <strong>No pee bottles are EVER allowed to be left in any truck.</strong> Violating this policy results in <strong>immediate disciplinary action up to and including termination</strong>.
-                </p>
-            </div>
-
-            <div class="cards-grid-3">
-                <div class="info-card">
-                    <h4>&#129529; Mandatory Daily Cab &amp; Cargo Clean-Out</h4>
-                    <ul>
-                        <li>Remove all food wrappers, empty drink cups, water bottles, shrink wrap, broken cardboard, and trash from the dashboard, floorboard, and cargo shelves every evening.</li>
-                        <li>Leave the cab and cargo bay spotless for the next morning's shift or rotator driver.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#129309; Physical Package Hand-Off at Station</h4>
-                    <ul>
-                        <li><strong>Never toss undelivered packages into a bin unattended.</strong></li>
-                        <li>Every returned package must have a valid exception code scanned (Zero Code 85) and be physically handed to station management with a clear explanation before clocking out.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#128273; Post-Trip DVIR &amp; Equipment Return</h4>
-                    <ul>
-                        <li>Complete your post-trip inspection and report any new mechanical issues, check-engine lights, brake wear, or tire/body damage to management immediately so repairs happen overnight.</li>
-                        <li>Dock your scanner, charge batteries, and secure truck keys in the designated C &amp; S lockbox.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 9: DOT HOURS OF SERVICE (49 CFR PART 395), HAZMAT & DRY ICE -->
-        <section class="handbook-section" id="sec-dot" data-category="regulations">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge">Chapter 9 &bull; Federal DOT &amp; SF-920P Regulations</span>
-                    <h3 class="section-title">FMCSA Hours of Service (49 CFR Part 395), Hazmat &amp; Dry Ice Rules</h3>
-                    <p class="section-subtitle">Federal property-carrying commercial motor vehicle limits and FedEx Ground Service Vendor safety rules.</p>
-                </div>
-            </div>
-
-            <div class="table-wrap" style="margin-bottom: 20px;">
-                <table class="handbook-table">
-                    <thead>
-                        <tr>
-                            <th>FMCSA HOS Rule (49 CFR 395)</th>
-                            <th>Federal Regulatory Limit</th>
-                            <th>C &amp; S / FedEx Ground Operational Requirement</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>14-Hour On-Duty Window</strong></td>
-                            <td>Max <strong>14 consecutive hours</strong> after coming on duty</td>
-                            <td>Includes dock sorting, pre-trip, driving, lunches, and post-trip. You cannot drive after the 14th hour without 10 consecutive hours off duty.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>11-Hour Driving Limit</strong></td>
-                            <td>Max <strong>11 hours</strong> of actual behind-the-wheel driving</td>
-                            <td>Must be completed within the 14-hour on-duty window following 10 consecutive hours off duty.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>30-Minute Rest Break</strong></td>
-                            <td>Mandatory <strong>30-minute break</strong> before exceeding 8 cumulative driving hours</td>
-                            <td>May be satisfied by any non-driving period (off-duty, meal break, or on-duty not driving) of 30 consecutive minutes.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>60 / 70-Hour Weekly Cap</strong></td>
-                            <td>Max <strong>60 hrs in 7 days</strong> or <strong>70 hrs in 8 days</strong></td>
-                            <td>Resets after a <strong>34-hour consecutive off-duty restart</strong>. Our 3-week rotation protects drivers from HOS fatigue.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>150 Air-Mile Short-Haul Exemption</strong></td>
-                            <td>49 CFR &sect; 395.1(e)(1) — Within 150 air-miles of your reporting terminal</td>
-                            <td>Exempt from grid ELD logs ONLY if returning to your home station and released within 14 hours; start/end time records still mandatory.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cards-grid-2">
-                <div class="info-card">
-                    <h4>&#9888; Hazardous Materials (SF-920P &amp; 49 CFR 177)</h4>
-                    <ul>
-                        <li><strong>999 lb Gross Aggregate Ceiling:</strong> Never load or transport <strong>1,000 lbs (454 kg) or more</strong> of Table 2 hazardous materials on a single P&amp;D van without proper placards and a CDL Hazmat endorsement.</li>
-                        <li><strong>Weight Caps:</strong> Max <strong>70 lbs (32 kg)</strong> per Hazmat package (<strong>66 lbs / 30 kg</strong> for Limited Quantity / ORM-D cartons).</li>
-                        <li><strong>Paperwork Audit (OP-900LL):</strong> Before moving a Hazmat package, verify the <strong>OP-900LL</strong> multi-ply label and <strong>Shipper-Signed Certification</strong> match the 4-part sequence (UN/NA ID, Proper Shipping Name, Hazard Class, Packing Group). Keep Hazmat shipping papers in the driver's door pouch or within reach while belted.</li>
-                        <li><strong>Loading &amp; Segregation:</strong> Load Hazmat on the <strong>rear floor near the roll-up door</strong>, blocked and braced against movement, with directional arrows pointing UP. Never stack heavy freight on top of Hazmat, and segregate incompatible classes (e.g., Class 8 Corrosives away from Class 4/5).</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#10052; Dry Ice (UN1845) &amp; Prohibited Hazmat Classes</h4>
-                    <ul>
-                        <li><strong>Dry Ice (Carbon Dioxide, Solid — Class 9, UN1845):</strong> Sublimates into CO2 gas that displaces oxygen in enclosed spaces. Verify the net weight in <strong>kg</strong> is marked on the diamond label, load in the rear cargo bay only (<strong>never inside the passenger cab</strong>), and keep the bulkhead door closed with cab air set to fresh/recirculated appropriately.</li>
-                        <li><strong>Strictly Prohibited in P&amp;D Vans:</strong> Never pick up or load Explosives (1.1–1.3), Poison Gas (2.3), Dangerous When Wet (4.3), Poison Inhalation Hazard (6.1 PIH), Infectious Substances (6.2), Radioactive (Class 7), or unapproved Lithium Batteries (UN3090/UN3480). Apply <strong>Code 83</strong> and call management.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAPTER 10: EMERGENCIES, INTERACTIVE SHIFT CHECKLIST & DRIVER SIGN-OFF -->
-        <section class="handbook-section" id="sec-checklist" data-category="checklist">
-            <div class="section-header">
-                <div>
-                    <span class="section-badge green">Chapter 10 &bull; Emergencies, Daily Checklist &amp; Sign-Off</span>
-                    <h3 class="section-title">Emergency Protocols, Interactive Daily Checklist &amp; Driver Sign-Off</h3>
-                    <p class="section-subtitle">Immediate accident/hazmat response, interactive daily readiness tracker, and official policy acknowledgment.</p>
-                </div>
-            </div>
-
-            <div class="cards-grid-2" style="margin-bottom: 22px;">
-                <div class="info-card">
-                    <h4>&#128657; 6-Step Accident &amp; Breakdown Protocol</h4>
-                    <ul>
-                        <li><strong>1. Stop Immediately &amp; Secure Scene:</strong> Turn on 4-way flashers, set parking brake, and place <strong>3 DOT reflective triangles</strong> within 10 minutes (at 10 ft, 100 ft, and 200 ft). Never leave the scene of an accident.</li>
-                        <li><strong>2. Call 911 &amp; Management Immediately:</strong> Check for injuries, call 911 if needed, and call <strong>Rob ("Brower")</strong> or <strong>Jamal Sealy (347-527-0069)</strong> immediately from the scene.</li>
-                        <li><strong>3. Document Without Admitting Fault:</strong> Be courteous, present your license/insurance/DOT cab card, photograph all vehicles, plates, and road conditions, and never debate fault at the scene.</li>
-                        <li><strong>4. Post-Accident &amp; Random DOT Testing (49 CFR 382):</strong> Any driver directed for a random or post-accident drug/alcohol test must proceed to the clinic within <strong>2 hours</strong>. Refusal or delay equals a positive test.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>&#9762; Leaking Hazmat &amp; Active Threat Response</h4>
-                    <ul>
-                        <li><strong>Leaking / Smoking Package:</strong> Stop in a safe open area, do not touch or inhale fumes, isolate the truck, keep shipping papers in hand, notify C &amp; S Management and FedEx Emergency Response (<strong>1-800-463-3339</strong>), and wait upwind.</li>
-                        <li><strong>Active Threat / Armed Robbery:</strong> Your life comes first—never fight over a truck, scanner, or freight. Comply calmly, observe details safely, retreat to cover (<strong>GET OUT / HIDE OUT / TAKE ACTION</strong>), and dial 911 + management once safe.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Interactive Daily Shift Readiness Checklist -->
-            <div class="checklist-header-bar no-print">
-                <div style="flex: 1;">
-                    <strong style="font-size: 0.98rem; color: #fff;">Interactive C &amp; S Daily Shift Readiness Checklist</strong>
-                    <div id="checklist-status-text" style="font-size: 0.8rem; color: var(--text-muted);">0 of 12 daily standards verified</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" id="checklist-progress-bar"></div>
-                    </div>
-                </div>
-                <button type="button" id="btn-reset-checks" class="btn-action btn-print" style="font-size: 0.78rem;">Reset Daily Checks</button>
-            </div>
-
-            <div class="checklist-grid no-print" id="checklist-container">
-                <!-- Populated dynamically via JS -->
-            </div>
-
-            <!-- Official Printable Driver Acknowledgment & Sign-Off -->
-            <div class="signoff-box" id="signoff-form-area">
-                <h4 style="margin: 0 0 8px; font-size: 1.15rem; font-weight: 900; color: #ffffff;">
-                    &#9997; Official C &amp; S Delivery Service, Inc. Driver Acknowledgment &amp; Sign-Off
-                </h4>
-                <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">
-                    I have read, understood, and agree to abide by all policies in the <strong>C &amp; S Delivery Service, Inc. Ultimate Driver Expectations &amp; Master Handbook</strong>—including our Mission &amp; Vision, Step 1 Pre-Trip &amp; GroundCloud tracking ON, Step 2 Dock Organization to prevent Code 27, Step 3 Safe Driving without speeding, Step 4 Label Verification &amp; 2nd/3rd floor apartment delivery, Step 5 On-Time Pickup Windows &amp; 100% scanning, Step 6 Mandatory Call to Management before applying Code 02 &amp; Zero Code 85 uncoded packages, and Step 7 Daily Truck Cleanliness with <strong>Strict Zero Tolerance for Urine ("Pee") Bottles</strong>.
-                </p>
-
-                <div class="signoff-grid">
-                    <div class="field-group">
-                        <label for="input-driver-name">Driver Full Name</label>
-                        <input type="text" id="input-driver-name" placeholder="Enter Full Legal Name">
-                    </div>
-                    <div class="field-group">
-                        <label for="input-route-id">Assigned Route / Truck #</label>
-                        <input type="text" id="input-route-id" placeholder="e.g., WA123 / WA135 / Bulk">
-                    </div>
-                    <div class="field-group">
-                        <label for="input-driver-sig">Driver Signature (Type or Sign on Print)</label>
-                        <input type="text" id="input-driver-sig" placeholder="Type Full Name to Acknowledge">
-                    </div>
-                    <div class="field-group">
-                        <label for="input-sign-date">Date</label>
-                        <input type="date" id="input-sign-date">
-                    </div>
-                </div>
-
-                <div class="no-print" style="margin-top: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-                    <span id="signoff-feedback" style="font-size: 0.84rem; font-weight: 700; color: #34d399;"></span>
-                    <div style="display: flex; gap: 10px;">
-                        <button type="button" id="btn-verify-signoff" class="btn-action btn-call">Verify &amp; Record Sign-Off</button>
-                        <button type="button" id="btn-print-bottom" class="btn-action btn-print">&#128424; Print Signed Handbook / Save PDF</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ==========================================================
-         DISPATCH & CODE 02 CALL MODAL
-         ========================================================== -->
-    <div class="modal-backdrop no-print" id="dispatch-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <h3 id="modal-title" style="margin: 0; font-size: 1.2rem; font-weight: 900; color: #ffffff;">&#128222; C &amp; S Dispatch &amp; Code 02 Verification</h3>
-                <button type="button" id="btn-close-modal" style="background: none; border: none; color: #94a3b8; font-size: 1.2rem; cursor: pointer;">&#10005;</button>
-            </div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0 0 16px;">
-                <strong>Mandatory Rule:</strong> Never apply <strong>Code 02 (Incorrect Address)</strong>, <strong>Code 27 (DNA)</strong>, or skip a stop blocked by a gate/dog without calling C &amp; S Management from the stop first.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
-                <div style="background: var(--bg-card-alt); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <strong style="display: block; color: #fff; font-size: 0.94rem;">Jamal Sealy (BC / Operations Dispatch)</strong>
-                        <span style="font-size: 0.8rem; color: var(--text-dim);">Primary On-Road &amp; Code 02 Support &bull; (347) 527-0069</span>
-                    </div>
-                    <a href="tel:3475270069" class="btn-action btn-call" style="padding: 6px 14px; font-size: 0.8rem;">Call Jamal</a>
-                </div>
-                <div style="background: var(--bg-card-alt); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 10px;">
-                    <strong style="display: block; color: #fff; font-size: 0.94rem;">Rob Alicea ("Brower") — Owner / AO</strong>
-                    <span style="font-size: 0.8rem; color: var(--text-dim);">All C &amp; S Operating Locations &bull; Escalations, Spare Truck &amp; Rescues</span>
-                </div>
-            </div>
-            <button type="button" id="btn-modal-done" class="btn-action btn-print" style="width: 100%; justify-content: center;">Close Window</button>
-        </div>
+<section class="chapter reveal" id="ch-06" data-title="step 2 dock organization SID shelf load code 27 misload damage">
+  <header class="ch-head"><span class="ch-num">06</span><span class="ch-kicker">Chapter 06 · Step 2 of 7</span><h3>Dock organization &amp; preventing Code 27</h3><p class="lede">Fifteen minutes on your shelves in the morning saves an hour of searching on the road.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-box"/></svg></span>Why it matters</h4><ul class="tight">
+      <li>Sort and lip-load every package by <b>stop ID (SID)</b> and sequence, label facing the aisle, before dispatch.</li>
+      <li>A <b>Code 27</b> (did not attempt) usually means a package was buried or on the wrong shelf, missed at the stop and found too late.</li>
+      <li>Heavy freight goes low. Keep the center aisle clear — it is your walkway.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-search"/></svg></span>Catch problems at the dock</h4><ul class="tight">
+      <li><b>Misloads:</b> packages for another route or ZIP code go back to the terminal before you leave.</li>
+      <li><b>Bad addresses:</b> missing street, suite or apartment numbers get flagged so management can research them early.</li>
+      <li><b>Damage:</b> crushed, wet, leaking or open boxes go to QA before loading.</li>
+      <li><b>Heavy packages:</b> boxes over 70 lb usually carry a heavy-package label. FedEx Ground takes packages up to 150 lb — plan a hand truck or team lift.</li></ul></div>
+  </div>
+  <div class="sid">
+    <div class="sid-title">Step-van shelf map · SID zones 1000–8500</div>
+    <div class="col">
+      <div class="shelf"><b>1000 · Driver side, top front</b>First stops of the day, priority business</div>
+      <div class="shelf"><b>3000 · Driver side, middle front</b>Mid-morning stops, labels facing aisle</div>
+      <div class="shelf"><b>5000 · Driver side, low front</b>Heavy cartons stay low</div>
+      <div class="shelf"><b>7000 · Driver side, rear</b>Afternoon sequence, mid-size freight</div>
     </div>
+    <div class="aisle"><span>▲ CAB</span><span>KEEP AISLE CLEAR</span><span>REAR DOOR ▼</span></div>
+    <div class="col">
+      <div class="shelf o"><b>2000 · Curb side, top front</b>Morning sequence, easy exit</div>
+      <div class="shelf o"><b>4000 · Curb side, middle front</b>Mid-day sequence, smalls bagged</div>
+      <div class="shelf o"><b>6000 · Curb side, low front</b>Afternoon heavy / medium</div>
+      <div class="shelf o"><b>8000 / 8500 · Curb rear &amp; floor</b>Bulk stops, team lifts, braced hazmat</div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==========================================================
-         INTERACTIVE APPLICATION LOGIC
-         ========================================================== -->
-    <script>
-        const SCANNER_CODES = [
-            {
-                code: "Code 01",
-                name: "Customer Security Delay / Blocked Access",
-                category: "critical",
-                pillClass: "critical",
-                condition: "Verifiable security threat, aggressive loose dog with no safe alternative spot, or police barricade.",
-                action: "Honk/rattle gate first. If Porch/Garage/Locker is unsafe, CALL MANAGEMENT before coding 01."
-            },
-            {
-                code: "Code 02",
-                name: "Incorrect / Incomplete Address (CALL FIRST!)",
-                category: "critical",
-                pillClass: "critical",
-                condition: "Strictly for missing street #, missing apt/suite #, or non-existent street number. NEVER for 'cannot locate'.",
-                action: "MANDATORY CALL PROTOCOL: Double-check label & map, then CALL JAMAL (347-527-0069) or ROB ('BROWER') from the stop before coding 02."
-            },
-            {
-                code: "Code 03",
-                name: "Customer Refused Delivery",
-                category: "delivery",
-                pillClass: "warn",
-                condition: "Recipient or business representative explicitly refuses to accept the package at the door.",
-                action: "Apply Code 03 at the stop, note reason clearly, and physically hand package to management at end of shift."
-            },
-            {
-                code: "Code 04",
-                name: "Business Closed (Normal Weekday Hours)",
-                category: "delivery",
-                pillClass: "safe",
-                condition: "Commercial business is locked/closed during standard weekday hours.",
-                action: "Must physically verify door is locked, scan a FedEx Door Tag on the entrance, and record business hours."
-            },
-            {
-                code: "Code 06",
-                name: "Customer Refused — Damaged Package",
-                category: "delivery",
-                pillClass: "warn",
-                condition: "Customer refuses delivery specifically because the carton or contents appear damaged.",
-                action: "Apply Code 06 and hand directly to Station QA / Management upon return for repackaging or claim inspection."
-            },
-            {
-                code: "Code 07",
-                name: "Residential Customer Not In (Signature Required)",
-                category: "delivery",
-                pillClass: "safe",
-                condition: "No one present to sign for ISR, DSR, or ASR 21+ package (or gated residential access completely blocked).",
-                action: "Knock/ring bell, wait 60 seconds, complete and affix a FedEx Door Tag, and scan the Door Tag barcode."
-            },
-            {
-                code: "Code 08",
-                name: "Driver Release Not Authorized / Unsafe",
-                category: "delivery",
-                pillClass: "warn",
-                condition: "High-exposure street doorstep with zero weather/theft shelter where package cannot be safely left.",
-                action: "Leave Door Tag, document reason, and call Dispatch if unsure whether an alternative spot is acceptable."
-            },
-            {
-                code: "Code 10",
-                name: "Damaged Package — No Delivery Attempted",
-                category: "station",
-                pillClass: "warn",
-                condition: "Crushed, leaking, or open carton caught during Step 2 morning dock sort or discovered in transit.",
-                action: "Catch at the dock before dispatch whenever possible and hand directly to QA/Station Management."
-            },
-            {
-                code: "Code 11",
-                name: "Business Closed — Weekend / Holiday",
-                category: "delivery",
-                pillClass: "safe",
-                condition: "Commercial stop closed on Saturday, Sunday, or official holiday.",
-                action: "Ensure commercial stops known to be closed on weekends are properly coded Code 11."
-            },
-            {
-                code: "Code 12",
-                name: "Wrong Route / Warehouse Misload",
-                category: "station",
-                pillClass: "warn",
-                condition: "Package sorted onto your truck that belongs to another route or outside your assigned service area.",
-                action: "Catch during Step 2 morning shelf organization and hand back to terminal before leaving the dock."
-            },
-            {
-                code: "Code 16",
-                name: "Payment / C.O.D. Not Available",
-                category: "station",
-                pillClass: "warn",
-                condition: "Recipient does not have required guaranteed funds/check for a C.O.D. shipment.",
-                action: "Leave Door Tag and return package to station management at end of day."
-            },
-            {
-                code: "Code 19",
-                name: "Vacation Hold / Future Delivery Requested",
-                category: "station",
-                pillClass: "safe",
-                condition: "Verified customer request on file to hold package until a specified future date.",
-                action: "Hand to station QA/hold cage at end of day with clear date verification."
-            },
-            {
-                code: "Code 27",
-                name: "Did Not Attempt (DNA — Preventable Failure!)",
-                category: "critical",
-                pillClass: "critical",
-                condition: "Package overlooked on a messy shelf and found at end of shift when too late to deliver.",
-                action: "MINIMIZE AT ALL COSTS! Prevent by organizing shelves 1000–8500 at the dock. Call management immediately if an emergency occurs."
-            },
-            {
-                code: "Code 83",
-                name: "Improper / Prohibited Hazardous Material",
-                category: "station",
-                pillClass: "critical",
-                condition: "Hazmat box missing OP-900LL, missing shipper signature, leaking, or prohibited hazard class.",
-                action: "STOP! Never load or transport an non-compliant Hazmat carton. Reject at dock/pickup and call Management."
-            },
-            {
-                code: "Code 85 / 35",
-                name: "Uncoded Package Left in Truck (ZERO TOLERANCE!)",
-                category: "critical",
-                pillClass: "critical",
-                condition: "Undelivered package brought back to the station without ANY exception scan applied.",
-                action: "WE DO NOT WANT CODE 85 INSIDE THE TRUCK! Walk cargo bay front-to-back before returning; code and hand every return to management."
-            },
-            {
-                code: "Code 13 / 21",
-                name: "Residential Release (13) / Signed Delivery (21)",
-                category: "pickup",
-                pillClass: "safe",
-                condition: "Standard successful completion codes for NSR residential release (13) or live signature capture (21).",
-                action: "Read label twice, place at sheltered front door (including 2nd/3rd floor apts), and snap a crisp POD photo."
-            },
-            {
-                code: "Code 22 / 24",
-                name: "Pickup: Zero Packages Ready (22) / Call Tag (24)",
-                category: "pickup",
-                pillClass: "safe",
-                condition: "Scheduled pickup shipper has 0 outbound boxes (22) or Call Tag return package is unavailable (24).",
-                action: "Must arrive and scan strictly inside the pickup open/close time window. Scan 100% of packages loaded."
-            }
-        ];
+<section class="chapter reveal" id="ch-07" data-title="step 3 safe driving speed seatbelt phone following distance backing GOAL three points contact lifting">
+  <header class="ch-head"><span class="ch-num">07</span><span class="ch-kicker">Chapter 07 · Step 3 of 7</span><h3>Safe driving — accuracy over speed</h3><p class="lede">Time is saved at the dock, never by speeding on the street.</p></header>
+  <div class="stat-row">
+    <div class="stat" style="--d:0"><b>100%</b><span>Seat belt use</span></div>
+    <div class="stat" style="--d:1"><b>0</b><span>Handheld phone use</span></div>
+    <div class="stat" style="--d:2"><b>6+ s</b><span>Following distance</span></div>
+    <div class="stat" style="--d:3"><b>3</b><span>Points of contact</span></div>
+  </div>
+  <div class="grid three">
+    <div class="card bad" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-siren"/></svg></span>Road rules</h4><ul class="tight">
+      <li>Obey every posted speed limit, including school zones and neighborhoods.</li>
+      <li><b>Seat belt on</b> before the truck moves — even 50 feet between houses. <span class="src">392.16</span></li>
+      <li>Full stops at every stop sign. Rolling stops are camera events.</li>
+      <li>Keep at least 6 seconds behind the vehicle ahead, and more in rain or at night.</li></ul></div>
+    <div class="card" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-eye"/></svg></span>Backing &amp; parking</h4><ul class="tight">
+      <li>Park so you can pull forward. Avoid backing whenever possible.</li>
+      <li>If you must back up: <b>G.O.A.L. — Get Out And Look</b>, flashers on, two horn taps, then back slowly using mirrors and camera.</li>
+      <li>At every stop: parking brake set, engine off, keys out, doors locked when out of sight.</li></ul></div>
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-lift"/></svg></span>Your body</h4><ul class="tight">
+      <li><b>Three points of contact</b> getting in and out of the cab and cargo area. <b>Never jump out.</b></li>
+      <li>Lift with your legs, keep the load close and do not twist under weight.</li>
+      <li>Use the hand truck for heavy or bulky packages, and get help with anything you cannot handle safely.</li></ul></div>
+  </div>
+</section>
 
-        const DAILY_CHECKS = [
-            { id: "chk-1", text: "Step 1: Full DOT Pre-Trip Walkaround (Full fuel tank, tires >= 4/32\" steer & 2/32\" drive, lights, brakes)" },
-            { id: "chk-2", text: "Step 1: Emergency Gear Verified (5 B:C fire extinguisher, 3 DOT triangles, first-aid kit, cab card)" },
-            { id: "chk-3", text: "Step 1: Scanner 100% charged & GroundCloud logged in with Location Tracking turned ON" },
-            { id: "chk-4", text: "Step 1: Out-of-Area route check completed before leaving the terminal" },
-            { id: "chk-5", text: "Step 2: All shelves (1000–8500) sorted by SID sequence to prevent Code 27 (Did Not Attempt)" },
-            { id: "chk-6", text: "Step 2: Warehouse misloads (Code 12), bad addresses & damaged boxes (Code 10) handed back at dock" },
-            { id: "chk-7", text: "Step 3: Zero speeding on highways/streets, 100% seatbelt at every stop, zero handheld phone use" },
-            { id: "chk-8", text: "Step 4: Read label twice at every stop, walk 2nd/3rd floor apartments, take sharp POD photos" },
-            { id: "chk-9", text: "Step 5: Arrive strictly inside all Pickup Time Windows & scan 100% of packages as loaded" },
-            { id: "chk-10", text: "Step 6: Called Jamal (347-527-0069) or Rob ('Brower') from the stop before any Code 02" },
-            { id: "chk-11", text: "Step 6: Full cargo walk-through completed — ZERO uncoded packages (Code 85) left in truck; returns handed to management" },
-            { id: "chk-12", text: "Step 7: Cab & cargo swept clean of all trash & ZERO urine ('pee') bottles left in vehicle" }
-        ];
+<section class="chapter reveal" id="ch-08" data-title="step 4 delivery label apartment POD photo signature ISR DSR ASR adult 21 door tag dogs gates placement">
+  <header class="ch-head"><span class="ch-num">08</span><span class="ch-kicker">Chapter 08 · Step 4 of 7</span><h3>Delivery execution &amp; signatures</h3><p class="lede">Right package, right door, right proof — every stop.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-home"/></svg></span>At the door</h4><ul class="tight">
+      <li><b>Read the label twice:</b> once in the truck and again at the door. Check name, street number, street and apt/suite.</li>
+      <li><b>Upper-floor apartments:</b> carry the package to the actual apartment door. Never leave it at the stairwell or breezeway.</li>
+      <li>Place it out of street view and out of the weather: porch, garage, side door or locker.</li>
+      <li><b>Sharp proof-of-delivery photo:</b> the package in its spot, with enough of the doorway to show where. No people, no faces, no blurry shots or photos taken from the cab.</li>
+      <li>If you choose "Other" on the scanner, type exactly where you left it.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-lock"/></svg></span>Gates, dogs &amp; doubts</h4><ul class="tight">
+      <li>Locked gate or loose dog blocking the door? Find a safe, sheltered alternative spot — or call before you code.</li>
+      <li>Rattle the gate, honk or whistle before you enter any yard. See Chapter 15 for dog safety.</li>
+      <li><b>Not sure a spot is safe? Call Rob or Jamal from the stop before you walk away.</b></li></ul></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signature option</th><th>Who may sign</th><th>Can you release without a person?</th><th>C &amp; S rule</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill green">No signature</span></td><td>No one</td><td><b>Yes.</b> Leave it safely at the address.</td><td>Sheltered spot plus a clear POD photo.</td></tr>
+        <tr><td><span class="pill amber">ISR · Indirect</span></td><td>Recipient, a neighbor, a building manager or another nearby person, or the recipient's signed door tag / electronic release</td><td><b>Only</b> with a signed door tag or recorded release</td><td>No one home? Leave a door tag, scan it and code the stop.</td></tr>
+        <tr><td><span class="pill amber">DSR · Direct</span></td><td><b>Someone at the delivery address</b></td><td><b>No.</b> Neighbors and door tags do not count.</td><td>Get a live signature at that address. Never sign for a customer.</td></tr>
+        <tr><td><span class="pill red">ASR · Adult 21+</span></td><td>Someone <b>21 or older at the address</b> with a valid government-issued photo ID</td><td><b>No.</b> Zero exceptions.</td><td>Check the ID and the date of birth every time.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Signature options as defined by FedEx (fedex.com, delivery signature options).</p>
+</section>
 
-        let checkState = {};
-        try {
-            const saved = localStorage.getItem("cns_handbook_checks_v2");
-            if (saved) checkState = JSON.parse(saved);
-        } catch (err) {
-            checkState = {};
-        }
+<section class="chapter reveal" id="ch-09" data-title="step 5 pickups pickup window scan every package code 22">
+  <header class="ch-head"><span class="ch-num">09</span><span class="ch-kicker">Chapter 09 · Step 5 of 7</span><h3>Pickups &amp; 100% scanning</h3><p class="lede">Pickups weigh heavily on our FedEx scorecard. They run on the clock.</p></header>
+  <div class="grid">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>Never early, never late</h4><ul class="tight">
+      <li>Review every scheduled pickup on your scanner and GroundCloud before you leave the station.</li>
+      <li>Arrive and scan <b>inside the customer's pickup window.</b> A scan before it opens or after it closes counts as a service failure.</li>
+      <li>Running late for a window? Call dispatch <b>before</b> you miss it, not after.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-scan"/></svg></span>Scan everything</h4><ul class="tight">
+      <li>Scan <b>each package</b> as you load it. Never toss unscanned boxes in the back to scan later.</li>
+      <li>Nothing ready at a scheduled pickup? Still arrive inside the window, talk to the shipper and close the stop with the correct code.</li>
+      <li>Inspect hazmat pickups for proper paperwork and labels before you accept them (Chapter 14).</li></ul></div>
+  </div>
+</section>
 
-        function renderScannerTable() {
-            const q = (document.getElementById("code-search").value || "").toLowerCase().trim();
-            const cat = document.getElementById("code-category-select").value;
-            const tbody = document.getElementById("scanner-codes-tbody");
+<section class="chapter reveal" id="ch-10" data-title="step 6 scanner codes exception code 01 02 03 04 06 07 08 10 11 12 16 19 27 83 85 call first">
+  <header class="ch-head"><span class="ch-num">10</span><span class="ch-kicker">Chapter 10 · Step 6 of 7</span><h3>Scanner &amp; exception codes</h3><p class="lede">An honest, accurate code tells the customer the truth — and protects you.</p></header>
+  <div class="grid three">
+    <div class="callout red" style="margin:0"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><div><b class="t">Code 02 — call first</b><p>Only for a truly wrong or incomplete address. <b>Never</b> because you can't find the house. Call Jamal (347-527-0069) or Rob from the stop before you apply it.</p></div></div>
+    <div class="callout amber" style="margin:0"><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span><div><b class="t">Code 27 — prevent it</b><p>"Did not attempt" is almost always a dock problem. Sort by SID every morning, and call if an emergency blocks a stop.</p></div></div>
+    <div class="callout red" style="margin:0"><span class="ic"><svg class="i"><use href="#i-box"/></svg></span><div><b class="t">Zero uncoded packages</b><p>Never bring a package back without a code. Walk the cargo area front to back before you return, then hand every return to management.</p></div></div>
+  </div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><div><b class="t">About these code numbers</b><p>This is the C &amp; S terminal code card. Scanner software updates can change numbers or names. <b>If your scanner shows a different description, follow the scanner and ask management.</b></p></div></div>
+  <div class="finder screen-only">
+    <input id="codeQ" type="search" placeholder="Find a code — try 02, refused, dog, closed…">
+    <select id="codeCat"><option value="all">All codes</option><option value="call">Call-first / restricted</option><option value="del">Delivery exceptions</option><option value="dock">Dock, damage &amp; hazmat</option><option value="pu">Completion &amp; pickup</option></select>
+  </div>
+  <div class="table-wrap">
+    <table id="codeTable">
+      <thead><tr><th>Code</th><th>Meaning</th><th>When to use it</th><th>What you must do</th></tr></thead>
+      <tbody>
+        <tr data-cat="call"><td><span class="pill red">01</span></td><td><b>Security delay / blocked access</b></td><td>Real security threat, aggressive loose dog with no safe alternative, police barricade.</td><td>Honk or rattle the gate first. <b>Call management before coding.</b></td></tr>
+        <tr data-cat="call"><td><span class="pill red">02</span></td><td><b>Incorrect / incomplete address</b></td><td>Missing street or apt/suite number, or a street number that doesn't exist. Never for "can't locate."</td><td>Re-check the label and map, then <b>call Jamal or Rob from the stop.</b></td></tr>
+        <tr data-cat="del"><td><span class="pill amber">03</span></td><td><b>Refused by customer</b></td><td>The recipient refuses the package at the door.</td><td>Note the reason. Hand it to management at end of day.</td></tr>
+        <tr data-cat="del"><td><span class="pill green">04</span></td><td><b>Business closed (weekday)</b></td><td>Business locked during normal weekday hours.</td><td>Confirm it's locked, leave a door tag, note the hours.</td></tr>
+        <tr data-cat="del"><td><span class="pill amber">06</span></td><td><b>Refused — damaged</b></td><td>The customer refuses because the box or contents look damaged.</td><td>Hand it to QA / management on return.</td></tr>
+        <tr data-cat="del"><td><span class="pill green">07</span></td><td><b>Customer not in (signature needed)</b></td><td>No one available to sign an ISR, DSR or ASR package.</td><td>Knock and wait about 60 seconds, then leave and scan a door tag.</td></tr>
+        <tr data-cat="del"><td><span class="pill amber">08</span></td><td><b>Release not authorized / unsafe</b></td><td>No safe sheltered spot to leave a no-signature package.</td><td>Door tag, document the reason, call if unsure.</td></tr>
+        <tr data-cat="dock"><td><span class="pill amber">10</span></td><td><b>Damaged — not attempted</b></td><td>Crushed, leaking or open carton found at the dock or in transit.</td><td>Catch it at the dock. Hand it to QA / management.</td></tr>
+        <tr data-cat="del"><td><span class="pill green">11</span></td><td><b>Business closed (weekend / holiday)</b></td><td>Commercial stop closed Saturday, Sunday or a holiday.</td><td>Code it correctly and note the business hours.</td></tr>
+        <tr data-cat="dock"><td><span class="pill amber">12</span></td><td><b>Misload / wrong route</b></td><td>The package belongs to another route or outside your area.</td><td>Catch it during Step 2 and return it before you leave.</td></tr>
+        <tr data-cat="dock"><td><span class="pill amber">16</span></td><td><b>C.O.D. payment not available</b></td><td>The recipient can't pay a C.O.D. shipment.</td><td>Leave a door tag and return the package to management.</td></tr>
+        <tr data-cat="dock"><td><span class="pill green">19</span></td><td><b>Future delivery requested</b></td><td>Verified customer request to hold until a later date.</td><td>Hand it to the hold cage with the date confirmed.</td></tr>
+        <tr data-cat="call"><td><span class="pill red">27</span></td><td><b>Did not attempt</b></td><td>Package missed on a messy shelf and found too late.</td><td><b>Prevent it.</b> Sort by SID and call management in an emergency.</td></tr>
+        <tr data-cat="dock"><td><span class="pill red">83</span></td><td><b>Improper / prohibited hazmat</b></td><td>Missing hazmat paperwork or shipper signature, leaking, or a prohibited class.</td><td><b>Do not load it.</b> Reject it and call management.</td></tr>
+        <tr data-cat="call"><td><span class="pill red">85</span></td><td><b>Uncoded return</b></td><td>Package brought back with no exception scan.</td><td><b>Zero tolerance.</b> Every return gets a code and is handed to management.</td></tr>
+        <tr data-cat="pu"><td><span class="pill violet">13 / 21</span></td><td><b>Delivered — released / signed</b></td><td>Successful no-signature release (13) or live signature (21).</td><td>Label read twice, sheltered spot, sharp POD photo.</td></tr>
+        <tr data-cat="pu"><td><span class="pill violet">22 / 24</span></td><td><b>Pickup — nothing ready / call tag</b></td><td>Scheduled shipper has nothing going out (22), or the call-tag item isn't available (24).</td><td>Still arrive and scan inside the pickup window.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-            const filtered = SCANNER_CODES.filter(item => {
-                const matchCat = (cat === "all") || (item.category === cat);
-                const matchText = !q ||
-                    item.code.toLowerCase().includes(q) ||
-                    item.name.toLowerCase().includes(q) ||
-                    item.condition.toLowerCase().includes(q) ||
-                    item.action.toLowerCase().includes(q);
-                return matchCat && matchText;
-            });
+<section class="chapter reveal" id="ch-11" data-title="step 7 end of day clean truck pee bottle biohazard returns post-trip DVIR keys">
+  <header class="ch-head"><span class="ch-num">11</span><span class="ch-kicker">Chapter 11 · Step 7 of 7</span><h3>End of day — clean truck, clean handoff</h3><p class="lede">Your truck is your office. Leave it the way you would want to find it.</p></header>
+  <div class="callout red pulse"><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span><div><b class="t">Zero tolerance · urine bottles &amp; human waste</b><p>Leaving urine bottles or any human waste in a cab or cargo area is a health hazard and disrespectful to the next driver and the mechanics. <b>It results in immediate disciplinary action, up to and including termination.</b> Need a bathroom stop? Take it — and tell dispatch if your route makes that hard.</p></div></div>
+  <div class="grid three">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-trash"/></svg></span>Clean out</h4><ul class="tight"><li>Remove wrappers, cups, bottles, shrink wrap, cardboard and trash from the dash, floor and shelves.</li><li>Leave the truck ready for the next shift.</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-users"/></svg></span>Hand off returns</h4><ul class="tight"><li>Every undelivered package has a valid code.</li><li>Hand returns <b>to a manager</b> with an explanation — never drop them in a bin unattended.</li></ul></div>
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-pen"/></svg></span>Post-trip report</h4><ul class="tight"><li>Federal law requires a written report when you find or are told about a defect. <span class="src">396.11</span></li><li><b>C &amp; S requires a post-trip check every day.</b> Report lights, brakes, tires or damage so repairs happen overnight.</li><li>Dock the scanner, charge batteries and put keys in the lockbox.</li></ul></div>
+  </div>
+</section>
 
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px;">No matching scanner codes found. Clear filter to view all codes.</td></tr>`;
-                return;
-            }
+<!-- ======================================================================
+     PART III — RULES OF THE ROAD
+     ====================================================================== -->
+<div class="part"><span class="bar print-only"></span><span>Part III</span><h2>Rules of the road</h2><p class="print-only">The federal rules that apply to every commercial vehicle we run — in plain English.</p></div>
 
-            tbody.innerHTML = filtered.map(item => `
-                <tr>
-                    <td><span class="code-pill ${item.pillClass}">${item.code}</span></td>
-                    <td><strong style="color: #ffffff;">${item.name}</strong></td>
-                    <td>${item.condition}</td>
-                    <td><strong style="color: #fdba74;">${item.action}</strong></td>
-                </tr>
-            `).join("");
-        }
+<section class="chapter reveal" id="ch-12" data-title="hours of service HOS 11 hour 14 hour 30 minute break 60 70 34 restart short haul 150 air mile">
+  <header class="ch-head"><span class="ch-num">12</span><span class="ch-kicker">Chapter 12 · 49 CFR Part 395</span><h3>Hours of service</h3><p class="lede">Fatigue kills. Federal limits apply to every commercial truck we run (10,001 lb or more).</p></header>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rule</th><th>The limit</th><th>What it means for you</th></tr></thead>
+      <tbody>
+        <tr><td><b>11-hour driving</b></td><td>Max 11 hours behind the wheel</td><td>Only after 10 consecutive hours off duty.</td></tr>
+        <tr><td><b>14-hour window</b></td><td>No driving after the 14th hour on duty</td><td>Dock sorting, pre-trip, breaks and post-trip all count. Then 10 hours off.</td></tr>
+        <tr><td><b>30-minute break</b></td><td>After 8 hours of driving</td><td>Any 30 minutes in a row off the wheel. Not required if you qualify for short-haul (below).</td></tr>
+        <tr><td><b>60 / 70 hours</b></td><td>60 hrs in 7 days or 70 hrs in 8</td><td>Reset with 34 hours off in a row.</td></tr>
+        <tr><td><b>Short-haul exception</b><br><span class="src">395.1(e)(1)</span></td><td>Stay within <b>150 air-miles</b> of the terminal and be <b>released within 14 hours</b></td><td>No logbook or ELD needed — C &amp; S keeps your start and end times instead. Go past 150 miles or 14 hours and full logging rules apply <b>that day</b>.</td></tr>
+        <tr><td><b>Non-CDL short-haul</b><br><span class="src">395.1(e)(2)</span></td><td>Within 150 air-miles, return to the terminal</td><td>Drivers of non-CDL trucks may stretch to 16 hours on duty on 2 days in any 7 — <b>only with management approval.</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout amber"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><b class="t">Heading toward 14 hours?</b><p>Call dispatch early — not at hour 13. We would rather send a rescue than have you break the law or drive tired.</p></div></div>
+</section>
 
-        function renderChecklist() {
-            const container = document.getElementById("checklist-container");
-            const statusText = document.getElementById("checklist-status-text");
-            const progressBar = document.getElementById("checklist-progress-bar");
+<section class="chapter reveal" id="ch-13" data-title="phone texting handheld 392.80 392.82 seatbelt alcohol drugs marijuana 0.04 0.02 testing">
+  <header class="ch-head"><span class="ch-num">13</span><span class="ch-kicker">Chapter 13</span><h3>Phones, seat belts, alcohol &amp; drugs</h3><p class="lede">The fastest ways to lose your job — and your license.</p></header>
+  <div class="grid">
+    <div class="card bad" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span>Phones &amp; screens <span class="src">392.80 · 392.82</span></h4><ul class="tight">
+      <li><b>No texting</b> while driving — that includes reading texts, emails and apps.</li>
+      <li><b>No handheld calls.</b> Do not hold the phone, and do not dial by pressing more than one button.</li>
+      <li>Hands-free is allowed only if the phone is mounted within reach while you are belted in.</li>
+      <li>"Driving" includes sitting at a red light or in traffic. Pull over and park first.</li>
+      <li>Only exception: calling 911 or police in an emergency.</li>
+      <li>These violations carry heavy fines, and repeat offenses can disqualify you from driving commercial vehicles.</li></ul></div>
+    <div class="card bad" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-drop"/></svg></span>Alcohol &amp; drugs</h4><ul class="tight">
+      <li><b>C &amp; S policy: zero.</b> No alcohol, marijuana or illegal drugs on duty, on station property or in a truck.</li>
+      <li>No alcohol within <b>4 hours</b> before duty.</li>
+      <li>DOT standards: an alcohol level of <b>0.04</b> or higher is a violation, and <b>0.02–0.039</b> means at least 24 hours off duty. <span class="src">382.201 · 382.505</span></li>
+      <li>State marijuana or medical cards <b>do not count</b> — federal transportation rules still apply.</li>
+      <li>Prescriptions that cause drowsiness: tell management before you drive.</li>
+      <li>Refusing a required test is treated the same as a positive test.</li></ul></div>
+  </div>
+  <div class="callout violet"><span class="ic"><svg class="i"><use href="#i-scale"/></svg></span><div><b class="t">Testing</b><p>Every C &amp; S driver is tested before hiring and when management has reasonable suspicion or after a crash. Drivers who hold a CDL are also in the federal random-testing program (49 CFR Part 382). Go to the clinic <b>right away</b> when directed.</p></div></div>
+</section>
 
-            let doneCount = 0;
-            DAILY_CHECKS.forEach(item => {
-                if (checkState[item.id]) doneCount++;
-            });
+<section class="chapter reveal" id="ch-14" data-title="hazmat hazardous materials placard 1001 limited quantity ORM-D shipping papers OP-900 dry ice UN1845 lithium">
+  <header class="ch-head"><span class="ch-num">14</span><span class="ch-kicker">Chapter 14 · 49 CFR Parts 171–177</span><h3>Hazardous materials &amp; dry ice</h3><p class="lede">Most hazmat you will see is small, legal and safe — if it is packed, papered and loaded right.</p></header>
+  <div class="grid">
+    <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Before you accept or load</h4><ul class="tight">
+      <li>Check for <b>hazard labels and markings</b>: the UN number, proper shipping name, class and packing group.</li>
+      <li>Check the <b>FedEx Ground hazmat shipping paper (OP-900)</b> and the shipper's signed certification. They must match the package.</li>
+      <li>Leaking, damaged, unsigned or mislabeled? <b>Do not load it.</b> Code 83 and call management.</li>
+      <li><b>Limited Quantity</b> packages show the black-and-white diamond mark and may weigh up to 30 kg (66 lb) gross. The old "ORM-D" marking is no longer valid for ground shipments.</li></ul></div>
+    <div class="card" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span>In the truck</h4><ul class="tight">
+      <li>Keep shipping papers <b>within reach while belted</b>, or in the driver-door pouch when you are out of the cab. <span class="src">177.817</span></li>
+      <li>Load hazmat near the rear door, upright (arrows up), blocked and braced. Never stack heavy freight on top.</li>
+      <li>Keep incompatible classes apart, such as corrosives (class 8) away from oxidizers (class 5).</li>
+      <li><b>Placard limit:</b> 1,001 lb or more combined of placard-table hazmat requires placards and a hazmat-endorsed CDL. <b>C &amp; S P&amp;D trucks stay below that limit.</b> <span class="src">172.504</span></li></ul></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card ok" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-snow"/></svg></span>Dry ice (UN1845, class 9)</h4><ul class="tight">
+      <li>Dry ice turns into CO₂ gas that pushes oxygen out of closed spaces.</li>
+      <li>The package must show the net weight in <b>kg</b>.</li>
+      <li>Load it in the cargo area <b>only, never in the cab</b>. Keep the bulkhead door closed and let air in before you climb in after a long stretch.</li></ul></div>
+    <div class="card bad" style="--d:3"><h4><span class="ic"><svg class="i"><use href="#i-x"/></svg></span>Never on a C &amp; S P&amp;D truck</h4><ul class="tight">
+      <li>Explosives (1.1–1.3), poison gas (2.3), dangerous-when-wet (4.3), poison-inhalation hazards, infectious substances (6.2) and radioactive material (class 7).</li>
+      <li>Damaged or recalled lithium batteries, or any battery shipment that isn't marked correctly.</li>
+      <li>In doubt? <b>Stop and call.</b></li></ul></div>
+  </div>
+</section>
 
-            const pct = Math.round((doneCount / DAILY_CHECKS.length) * 100);
-            statusText.textContent = `${doneCount} of ${DAILY_CHECKS.length} daily C & S standards verified (${pct}%)`;
-            progressBar.style.width = `${pct}%`;
+<section class="chapter reveal" id="ch-15" data-title="heat illness water rest shade heat stroke dog bite robbery threat weather winter lifting">
+  <header class="ch-head"><span class="ch-num">15</span><span class="ch-kicker">Chapter 15</span><h3>Heat, dogs &amp; personal safety</h3><p class="lede">Your life is worth more than any package.</p></header>
+  <div class="grid">
+    <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-sun"/></svg></span>Beat the heat — water, rest, shade</h4><ul class="tight">
+      <li>Drink water often, <b>before you feel thirsty</b> — about a cup every 15–20 minutes in hot weather. Go easy on energy drinks.</li>
+      <li>Cool down in the A/C or shade on breaks. A cargo area in summer gets far hotter than the street.</li>
+      <li>New or returning from time off? Your body needs about <b>1–2 weeks</b> to adjust. Pace yourself and take more breaks.</li>
+      <li>Wear light, breathable uniform layers and a FedEx cap.</li></ul></div>
+    <div class="card bad" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-heart"/></svg></span>Know the signs</h4><ul class="tight">
+      <li><b>Heat exhaustion:</b> headache, dizziness, weakness, heavy sweating, nausea, cramps. → Stop, cool down, drink water and call dispatch.</li>
+      <li><b>Heat stroke (an emergency):</b> confusion, slurred speech, fainting, seizures, very hot skin — sweating may stop. → <b>Call 911</b>, get to shade, cool with water and fanning.</li>
+      <li>Sweating does not mean you're safe. Watch your coworkers too.</li></ul></div>
+    <div class="card" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-paw"/></svg></span>Dogs</h4><ul class="tight">
+      <li>Look for bowls, toys, chains and "Beware of Dog" signs. Rattle the gate or honk before you enter.</li>
+      <li>A dog comes at you: <b>do not run.</b> Stand still, keep the package between you and the dog, avoid eye contact and back away slowly.</li>
+      <li>If you are bitten: get to safety, clean the wound, <b>report it immediately</b> and get medical care.</li></ul></div>
+    <div class="card bad" style="--d:3"><h4><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span>Robbery &amp; threats</h4><ul class="tight">
+      <li><b>Never fight over a truck, scanner or freight.</b> Comply calmly and remember details safely.</li>
+      <li>Get to safety, then call 911 and management.</li>
+      <li>If something feels wrong at a stop, leave and call. We will back your decision.</li>
+      <li>Ice, flooding or storms: slow down, and call if the roads aren't safe.</li></ul></div>
+  </div>
+</section>
 
-            container.innerHTML = DAILY_CHECKS.map(item => {
-                const isChecked = !!checkState[item.id];
-                return `
-                    <label class="check-row ${isChecked ? 'checked' : ''}">
-                        <input type="checkbox" data-check-id="${item.id}" ${isChecked ? 'checked' : ''}>
-                        <span>${item.text}</span>
-                    </label>
-                `;
-            }).join("");
+<section class="chapter reveal" id="ch-16" data-title="accident crash breakdown triangles warning devices 911 post-accident test report">
+  <header class="ch-head"><span class="ch-num">16</span><span class="ch-kicker">Chapter 16</span><h3>Accidents, breakdowns &amp; emergencies</h3><p class="lede">Stay calm. Follow the steps. Call us.</p></header>
+  <div class="steps">
+    <div><b>Stop and secure the scene</b><span>Never leave the scene. Flashers on immediately, parking brake set, engine off if there's any leak or smoke.</span></div>
+    <div><b>Check for injuries and call 911</b><span>Help only as far as it's safe. Do not move injured people unless they're in danger.</span></div>
+    <div><b>Set out triangles within 10 minutes</b><span>Two-way road: 10 ft from the truck on the traffic side, 100 ft behind and 100 ft ahead. Divided or one-way road: 10, 100 and 200 ft behind. Near a hill or curve: put one 100–500 ft back so drivers see it in time. <span class="src">392.22</span></span></div>
+    <div><b>Call management right away</b><span>Rob ("Brower") or Jamal Sealy at (347) 527-0069 — before you talk to anyone else about fault.</span></div>
+    <div><b>Document, don't debate</b><span>Photograph every vehicle, plate, the damage, the road and the signs. Exchange license, insurance and registration. Be polite and don't admit fault — the camera and the facts will tell the story.</span></div>
+    <div><b>Testing &amp; reporting</b><span>If directed to test, go immediately. Under federal rules, alcohol tests happen within 2 hours, drug tests within 32 hours, and you may not drink alcohol for 8 hours after the crash. Stay reachable. <span class="src">382.303</span></span></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card warm" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-flame"/></svg></span>Leaking or smoking package</h4><ul class="tight"><li>Stop in a safe, open area away from people.</li><li>Don't touch it or breathe the fumes. Take the shipping papers and move upwind.</li><li>Call 911, then C &amp; S management, then FedEx (1-800-463-3339).</li></ul></div>
+    <div class="card" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span>Breakdown</h4><ul class="tight"><li>Get fully off the road if you can. Flashers on, triangles out.</li><li>Call dispatch — the spare truck and a rescue driver are on the way.</li><li>Stay with the truck and freight unless you're unsafe.</li></ul></div>
+  </div>
+</section>
 
-            container.querySelectorAll("input[type='checkbox']").forEach(box => {
-                box.addEventListener("change", (e) => {
-                    const id = e.target.getAttribute("data-check-id");
-                    checkState[id] = e.target.checked;
-                    try {
-                        localStorage.setItem("cns_handbook_checks_v2", JSON.stringify(checkState));
-                    } catch (err) {}
-                    renderChecklist();
-                });
-            });
-        }
+<!-- ======================================================================
+     PART IV — TOOLS
+     ====================================================================== -->
+<div class="part"><span class="bar print-only"></span><span>Part IV</span><h2>Tools</h2><p class="print-only">Your daily checklist, a quick-reference card for the cab, and your signed acknowledgment.</p></div>
 
-        function applyCategoryFilter(category) {
-            document.querySelectorAll(".filter-pill").forEach(btn => {
-                btn.classList.toggle("active", btn.getAttribute("data-filter") === category);
-            });
+<section class="chapter reveal" id="ch-17" data-title="daily checklist readiness">
+  <header class="ch-head"><span class="ch-num">17</span><span class="ch-kicker">Chapter 17</span><h3>Daily readiness checklist</h3><p class="lede">Twelve checks. Every route. Every day.</p></header>
+  <div class="meter"><div class="bar"><i id="meterBar"></i></div><b id="meterTxt">0/12</b><button class="btn" id="resetChecks">Reset</button></div>
+  <div class="checklist" id="checklist">
+    <label class="check"><input type="checkbox" data-id="c1"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Reviewed the last inspection report, then walked around: tires (4/32" steer, 2/32" others), brakes, steering, lights, fluids, full tank.</span></label>
+    <label class="check"><input type="checkbox" data-id="c2"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Fire extinguisher charged and secured, 3 triangles, first-aid kit and truck papers on board.</span></label>
+    <label class="check"><input type="checkbox" data-id="c3"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>In full uniform, badge visible, safety shoes on, medical card in my wallet.</span></label>
+    <label class="check"><input type="checkbox" data-id="c4"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Scanner charged; GroundCloud on with location tracking; manifest checked for out-of-area stops.</span></label>
+    <label class="check"><input type="checkbox" data-id="c5"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Shelves sorted by SID with labels facing the aisle — no Code 27 today.</span></label>
+    <label class="check"><input type="checkbox" data-id="c6"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Misloads, bad addresses and damaged boxes handed back at the dock.</span></label>
+    <label class="check"><input type="checkbox" data-id="c7"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Seat belt every move, phone mounted, no speeding, full stops, backing only with G.O.A.L.</span></label>
+    <label class="check"><input type="checkbox" data-id="c8"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Read every label twice, carried packages to upper-floor doors, took sharp POD photos.</span></label>
+    <label class="check"><input type="checkbox" data-id="c9"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Hit every pickup window and scanned 100% of packages as loaded.</span></label>
+    <label class="check"><input type="checkbox" data-id="c10"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Called management before any Code 01 or 02.</span></label>
+    <label class="check"><input type="checkbox" data-id="c11"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Walked the cargo area — zero uncoded packages; returns handed to a manager.</span></label>
+    <label class="check"><input type="checkbox" data-id="c12"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span>Truck cleaned out (zero bottles or waste), post-trip done, keys in the lockbox.</span></label>
+  </div>
+</section>
 
-            document.querySelectorAll(".handbook-section").forEach(sec => {
-                if (category === "all") {
-                    sec.style.display = "block";
-                } else {
-                    const secCat = sec.getAttribute("data-category");
-                    sec.style.display = (secCat === category) ? "block" : "none";
-                }
-            });
-        }
+<section class="chapter reveal quickref" id="ch-18" data-title="quick reference contacts numbers emergency">
+  <header class="ch-head"><span class="ch-num">18</span><span class="ch-kicker">Chapter 18</span><h3>Quick reference card</h3><p class="lede">Keep it in the cab.</p></header>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Who / what</th><th>Number</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td><b>Emergency</b></td><td><b>911</b></td><td>Injury, fire, crash, threat, leaking hazmat</td></tr>
+        <tr><td><b>Jamal Sealy</b> · Operations / dispatch</td><td><a href="tel:+13475270069"><b>(347) 527-0069</b></a></td><td>Code 01/02 calls, delays, breakdowns, rescues</td></tr>
+        <tr><td><b>Rob Alicea ("Brower")</b> · Owner</td><td>Your station's posted number</td><td>Escalations, crashes, anything serious</td></tr>
+        <tr><td><b>FedEx</b></td><td>1-800-463-3339</td><td>After 911 and C &amp; S — hazmat incidents</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid three">
+    <div class="card" style="--d:0"><h4><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>Hours</h4><ul class="tight"><li>11 hrs driving / 14-hr window</li><li>10 hrs off between shifts</li><li>Short-haul: 150 air-miles, released within 14 hrs</li></ul></div>
+    <div class="card warm" style="--d:1"><h4><span class="ic"><svg class="i"><use href="#i-wheel"/></svg></span>Truck</h4><ul class="tight"><li>Tread 4/32" steer, 2/32" others</li><li>5 B:C extinguisher plus 3 triangles</li><li>Triangles out within 10 min</li></ul></div>
+    <div class="card bad" style="--d:2"><h4><span class="ic"><svg class="i"><use href="#i-alert"/></svg></span>Never</h4><ul class="tight"><li>Handheld phone or texting while driving</li><li>Code 02 without calling</li><li>Uncoded returns or bottles left in a truck</li></ul></div>
+  </div>
+</section>
 
-        window.addEventListener("DOMContentLoaded", () => {
-            renderScannerTable();
-            renderChecklist();
+<section class="chapter reveal" id="ch-19" data-title="acknowledgment sign off signature">
+  <header class="ch-head"><span class="ch-num">19</span><span class="ch-kicker">Chapter 19</span><h3>Driver acknowledgment</h3><p class="lede">Sign, date and hand this page to management.</p></header>
+  <p>I have received and read the <b>C &amp; S Delivery Service, Inc. Driver Handbook (2026 Edition)</b>. I understand and agree to follow it, including: the daily pre-trip inspection and GroundCloud tracking; dock organization to prevent Code 27; safe driving with no speeding, no handheld phone use and a seat belt at all times; reading every label twice and carrying packages to upper-floor doors; on-time pickups and 100% scanning; <b>calling management before any Code 02</b>; <b>zero uncoded packages</b>; the uniform and appearance standards; the alcohol and drug policy; and the <b>zero-tolerance policy on urine bottles and human waste</b>.</p>
+  <p>I understand this handbook does not replace federal or state law or FedEx Ground standards, and that C &amp; S may update it at any time.</p>
+  <div class="sign">
+    <label>Driver full name<input id="sName" placeholder="Full legal name"><span class="sig-line" data-from="sName"></span></label>
+    <label>Route / terminal<input id="sRoute" placeholder="e.g. WA123 · Terminal 4901"><span class="sig-line" data-from="sRoute"></span></label>
+    <label>Driver signature<input id="sSig" placeholder="Type your full name to sign"><span class="sig-line" data-from="sSig"></span></label>
+    <label>Date<input id="sDate" type="date"><span class="sig-line" data-from="sDate"></span></label>
+    <label>Manager name<input id="sMgr" placeholder="Receiving manager"><span class="sig-line" data-from="sMgr"></span></label>
+    <label>Manager signature<input id="sMgrSig" placeholder="Manager signs on paper"><span class="sig-line" data-from="sMgrSig"></span></label>
+  </div>
+  <div class="cover-actions screen-only" style="margin-top:18px">
+    <button class="btn violet" id="printSigned"><svg class="i"><use href="#i-print"/></svg>Print / save my signed copy</button>
+    <span id="signMsg" class="src" style="align-self:center"></span>
+  </div>
+</section>
 
-            // Set default date
-            const dateInput = document.getElementById("input-sign-date");
-            if (dateInput && !dateInput.value) {
-                dateInput.value = new Date().toISOString().split("T")[0];
-            }
+<!-- Back cover (print) -->
+<section class="back-cover print-only">
+  <div>
+    <div class="mark">C&amp;S</div>
+    <h2 style="margin-top:18px">Safe. Accurate.<br>On time. Every stop.</h2>
+    <p>Thank you for carrying our name — and our customers' trust — every single day.</p>
+  </div>
+  <div class="bc-contacts">
+    <div><small>Operations / dispatch</small>Jamal Sealy · (347) 527-0069</div>
+    <div><small>Owner / authorized officer</small>Rob Alicea ("Brower")</div>
+    <div><small>Emergency</small>Call 911 first — then call us</div>
+  </div>
+  <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:#cbb8f5">C &amp; S Delivery Service, Inc. · Contracted service provider for FedEx Ground · 2026 Edition</div>
+</section>
 
-            // Category Filter Pills
-            document.querySelectorAll(".filter-pill").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    applyCategoryFilter(btn.getAttribute("data-filter"));
-                });
-            });
+<div class="no-results" id="noResults">No chapters match your search.</div>
+<footer class="site">C &amp; S Delivery Service, Inc. · Driver Handbook, 2026 edition · Regulations summarized from 49 CFR and FedEx published materials as of November 2026. When in doubt, follow the strictest rule and call management.</footer>
+</main>
+</div>
 
-            // TOC Quick Jump Buttons
-            document.querySelectorAll(".toc-item").forEach(item => {
-                item.addEventListener("click", () => {
-                    applyCategoryFilter("all");
-                    const targetId = item.getAttribute("data-jump");
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
-                });
-            });
+<!-- Dispatch modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h3 id="mTitle" style="margin:0">Call dispatch</h3><button class="btn" id="mClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
+    <p style="color:var(--muted);font-size:.9rem">Call <b>before</b> any Code 01 or 02, before skipping a stop blocked by a gate or dog, and the moment anything goes wrong.</p>
+    <div class="contact"><div><b>Jamal Sealy</b><small>Operations / dispatch · (347) 527-0069</small></div><a class="btn hot" href="tel:+13475270069"><svg class="i"><use href="#i-phone"/></svg>Call</a></div>
+    <div class="contact"><div><b>Rob Alicea ("Brower")</b><small>Owner — escalations, crashes, spare truck</small></div></div>
+    <div class="contact"><div><b>Emergency</b><small>Injury, fire, crash, threat</small></div><a class="btn" href="tel:911">911</a></div>
+  </div>
+</div>
 
-            // Global Search Input
-            const globalSearch = document.getElementById("global-search");
-            const clearSearchBtn = document.getElementById("btn-clear-search");
-            globalSearch.addEventListener("input", () => {
-                const query = globalSearch.value.toLowerCase().trim();
-                clearSearchBtn.style.display = query ? "block" : "none";
-                applyCategoryFilter("all");
+<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
 
-                document.querySelectorAll(".handbook-section").forEach(sec => {
-                    if (!query) {
-                        sec.style.display = "block";
-                        return;
-                    }
-                    const matches = sec.innerText.toLowerCase().includes(query);
-                    sec.style.display = matches ? "block" : "none";
-                });
-            });
+<script>
+(function () {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 
-            clearSearchBtn.addEventListener("click", () => {
-                globalSearch.value = "";
-                clearSearchBtn.style.display = "none";
-                applyCategoryFilter("all");
-            });
+  // Stagger delays for cards inside each chapter
+  $$('.chapter').forEach((ch) => $$('.card, .steps > div, .stat', ch).forEach((el, i) => { if (!el.style.getPropertyValue('--d')) el.style.setProperty('--d', i); }));
 
-            // Scanner Table Filters
-            document.getElementById("code-search").addEventListener("input", renderScannerTable);
-            document.getElementById("code-category-select").addEventListener("change", renderScannerTable);
+  // Reveal on scroll
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.06 }) : null;
+  $$('.reveal').forEach((el) => io ? io.observe(el) : el.classList.add('in'));
 
-            // Reset Daily Checklist
-            document.getElementById("btn-reset-checks").addEventListener("click", () => {
-                checkState = {};
-                try {
-                    localStorage.removeItem("cns_handbook_checks_v2");
-                } catch (err) {}
-                renderChecklist();
-            });
+  // Progress bar, scroll spy, back-to-top
+  const links = $$('#rail a');
+  const chapters = $$('.chapter');
+  const bar = $('#progress'), top = $('#toTop');
+  let ticking = false;
+  function onScroll() {
+    const h = document.documentElement;
+    const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    bar.style.transform = `scaleX(${p})`;
+    top.classList.toggle('show', h.scrollTop > 900);
+    let cur = null;
+    for (const c of chapters) { if (c.getBoundingClientRect().top < 140) cur = c.id; }
+    links.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+    ticking = false;
+  }
+  addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+  onScroll();
+  top.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // Print / Save PDF Buttons
-            const handlePrint = () => {
-                applyCategoryFilter("all");
-                document.getElementById("code-search").value = "";
-                document.getElementById("code-category-select").value = "all";
-                renderScannerTable();
-                window.print();
-            };
-            document.getElementById("btn-print-top").addEventListener("click", handlePrint);
-            document.getElementById("btn-print-bottom").addEventListener("click", handlePrint);
+  // Mobile chapter menu
+  $('#menuBtn').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  links.forEach((a) => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+  document.addEventListener('click', (e) => { if (document.body.classList.contains('menu-open') && !e.target.closest('#rail, #menuBtn')) document.body.classList.remove('menu-open'); });
 
-            // Dispatch Modal Controls
-            const modal = document.getElementById("dispatch-modal");
-            document.getElementById("btn-open-dispatch").addEventListener("click", () => modal.classList.add("open"));
-            document.getElementById("btn-close-modal").addEventListener("click", () => modal.classList.remove("open"));
-            document.getElementById("btn-modal-done").addEventListener("click", () => modal.classList.remove("open"));
+  // Search across chapters
+  const q = $('#q');
+  q.addEventListener('input', () => {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    chapters.forEach((c) => {
+      const hit = !term || (c.dataset.title + ' ' + c.textContent).toLowerCase().includes(term);
+      c.classList.toggle('filtered-out', !hit);
+      if (hit) { shown++; c.classList.add('in'); }
+    });
+    $$('.part').forEach((p) => { p.style.display = term ? 'none' : ''; });
+    $('#noResults').style.display = shown ? 'none' : 'block';
+  });
 
-            // Verify Sign-Off Button
-            document.getElementById("btn-verify-signoff").addEventListener("click", () => {
-                const name = document.getElementById("input-driver-name").value.trim();
-                const route = document.getElementById("input-route-id").value.trim();
-                const sig = document.getElementById("input-driver-sig").value.trim();
-                const feedback = document.getElementById("signoff-feedback");
+  // Code finder
+  const codeQ = $('#codeQ'), codeCat = $('#codeCat');
+  function filterCodes() {
+    const t = codeQ.value.trim().toLowerCase(), cat = codeCat.value;
+    $$('#codeTable tbody tr').forEach((r) => {
+      const ok = (cat === 'all' || r.dataset.cat === cat) && (!t || r.textContent.toLowerCase().includes(t));
+      r.classList.toggle('hide', !ok);
+    });
+  }
+  codeQ.addEventListener('input', filterCodes);
+  codeCat.addEventListener('change', filterCodes);
 
-                if (!name || !sig) {
-                    feedback.style.color = "#f87171";
-                    feedback.textContent = "Please enter both your Full Name and Signature to record acknowledgment.";
-                    return;
-                }
-                feedback.style.color = "#34d399";
-                feedback.textContent = `✓ Acknowledgment verified for ${name} (${route || 'C & S Driver'}). Click 'Print Signed Handbook / Save PDF' to save your copy.`;
-            });
-        });
-    </script>
+  // Checklist (resets each day)
+  const today = new Date().toISOString().slice(0, 10);
+  let checks = store.get('cs_checks', {});
+  if (checks.day !== today) checks = { day: today };
+  function paintChecks() {
+    const boxes = $$('#checklist input');
+    let n = 0;
+    boxes.forEach((b) => { b.checked = !!checks[b.dataset.id]; b.closest('.check').classList.toggle('done', b.checked); if (b.checked) n++; });
+    $('#meterBar').style.width = (n / boxes.length * 100) + '%';
+    $('#meterTxt').textContent = n + '/' + boxes.length;
+  }
+  $$('#checklist input').forEach((b) => b.addEventListener('change', () => { checks[b.dataset.id] = b.checked; store.set('cs_checks', checks); paintChecks(); }));
+  $('#resetChecks').addEventListener('click', () => { checks = { day: today }; store.set('cs_checks', checks); paintChecks(); });
+  paintChecks();
+
+  // Sign-off fields mirror into printable signature lines
+  const sDate = $('#sDate'); if (!sDate.value) sDate.value = today;
+  const saved = store.get('cs_sign', {});
+  ['sName', 'sRoute', 'sSig', 'sMgr'].forEach((id) => { if (saved[id]) $('#' + id).value = saved[id]; });
+  function mirror() {
+    $$('.sig-line').forEach((l) => { const v = $('#' + l.dataset.from).value; l.textContent = l.dataset.from === 'sMgrSig' ? '' : v; });
+  }
+  $$('.sign input').forEach((i) => i.addEventListener('input', () => { const s = store.get('cs_sign', {}); s[i.id] = i.value; store.set('cs_sign', s); mirror(); }));
+  mirror();
+  $('#printSigned').addEventListener('click', () => {
+    if (!$('#sName').value.trim() || !$('#sSig').value.trim()) { $('#signMsg').textContent = 'Enter your name and signature first.'; $('#signMsg').style.color = '#fca5a5'; return; }
+    $('#signMsg').textContent = ''; mirror(); window.print();
+  });
+
+  // Printing: show everything
+  function preparePrint() { q.value = ''; q.dispatchEvent(new Event('input')); codeQ.value = ''; codeCat.value = 'all'; filterCodes(); $$('.reveal').forEach((r) => r.classList.add('in')); mirror(); }
+  addEventListener('beforeprint', preparePrint);
+  $('#printBtn').addEventListener('click', () => { preparePrint(); window.print(); });
+
+  // Dispatch modal
+  const modal = $('#modal');
+  $('#callBtn').addEventListener('click', () => modal.classList.add('open'));
+  $('#mClose').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') { modal.classList.remove('open'); document.body.classList.remove('menu-open'); } });
+})();
+</script>
 </body>
 </html>
